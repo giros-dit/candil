@@ -1,0 +1,34 @@
+# gNMI target address; CLI flag `--address`
+address: "clab-telemetry-testbed-srl-xe-r1"
+# gNMI target user name; CLI flag `--username`
+username: admin
+# gNMI target user password; CLI flag `--password`
+password: NokiaSrl1!
+# connection mode; CLI flag `--insecure`
+#insecure: true
+skip-verify: true
+# log file location; CLI flag `--log-file`
+log-file: /tmp/gnmic.log
+subscriptions:
+  port_stats:
+    paths:
+      - "/interfaces/interface[name=ethernet-1/1]/state/oper-status"
+    stream-mode: on-change
+    #stream-mode: sample
+    #sample-interval: 5s
+    encoding: JSON_IETF
+outputs:
+  output1:
+    # required
+    type: kafka
+    # Comma separated brokers addresses
+    address: kafka:9092
+    # Kafka topic name
+    topic: gnmi
+    max-retry: 2
+    # Kafka connection timeout
+    timeout: 5s
+    # Wait time to reestablish the kafka producer connection after a failure
+    recovery-wait-time: 10s
+    # Exported msg format, json, protojson, prototext, proto, event
+    format: event

@@ -1,0 +1,753 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://candil.namespace.com#"
+     xml:base="http://candil.namespace.com"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:mod="https://w3id.org/mod#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://candil.namespace.com#">
+        <dc:creator>Ignacio D. Martinez-Casanueva</dc:creator>
+        <dc:title>CANDIL Ontology</dc:title>
+        <owl:versionInfo>0.0.1</owl:versionInfo>
+        <mod:createdWith rdf:resource="https://chowlk.linkeddata.es/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#versionInfo -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#versionInfo"/>
+    
+
+
+    <!-- https://w3id.org/mod#createdWith -->
+
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/mod#createdWith"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://candil.namespace.com#connectsNode -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#connectsNode">
+        <rdfs:label>connects node</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://candil.namespace.com#hasInterfaceStatistics -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#hasInterfaceStatistics">
+        <rdfs:label>has interface statistics</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://candil.namespace.com#hasInterfaceType -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#hasInterfaceType">
+        <rdfs:label>has interface type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://candil.namespace.com#hasOperStatus -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#hasOperStatus">
+        <rdfs:label>has oper status</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://candil.namespace.com#inDiscards -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#inDiscards">
+        <rdfs:domain rdf:resource="http://candil.namespace.com#InterfaceStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Integer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://candil.namespace.com#inErrors -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#inErrors">
+        <rdfs:domain rdf:resource="http://candil.namespace.com#InterfaceStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Integer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://candil.namespace.com#inNode -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#inNode">
+        <rdfs:label>in node</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://candil.namespace.com#inUnicastPackets -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#inUnicastPackets">
+        <rdfs:domain rdf:resource="http://candil.namespace.com#InterfaceStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Integer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://candil.namespace.com#inputOctets -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#inputOctets">
+        <rdfs:domain rdf:resource="http://candil.namespace.com#InterfaceStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Integer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://candil.namespace.com#interfaceDescription -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#interfaceDescription">
+        <rdfs:domain rdf:resource="http://candil.namespace.com#Interface"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://candil.namespace.com#interfaceEnabled -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#interfaceEnabled">
+        <rdfs:domain rdf:resource="http://candil.namespace.com#Interface"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://candil.namespace.com#interfaceName -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#interfaceName">
+        <rdfs:domain rdf:resource="http://candil.namespace.com#Interface"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://candil.namespace.com#isContainedInNetwork -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#isContainedInNetwork">
+        <rdfs:label>is contained in network</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://candil.namespace.com#linkIdentifier -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#linkIdentifier">
+        <rdfs:domain rdf:resource="http://candil.namespace.com#TerminationPoint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://candil.namespace.com#networkIdentifier -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#networkIdentifier">
+        <rdfs:domain rdf:resource="http://candil.namespace.com#Network"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://candil.namespace.com#nodeIdentifier -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#nodeIdentifier">
+        <rdfs:domain rdf:resource="http://candil.namespace.com#Node"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://candil.namespace.com#outDiscards -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#outDiscards">
+        <rdfs:domain rdf:resource="http://candil.namespace.com#InterfaceStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Integer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://candil.namespace.com#outErrors -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#outErrors">
+        <rdfs:domain rdf:resource="http://candil.namespace.com#InterfaceStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Integer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://candil.namespace.com#outUnicastPackets -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#outUnicastPackets">
+        <rdfs:domain rdf:resource="http://candil.namespace.com#InterfaceStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Integer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://candil.namespace.com#outputOctets -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#outputOctets">
+        <rdfs:domain rdf:resource="http://candil.namespace.com#InterfaceStatistics"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Integer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://candil.namespace.com#terminatesLink -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#terminatesLink">
+        <rdfs:label>terminates link</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://candil.namespace.com#terminationPointIndetifier -->
+
+
+    <owl:ObjectProperty rdf:about="http://candil.namespace.com#terminationPointIndetifier">
+        <rdfs:domain rdf:resource="http://candil.namespace.com#TerminationPoint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#String"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://candil.namespace.com#inDiscards -->
+
+
+    <owl:DatatypeProperty rdf:about="http://candil.namespace.com#inDiscards"/>
+    
+
+
+    <!-- http://candil.namespace.com#inErrors -->
+
+
+    <owl:DatatypeProperty rdf:about="http://candil.namespace.com#inErrors"/>
+    
+
+
+    <!-- http://candil.namespace.com#inUnicastPackets -->
+
+
+    <owl:DatatypeProperty rdf:about="http://candil.namespace.com#inUnicastPackets"/>
+    
+
+
+    <!-- http://candil.namespace.com#inputOctets -->
+
+
+    <owl:DatatypeProperty rdf:about="http://candil.namespace.com#inputOctets"/>
+    
+
+
+    <!-- http://candil.namespace.com#interfaceDescription -->
+
+
+    <owl:DatatypeProperty rdf:about="http://candil.namespace.com#interfaceDescription"/>
+    
+
+
+    <!-- http://candil.namespace.com#interfaceEnabled -->
+
+
+    <owl:DatatypeProperty rdf:about="http://candil.namespace.com#interfaceEnabled"/>
+    
+
+
+    <!-- http://candil.namespace.com#interfaceName -->
+
+
+    <owl:DatatypeProperty rdf:about="http://candil.namespace.com#interfaceName"/>
+    
+
+
+    <!-- http://candil.namespace.com#linkIdentifier -->
+
+
+    <owl:DatatypeProperty rdf:about="http://candil.namespace.com#linkIdentifier"/>
+    
+
+
+    <!-- http://candil.namespace.com#networkIdentifier -->
+
+
+    <owl:DatatypeProperty rdf:about="http://candil.namespace.com#networkIdentifier"/>
+    
+
+
+    <!-- http://candil.namespace.com#nodeIdentifier -->
+
+
+    <owl:DatatypeProperty rdf:about="http://candil.namespace.com#nodeIdentifier"/>
+    
+
+
+    <!-- http://candil.namespace.com#outDiscards -->
+
+
+    <owl:DatatypeProperty rdf:about="http://candil.namespace.com#outDiscards"/>
+    
+
+
+    <!-- http://candil.namespace.com#outErrors -->
+
+
+    <owl:DatatypeProperty rdf:about="http://candil.namespace.com#outErrors"/>
+    
+
+
+    <!-- http://candil.namespace.com#outUnicastPackets -->
+
+
+    <owl:DatatypeProperty rdf:about="http://candil.namespace.com#outUnicastPackets"/>
+    
+
+
+    <!-- http://candil.namespace.com#outputOctets -->
+
+
+    <owl:DatatypeProperty rdf:about="http://candil.namespace.com#outputOctets"/>
+    
+
+
+    <!-- http://candil.namespace.com#terminationPointIndetifier -->
+
+
+    <owl:DatatypeProperty rdf:about="http://candil.namespace.com#terminationPointIndetifier"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://candil.namespace.com#Interface -->
+
+
+    <owl:Class rdf:about="http://candil.namespace.com#Interface">
+        <rdfs:subClassOf rdf:resource="http://candil.namespace.com#TerminationPoint"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#hasInterfaceStatistics"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#hasOperStatus"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#interfaceEnabled"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#interfaceName"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#hasInterfaceType"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#interfaceDescription"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Interface</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://candil.namespace.com#InterfaceStatistics -->
+
+
+    <owl:Class rdf:about="http://candil.namespace.com#InterfaceStatistics">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#inDiscards"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#inErrors"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#inUnicastPackets"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#inputOctets"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#outDiscards"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#outErrors"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#outUnicastPackets"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#outputOctets"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Interface Statistics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://candil.namespace.com#InterfaceType -->
+
+
+    <owl:Class rdf:about="http://candil.namespace.com#InterfaceType">
+        <rdfs:label>Interface Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://candil.namespace.com#Link -->
+
+
+    <owl:Class rdf:about="http://candil.namespace.com#Link">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#connectsNode"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Link</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://candil.namespace.com#Network -->
+
+
+    <owl:Class rdf:about="http://candil.namespace.com#Network">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#networkIdentifier"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Network</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://candil.namespace.com#Node -->
+
+
+    <owl:Class rdf:about="http://candil.namespace.com#Node">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#isContainedInNetwork"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#nodeIdentifier"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Node</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://candil.namespace.com#TerminationPoint -->
+
+
+    <owl:Class rdf:about="http://candil.namespace.com#TerminationPoint">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#inNode"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#linkIdentifier"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#terminatesLink"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://candil.namespace.com#terminationPointIndetifier"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Termination Point</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://candil.namespace.com#lnterfaceIANA -->
+
+
+    <owl:Class rdf:about="http://candil.namespace.com#lnterfaceIANA">
+        <rdfs:subClassOf rdf:resource="http://candil.namespace.com#InterfaceType"/>
+        <rdfs:label>lnterface IANA</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://candil.namespace.com#operStatus -->
+
+
+    <owl:Class rdf:about="http://candil.namespace.com#operStatus">
+        <rdfs:label>Oper Status</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#Integer -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2001/XMLSchema#Integer"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#String -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2001/XMLSchema#String"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://candil.namespace.com#DOWN -->
+
+
+    <owl:NamedIndividual rdf:about="http://candil.namespace.com#DOWN">
+        <rdf:type rdf:resource="http://candil.namespace.com#operStatus"/>
+        <rdfs:comment>The interface does not pass any packets.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://candil.namespace.com#UP -->
+
+
+    <owl:NamedIndividual rdf:about="http://candil.namespace.com#UP">
+        <rdf:type rdf:resource="http://candil.namespace.com#operStatus"/>
+        <rdfs:comment>Ready to pass packets.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://candil.namespace.com#ethernetCsmacd -->
+
+
+    <owl:NamedIndividual rdf:about="http://candil.namespace.com#ethernetCsmacd">
+        <rdf:type rdf:resource="http://candil.namespace.com#lnterfaceIANA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://candil.namespace.com#l2vlan -->
+
+
+    <owl:NamedIndividual rdf:about="http://candil.namespace.com#l2vlan">
+        <rdf:type rdf:resource="http://candil.namespace.com#lnterfaceIANA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://candil.namespace.com#inDiscards">
+        <rdfs:label>in discards</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://candil.namespace.com#inErrors">
+        <rdfs:label>in errors</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://candil.namespace.com#inUnicastPackets">
+        <rdfs:label>in unicast packets</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://candil.namespace.com#inputOctets">
+        <rdfs:label>input octets</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://candil.namespace.com#interfaceDescription">
+        <rdfs:label>interface description</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://candil.namespace.com#interfaceEnabled">
+        <rdfs:label>interface enabled</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://candil.namespace.com#interfaceName">
+        <rdfs:label>interface name</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://candil.namespace.com#linkIdentifier">
+        <rdfs:label>link identifier</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://candil.namespace.com#networkIdentifier">
+        <rdfs:label>network identifier</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://candil.namespace.com#nodeIdentifier">
+        <rdfs:label>node identifier</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://candil.namespace.com#outDiscards">
+        <rdfs:label>out discards</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://candil.namespace.com#outErrors">
+        <rdfs:label>out errors</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://candil.namespace.com#outUnicastPackets">
+        <rdfs:label>out unicast packets</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://candil.namespace.com#outputOctets">
+        <rdfs:label>output octets</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://candil.namespace.com#terminationPointIndetifier">
+        <rdfs:label>termination point indetifier</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

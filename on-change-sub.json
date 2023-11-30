@@ -1,0 +1,18 @@
+{
+  "id": "urn:ngsi-ld:Subscription:withOnChange",
+  "type": "Subscription",
+  "entities": [
+    {
+      "type": "Interface",
+      "id": "candil:r1_e1-1"
+    }
+  ],
+  "watchedAttributes": ["candil:operStatus"],
+  "notification": {
+    "attributes": ["candil:operStatus"],
+    "endpoint": {
+      "uri": "http://analytics-server:8080",
+      "accept": "application/json"
+    }
+  }
+}

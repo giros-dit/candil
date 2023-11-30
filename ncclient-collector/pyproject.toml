@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "ncclient-collector"
+version = "0.1.0"
+description = ""
+authors = ["Ignacio Dominguez Martinez-Casanueva <ignacio.dominguezmartinez@telefonica.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+ncclient = "^0.6.15"
+kafka-python = "^2.0.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

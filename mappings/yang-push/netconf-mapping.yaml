@@ -1,0 +1,39 @@
+prefixes:
+ candil: "http://candil.namespace.com#"
+
+sources:
+  interfaces-file:
+    access: netconf-interfaces.xml
+    referenceFormulation: xpath
+    iterator: /interfaces/interface
+
+mappings:
+  interfaces:
+    sources:
+      - interfaces-file
+    s: candil:$(name)
+    po:
+      - [a, candil:Interface]
+      - [candil:interfaceName, $(name), xsd:string]
+      - [candil:interfaceDescription, $(description), xsd:string]
+      - [candil:interfaceEnabled, $(enabled), xsd:boolean]
+      - p: candil:hasInterfaceStatistics
+        o:
+          mapping: counters
+        type: iri
+      - p: candil:hasLowerInterface
+        o: candil:$(lower-layer-if)
+        type: iri
+  counters:
+    sources:
+      - interfaces-file
+    po:
+      - [a, candil:InterfaceStatistics]
+      - [candil:inputOctets, $(statistics/in-octets), xsd:integer]
+      - [candil:inputUnicastPackets, $(statistics/in-unicast-pkts), xsd:integer]
+      - [candil:inputDiscards, $(statistics/in-discards), xsd:integer]
+      - [candil:inputErrors, $(statistics/in-errors), xsd:integer]
+      - [candil:outOctets, $(statistics/out-octets), xsd:integer]
+      - [candil:outputUnicastPackets, $(statistics/out-unicast-pkts), xsd:integer]
+      - [candil:outputDiscards, $(statistics/out-discards), xsd:integer]
+      - [candil:outputErrors, $(statistics/out-errors), xsd:integer]

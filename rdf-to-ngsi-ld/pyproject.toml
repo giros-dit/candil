@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "rdf-to-ngsi-ld"
+version = "0.1.0"
+description = ""
+authors = ["Ignacio Dominguez Martinez-Casanueva <ignacio.dominguezmartinez@telefonica.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+morph-kgc = "^2.6.3"
+rdflib = "^7.0.0"
+ngsi-ld-client = {git = "https://github.com/giros-dit/python-ngsi-ld-client.git", rev = "1.6.1"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

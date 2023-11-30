@@ -1,0 +1,21 @@
+# Mapping for SR Linux (srl2) interface (e1-1)
+prefixes:
+ candil: "http://candil.namespace.com#"
+
+sources:
+  interfaces-file:
+    access: gnmic-oper-status-event.json
+    referenceFormulation: jsonpath
+    iterator: $.*
+
+mappings:
+  interfaces:
+    sources:
+      - interfaces-file
+    s: candil:r1_e1-1
+    po:
+      - [a, candil:Interface]
+      - [candil:interfaceName, $(tags.interface_name), xsd:string]
+      - p: candil:operStatus
+        o: candil:InterfaceStatus$(values["/openconfig-interfaces:interfaces/interface/state/oper-status"])
+        type: iri

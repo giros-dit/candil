@@ -1,0 +1,88 @@
+prefixes:
+ candil: "http://candil.namespace.com#"
+
+mappings:
+  network:
+    sources:
+      access: /files/topology-data.json
+      referenceFormulation: jsonpath
+      iterator: $
+    s: candil:$(name)
+    po:
+      - [a, candil:Network]
+      - [candil:networkIdentifier, $(name), xsd:string]
+  nodes:
+    sources:
+      access: /files/topology-data.json
+      referenceFormulation: jsonpath
+      iterator: $.nodes.*
+    s: candil:$(longname)
+    po:
+      - [a, candil:Node]
+      - [candil:nodeIdentifier, $(shortname), xsd:string]
+      - p: candil:isContainedInNetwork
+        o:
+          - mapping: network
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(labels.containerlab)] # ID of network under `nodes`
+                - [str2, $(name)] # ID of network under `network`
+  termination-point:
+    sources:
+      access: /files/topology-data.json
+      referenceFormulation: jsonpath
+      iterator: $.links.*.*
+    s: candil:$(node)_$(interface)
+    po:
+      - [a, candil:Interface] # Use Interface to skip NGSI-LD multi-type
+      - [candil:terminationPointId, $(interface)]
+      - p: candil:inNode
+        o:
+          - mapping: nodes
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(node)] # ID of node under `termination-points`
+                - [str2, $(shortname)] # ID of node under `nodes`
+      - p: candil:terminatesLink
+        o:
+          - mapping: links
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(node)] # ID of node under `termination-points`
+                - [str2, $(a.node)] # ID of node under `links`
+      - p: candil:terminatesLink
+        o:
+          - mapping: links
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(node)] # ID of node under `termination-points`
+                - [str2, $(z.node)] # ID of node under `links`
+  links:
+    sources:
+      access: /files/topology-data.json
+      referenceFormulation: jsonpath
+      iterator: $.links.*
+    s: candil:$(a.node)_$(a.interface)_$(z.node)_$(z.interface)
+    po:
+      - [a, candil:Link]
+      - [candil:linkIdentifier, $(a.node)_$(a.interface)_$(z.node)_$(z.interface), xsd:string]
+      - p: candil:connectsNode
+        o:
+          - mapping: nodes
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(a.node)] # ID of node under `links`
+                - [str2, $(shortname)] # ID of node under `nodes`
+      - p: candil:connectsNode
+        o:
+          - mapping: nodes
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(z.node)] # ID of node under `links`
+                - [str2, $(shortname)] # ID of node under `nodes`

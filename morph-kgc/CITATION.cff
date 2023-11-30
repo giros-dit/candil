@@ -1,0 +1,28 @@
+title: "Morph-KGC: Scalable Knowledge Graph Materialization with Mapping Partitions"
+license: Apache-2.0
+authors:
+  - family-names: Arenas-Guerrero
+    given-names: Julián
+    orcid: "http://orcid.org/0000-0002-3029-6469"
+cff-version: 1.2.0
+preferred-citation:
+  authors:
+    - family-names: Arenas-Guerrero
+      given-names: Julián
+    - family-names: Chaves-Fraga
+      given-names: David
+    - family-names: Toledo
+      given-names: Jhon
+    - family-names: Pérez
+      given-names: María S.
+    - family-names: Corcho
+      given-names: Oscar
+  title: "Morph-KGC: Scalable knowledge graph materialization with mapping partitions"
+  type: article
+  journal: Semantic Web
+  doi: 10.3233/SW-223135
+  year: 2022
+identifiers:
+  - description: "Collection of archived snapshots for Morph-KGC"
+    type: doi
+    value: 10.5281/zenodo.6524684

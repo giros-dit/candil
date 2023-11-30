@@ -1,0 +1,18 @@
+{
+  "id": "urn:ngsi-ld:Subscription:withTimeInterval",
+  "type": "Subscription",
+  "entities": [
+    {
+      "type": "InterfaceStatistics",
+      "id": "candil:r2_eth1_stats"
+    }
+  ],
+  "timeInterval": 60,
+  "notification": {
+    "attributes": ["candil:inputOctets"],
+    "endpoint": {
+      "uri": "http://test-server:8080",
+      "accept": "application/json"
+    }
+  }
+}
