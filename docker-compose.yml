@@ -2,7 +2,7 @@ version: '3'
 
 services:
   # NGSI-LD testing
-  testserver:
+  analytics-server:
     image: testserver
     ports:
      - "8080:8080"
@@ -103,8 +103,18 @@ services:
       - ./containerlab/clab-telemetry-testbed-srl-xe/topology-data.json:/files/topology-data.json
       - ./mappings/containerlab/:/files
     command: "/files/config.ini"
-  #rdf-to-ngsi-ld:
-  # input topic: rdf-containerlab
+    depends_on:
+      - kafka
+  rdf-to-ngsi-ld:
+    image: rdf-to-ngsi-ld
+    environment:
+      KAFKA_BROKER: kafka:9092
+      KAFKA_TOPIC: containerlab
+      BROKER_URI: http://cloud-scorpio:9090/ngsi-ld/v1
+      DEBUG: True
+    depends_on:
+      - morph-kgc
+      - kafka
 networks:
   default:
     name: clab

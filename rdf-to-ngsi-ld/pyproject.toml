@@ -6,10 +6,11 @@ authors = ["Ignacio Dominguez Martinez-Casanueva <ignacio.dominguezmartinez@tele
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.9"
 morph-kgc = "^2.6.3"
-rdflib = "^7.0.0"
 ngsi-ld-client = {git = "https://github.com/giros-dit/python-ngsi-ld-client.git", rev = "1.6.1"}
+kafka-python = "^2.0.2"
+pyoxigraph = "^0.3.21"
 
 
 [build-system]

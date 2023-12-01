@@ -11,7 +11,7 @@
   "notification": {
     "attributes": ["candil:inputOctets"],
     "endpoint": {
-      "uri": "http://test-server:8080",
+      "uri": "http://analytics-server:8080",
       "accept": "application/json"
     }
   }
