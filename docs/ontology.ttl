@@ -1,0 +1,420 @@
+@prefix : <http://candil.namespace.com#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://candil.namespace.com#> .
+
+<http://candil.namespace.com#> rdf:type owl:Ontology ;
+                                <http://purl.org/dc/elements/1.1/creator> "Ignacio D. Martinez-Casanueva" ;
+                                <http://purl.org/dc/elements/1.1/title> "CANDIL Ontology" ;
+                                owl:versionInfo "0.0.1" ;
+                                <https://w3id.org/mod#createdWith> <https://chowlk.linkeddata.es/> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/mod#createdWith
+<https://w3id.org/mod#createdWith> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://candil.namespace.com#adminStatus
+:adminStatus rdf:type owl:ObjectProperty ;
+             rdfs:domain :Interface ;
+             rdfs:range :InterfaceStatus ;
+             rdfs:comment "Refers to the desired state of the interface." ;
+             rdfs:label "admin status" .
+
+
+###  http://candil.namespace.com#connectsNode
+:connectsNode rdf:type owl:ObjectProperty ;
+              rdfs:domain :Link ;
+              rdfs:range :Node ;
+              rdfs:comment "Refers to the node that this link is connected to." ;
+              rdfs:label "connects node" .
+
+
+###  http://candil.namespace.com#hasInterfaceStatistics
+:hasInterfaceStatistics rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Interface ;
+                        rdfs:range :InterfaceStatistics ;
+                        rdfs:comment "Refers to the collection of interface-related statistics gather by the interface." ;
+                        rdfs:label "has interface statistics" .
+
+
+###  http://candil.namespace.com#hasInterfaceType
+:hasInterfaceType rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Interface ;
+                  rdfs:range :InterfaceType ;
+                  rdfs:comment "Referts to the type of the interface." ;
+                  rdfs:label "has interface type" .
+
+
+###  http://candil.namespace.com#inNode
+:inNode rdf:type owl:ObjectProperty ;
+        rdfs:domain :Interface ;
+        rdfs:range :Node ;
+        rdfs:comment "The node that the termination point is contained in." ;
+        rdfs:label "in node" .
+
+
+###  http://candil.namespace.com#isContainedInNetwork
+:isContainedInNetwork rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Node ;
+                      rdfs:range :Network ;
+                      rdfs:comment "The network that node is contained in (can only be part of one network)." ;
+                      rdfs:label "is contained in network" .
+
+
+###  http://candil.namespace.com#operStatus
+:operStatus rdf:type owl:ObjectProperty ;
+            rdfs:domain :Interface ;
+            rdfs:range :InterfaceType ;
+            rdfs:comment "Refers current operational state of the interface." ;
+            rdfs:label "oper status" .
+
+
+###  http://candil.namespace.com#terminatesLink
+:terminatesLink rdf:type owl:ObjectProperty ;
+                rdfs:domain :TerminationPoint ;
+                rdfs:range :Link ;
+                rdfs:comment "The link that the termination point terminates (could be source or destination terminations when using unidirectional links)." ;
+                rdfs:label "terminates link" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://candil.namespace.com#inDiscards
+:inDiscards rdf:type owl:DatatypeProperty ;
+            rdfs:domain :InterfaceStatistics ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "The number of inbound packets that were chosen to be discarded even though no errors had been detected to prevent their being deliverable to a higher-layer protocol." ;
+            rdfs:label "in discards" .
+
+
+###  http://candil.namespace.com#inErrors
+:inErrors rdf:type owl:DatatypeProperty ;
+          rdfs:domain :InterfaceStatistics ;
+          rdfs:range xsd:integer ;
+          rdfs:comment "For packet-oriented interfaces, the number of packets received via the interface that were discarded because of an unknown or unsupported protocol." ;
+          rdfs:label "in errors" .
+
+
+###  http://candil.namespace.com#inUnicastPackets
+:inUnicastPackets rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :InterfaceStatistics ;
+                  rdfs:range xsd:integer ;
+                  rdfs:comment "The number of packets, delivered by this sub-layer to a higher (sub-)layer, that were not addressed to a multicast or broadcast address at this sub-layer." ;
+                  rdfs:label "in unicast packets" .
+
+
+###  http://candil.namespace.com#inputOctets
+:inputOctets rdf:type owl:DatatypeProperty ;
+             rdfs:domain :InterfaceStatistics ;
+             rdfs:range xsd:integer ;
+             rdfs:comment "The total number of octets received on the interface, including framing characters." ;
+             rdfs:label "input octets" .
+
+
+###  http://candil.namespace.com#interfaceDescription
+:interfaceDescription rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Interface ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "A textual description of the interface." ;
+                      rdfs:label "interface description" .
+
+
+###  http://candil.namespace.com#interfaceEnabled
+:interfaceEnabled rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Interface ;
+                  rdfs:range xsd:boolean ;
+                  rdfs:comment "Contains the configured, desired state of the interface." ;
+                  rdfs:label "interface enabled" .
+
+
+###  http://candil.namespace.com#interfaceName
+:interfaceName rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Interface ;
+               rdfs:range xsd:string ;
+               rdfs:comment "Name that identifies the interface." ;
+               rdfs:label "interface name" .
+
+
+###  http://candil.namespace.com#linkIdentifier
+:linkIdentifier rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Link ;
+                rdfs:range xsd:string ;
+                rdfs:comment "Identifier of the link within a topology." ;
+                rdfs:label "link identifier" .
+
+
+###  http://candil.namespace.com#networkIdentifier
+:networkIdentifier rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Network ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Identifier of the network." ;
+                   rdfs:label "network identifier" .
+
+
+###  http://candil.namespace.com#nodeIdentifier
+:nodeIdentifier rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Node ;
+                rdfs:range xsd:string ;
+                rdfs:comment "Identifier of the node." ;
+                rdfs:label "node identifier" .
+
+
+###  http://candil.namespace.com#outDiscards
+:outDiscards rdf:type owl:DatatypeProperty ;
+             rdfs:domain :InterfaceStatistics ;
+             rdfs:range xsd:integer ;
+             rdfs:comment "The number of outbound packets that were chosen to be discarded even though no errors had been detected to prevent their being transmitted." ;
+             rdfs:label "out discards" .
+
+
+###  http://candil.namespace.com#outErrors
+:outErrors rdf:type owl:DatatypeProperty ;
+           rdfs:domain :InterfaceStatistics ;
+           rdfs:range xsd:integer ;
+           rdfs:comment "For packet-oriented interfaces, the number of outbound packets that could not be transmitted because of errors." ;
+           rdfs:label "out errors" .
+
+
+###  http://candil.namespace.com#outUnicastPackets
+:outUnicastPackets rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :InterfaceStatistics ;
+                   rdfs:range xsd:integer ;
+                   rdfs:comment "The total number of packets that higher-level protocols requested be transmitted and that were not addressed to a multicast or broadcast address at this sub-layer, including those that were discarded or not sent." ;
+                   rdfs:label "out unicast packets" .
+
+
+###  http://candil.namespace.com#outputOctets
+:outputOctets rdf:type owl:DatatypeProperty ;
+              rdfs:domain :InterfaceStatistics ;
+              rdfs:range xsd:integer ;
+              rdfs:comment "The total number of octets transmitted out of the interface, including framing characters." ;
+              rdfs:label "output octets" .
+
+
+###  http://candil.namespace.com#terminationPointIndetifier
+:terminationPointIndetifier rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :TerminationPoint ;
+                            rdfs:range xsd:string ;
+                            rdfs:comment "Identifier of the termination point." ;
+                            rdfs:label "termination point indetifier" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://candil.namespace.com#Interface
+:Interface rdf:type owl:Class ;
+           rdfs:subClassOf :TerminationPoint ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :adminStatus ;
+                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasInterfaceStatistics ;
+                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :operStatus ;
+                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasInterfaceType ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :interfaceEnabled ;
+                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :interfaceName ;
+                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :interfaceDescription ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                           ] ;
+           rdfs:comment "Interface of a network device. Can be physical or logical." ;
+           rdfs:label "Interface" ;
+           rdfs:seeAlso "RFC8343" .
+
+
+###  http://candil.namespace.com#InterfaceStatistics
+:InterfaceStatistics rdf:type owl:Class ;
+                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                       owl:onProperty :inDiscards ;
+                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :inErrors ;
+                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :inUnicastPackets ;
+                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :inputOctets ;
+                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :outDiscards ;
+                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :outErrors ;
+                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :outUnicastPackets ;
+                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :outputOctets ;
+                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                     ] ;
+                     rdfs:comment "A collection of interface-related statistics objects." ;
+                     rdfs:label "Interface Statistics" ;
+                     rdfs:seeAlso "RFC8343" .
+
+
+###  http://candil.namespace.com#InterfaceStatus
+:InterfaceStatus rdf:type owl:Class ;
+                 rdfs:comment "Represents the state of the interface." ;
+                 rdfs:label "Interface Status" ;
+                 rdfs:seeAlso "RFC8343" .
+
+
+###  http://candil.namespace.com#InterfaceType
+:InterfaceType rdf:type owl:Class ;
+               rdfs:comment "The type of the interface." ;
+               rdfs:label "Interface Type" ;
+               rdfs:seeAlso "RFC8343" .
+
+
+###  http://candil.namespace.com#Link
+:Link rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :connectsNode ;
+                        owl:cardinality "2"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :linkIdentifier ;
+                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                      ] ;
+      rdfs:comment "Unidirectional and point-to-point connections between nodes." ;
+      rdfs:label "Link" ;
+      rdfs:seeAlso "RFC8345" .
+
+
+###  http://candil.namespace.com#Network
+:Network rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :networkIdentifier ;
+                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                         ] ;
+         rdfs:comment "Set of devices arranged in a topology." ;
+         rdfs:label "Network" ;
+         rdfs:seeAlso "RFC8345" .
+
+
+###  http://candil.namespace.com#Node
+:Node rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :isContainedInNetwork ;
+                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :nodeIdentifier ;
+                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                      ] ;
+      rdfs:comment "Represents an abstraction of the device for the particular network of which it is part." ;
+      rdfs:label "Node" ;
+      rdfs:seeAlso "RFC8345" .
+
+
+###  http://candil.namespace.com#TerminationPoint
+:TerminationPoint rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :inNode ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :terminatesLink ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :terminationPointIndetifier ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ;
+                  rdfs:comment "Termination of a link. Can be a physical or logical port, or, more generally, an interface." ;
+                  rdfs:label "Termination Point" ;
+                  rdfs:seeAlso "RFC8345" .
+
+
+###  http://candil.namespace.com#lnterfaceIANA
+:lnterfaceIANA rdf:type owl:Class ;
+               rdfs:subClassOf :InterfaceType ;
+               rdfs:comment "Interface types standardized by IANA. Some examples are ethernedCsmacd (for For all Ethernet-like interfaces, regardless of speed, as per RFC 3635.), l2vlan (for Layer 2 Virtual LAN using 802.1Q), tunnel (Encapsulation interface), or softwareLoopback." ;
+               rdfs:label "lnterface IANA" ;
+               rdfs:seeAlso "RFC7224" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://candil.namespace.com#InterfaceStatusDOWN
+:InterfaceStatusDOWN rdf:type owl:NamedIndividual ,
+                              :InterfaceStatus ;
+                     rdfs:comment "Not ready to pass packets and not in some test mode." ;
+                     rdfs:seeAlso "RFC8343" .
+
+
+###  http://candil.namespace.com#InterfaceStatusUP
+:InterfaceStatusUP rdf:type owl:NamedIndividual ,
+                            :InterfaceStatus ;
+                   rdfs:comment "Ready to pass packets." ;
+                   rdfs:seeAlso "RFC8343" .
+
+
+###  http://candil.namespace.com#ethernetCsmacd
+:ethernetCsmacd rdf:type owl:NamedIndividual ,
+                         :lnterfaceIANA ;
+                rdfs:comment "For all Ethernet-like interfaces, regardless of speed, as per RFC 3635." ;
+                rdfs:seeAlso "RFC3635" .
+
+
+###  http://candil.namespace.com#l2vlan
+:l2vlan rdf:type owl:NamedIndividual ,
+                 :lnterfaceIANA ;
+        rdfs:comment "Layer 2 Virtual LAN using 802.1Q." ;
+        rdfs:seeAlso "RFC7224" .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

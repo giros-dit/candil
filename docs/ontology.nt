@@ -1,0 +1,396 @@
+<http://candil.namespace.com#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://candil.namespace.com#> <http://purl.org/dc/elements/1.1/creator> "Ignacio D. Martinez-Casanueva" .
+<http://candil.namespace.com#> <http://purl.org/dc/elements/1.1/title> "CANDIL Ontology" .
+<http://candil.namespace.com#> <http://www.w3.org/2002/07/owl#versionInfo> "0.0.1" .
+<http://candil.namespace.com#> <https://w3id.org/mod#createdWith> <https://chowlk.linkeddata.es/> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2002/07/owl#versionInfo
+<http://www.w3.org/2002/07/owl#versionInfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/mod#createdWith
+<https://w3id.org/mod#createdWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://candil.namespace.com#adminStatus
+<http://candil.namespace.com#adminStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://candil.namespace.com#adminStatus> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#Interface> .
+<http://candil.namespace.com#adminStatus> <http://www.w3.org/2000/01/rdf-schema#range> <http://candil.namespace.com#InterfaceStatus> .
+<http://candil.namespace.com#adminStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the desired state of the interface." .
+<http://candil.namespace.com#adminStatus> <http://www.w3.org/2000/01/rdf-schema#label> "admin status" .
+# 
+# http://candil.namespace.com#connectsNode
+<http://candil.namespace.com#connectsNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://candil.namespace.com#connectsNode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#Link> .
+<http://candil.namespace.com#connectsNode> <http://www.w3.org/2000/01/rdf-schema#range> <http://candil.namespace.com#Node> .
+<http://candil.namespace.com#connectsNode> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the node that this link is connected to." .
+<http://candil.namespace.com#connectsNode> <http://www.w3.org/2000/01/rdf-schema#label> "connects node" .
+# 
+# http://candil.namespace.com#hasInterfaceStatistics
+<http://candil.namespace.com#hasInterfaceStatistics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://candil.namespace.com#hasInterfaceStatistics> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#Interface> .
+<http://candil.namespace.com#hasInterfaceStatistics> <http://www.w3.org/2000/01/rdf-schema#range> <http://candil.namespace.com#InterfaceStatistics> .
+<http://candil.namespace.com#hasInterfaceStatistics> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the collection of interface-related statistics gather by the interface." .
+<http://candil.namespace.com#hasInterfaceStatistics> <http://www.w3.org/2000/01/rdf-schema#label> "has interface statistics" .
+# 
+# http://candil.namespace.com#hasInterfaceType
+<http://candil.namespace.com#hasInterfaceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://candil.namespace.com#hasInterfaceType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#Interface> .
+<http://candil.namespace.com#hasInterfaceType> <http://www.w3.org/2000/01/rdf-schema#range> <http://candil.namespace.com#InterfaceType> .
+<http://candil.namespace.com#hasInterfaceType> <http://www.w3.org/2000/01/rdf-schema#comment> "Referts to the type of the interface." .
+<http://candil.namespace.com#hasInterfaceType> <http://www.w3.org/2000/01/rdf-schema#label> "has interface type" .
+# 
+# http://candil.namespace.com#inNode
+<http://candil.namespace.com#inNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://candil.namespace.com#inNode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#Interface> .
+<http://candil.namespace.com#inNode> <http://www.w3.org/2000/01/rdf-schema#range> <http://candil.namespace.com#Node> .
+<http://candil.namespace.com#inNode> <http://www.w3.org/2000/01/rdf-schema#comment> "The node that the termination point is contained in." .
+<http://candil.namespace.com#inNode> <http://www.w3.org/2000/01/rdf-schema#label> "in node" .
+# 
+# http://candil.namespace.com#isContainedInNetwork
+<http://candil.namespace.com#isContainedInNetwork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://candil.namespace.com#isContainedInNetwork> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#Node> .
+<http://candil.namespace.com#isContainedInNetwork> <http://www.w3.org/2000/01/rdf-schema#range> <http://candil.namespace.com#Network> .
+<http://candil.namespace.com#isContainedInNetwork> <http://www.w3.org/2000/01/rdf-schema#comment> "The network that node is contained in (can only be part of one network)." .
+<http://candil.namespace.com#isContainedInNetwork> <http://www.w3.org/2000/01/rdf-schema#label> "is contained in network" .
+# 
+# http://candil.namespace.com#operStatus
+<http://candil.namespace.com#operStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://candil.namespace.com#operStatus> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#Interface> .
+<http://candil.namespace.com#operStatus> <http://www.w3.org/2000/01/rdf-schema#range> <http://candil.namespace.com#InterfaceType> .
+<http://candil.namespace.com#operStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers current operational state of the interface." .
+<http://candil.namespace.com#operStatus> <http://www.w3.org/2000/01/rdf-schema#label> "oper status" .
+# 
+# http://candil.namespace.com#terminatesLink
+<http://candil.namespace.com#terminatesLink> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://candil.namespace.com#terminatesLink> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#TerminationPoint> .
+<http://candil.namespace.com#terminatesLink> <http://www.w3.org/2000/01/rdf-schema#range> <http://candil.namespace.com#Link> .
+<http://candil.namespace.com#terminatesLink> <http://www.w3.org/2000/01/rdf-schema#comment> "The link that the termination point terminates (could be source or destination terminations when using unidirectional links)." .
+<http://candil.namespace.com#terminatesLink> <http://www.w3.org/2000/01/rdf-schema#label> "terminates link" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://candil.namespace.com#inDiscards
+<http://candil.namespace.com#inDiscards> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://candil.namespace.com#inDiscards> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#InterfaceStatistics> .
+<http://candil.namespace.com#inDiscards> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://candil.namespace.com#inDiscards> <http://www.w3.org/2000/01/rdf-schema#comment> "The number of inbound packets that were chosen to be discarded even though no errors had been detected to prevent their being deliverable to a higher-layer protocol." .
+<http://candil.namespace.com#inDiscards> <http://www.w3.org/2000/01/rdf-schema#label> "in discards" .
+# 
+# http://candil.namespace.com#inErrors
+<http://candil.namespace.com#inErrors> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://candil.namespace.com#inErrors> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#InterfaceStatistics> .
+<http://candil.namespace.com#inErrors> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://candil.namespace.com#inErrors> <http://www.w3.org/2000/01/rdf-schema#comment> "For packet-oriented interfaces, the number of packets received via the interface that were discarded because of an unknown or unsupported protocol." .
+<http://candil.namespace.com#inErrors> <http://www.w3.org/2000/01/rdf-schema#label> "in errors" .
+# 
+# http://candil.namespace.com#inUnicastPackets
+<http://candil.namespace.com#inUnicastPackets> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://candil.namespace.com#inUnicastPackets> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#InterfaceStatistics> .
+<http://candil.namespace.com#inUnicastPackets> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://candil.namespace.com#inUnicastPackets> <http://www.w3.org/2000/01/rdf-schema#comment> "The number of packets, delivered by this sub-layer to a higher (sub-)layer, that were not addressed to a multicast or broadcast address at this sub-layer." .
+<http://candil.namespace.com#inUnicastPackets> <http://www.w3.org/2000/01/rdf-schema#label> "in unicast packets" .
+# 
+# http://candil.namespace.com#inputOctets
+<http://candil.namespace.com#inputOctets> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://candil.namespace.com#inputOctets> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#InterfaceStatistics> .
+<http://candil.namespace.com#inputOctets> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://candil.namespace.com#inputOctets> <http://www.w3.org/2000/01/rdf-schema#comment> "The total number of octets received on the interface, including framing characters." .
+<http://candil.namespace.com#inputOctets> <http://www.w3.org/2000/01/rdf-schema#label> "input octets" .
+# 
+# http://candil.namespace.com#interfaceDescription
+<http://candil.namespace.com#interfaceDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://candil.namespace.com#interfaceDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#Interface> .
+<http://candil.namespace.com#interfaceDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://candil.namespace.com#interfaceDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "A textual description of the interface." .
+<http://candil.namespace.com#interfaceDescription> <http://www.w3.org/2000/01/rdf-schema#label> "interface description" .
+# 
+# http://candil.namespace.com#interfaceEnabled
+<http://candil.namespace.com#interfaceEnabled> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://candil.namespace.com#interfaceEnabled> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#Interface> .
+<http://candil.namespace.com#interfaceEnabled> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://candil.namespace.com#interfaceEnabled> <http://www.w3.org/2000/01/rdf-schema#comment> "Contains the configured, desired state of the interface." .
+<http://candil.namespace.com#interfaceEnabled> <http://www.w3.org/2000/01/rdf-schema#label> "interface enabled" .
+# 
+# http://candil.namespace.com#interfaceName
+<http://candil.namespace.com#interfaceName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://candil.namespace.com#interfaceName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#Interface> .
+<http://candil.namespace.com#interfaceName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://candil.namespace.com#interfaceName> <http://www.w3.org/2000/01/rdf-schema#comment> "Name that identifies the interface." .
+<http://candil.namespace.com#interfaceName> <http://www.w3.org/2000/01/rdf-schema#label> "interface name" .
+# 
+# http://candil.namespace.com#linkIdentifier
+<http://candil.namespace.com#linkIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://candil.namespace.com#linkIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#Link> .
+<http://candil.namespace.com#linkIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://candil.namespace.com#linkIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifier of the link within a topology." .
+<http://candil.namespace.com#linkIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "link identifier" .
+# 
+# http://candil.namespace.com#networkIdentifier
+<http://candil.namespace.com#networkIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://candil.namespace.com#networkIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#Network> .
+<http://candil.namespace.com#networkIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://candil.namespace.com#networkIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifier of the network." .
+<http://candil.namespace.com#networkIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "network identifier" .
+# 
+# http://candil.namespace.com#nodeIdentifier
+<http://candil.namespace.com#nodeIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://candil.namespace.com#nodeIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#Node> .
+<http://candil.namespace.com#nodeIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://candil.namespace.com#nodeIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifier of the node." .
+<http://candil.namespace.com#nodeIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "node identifier" .
+# 
+# http://candil.namespace.com#outDiscards
+<http://candil.namespace.com#outDiscards> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://candil.namespace.com#outDiscards> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#InterfaceStatistics> .
+<http://candil.namespace.com#outDiscards> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://candil.namespace.com#outDiscards> <http://www.w3.org/2000/01/rdf-schema#comment> "The number of outbound packets that were chosen to be discarded even though no errors had been detected to prevent their being transmitted." .
+<http://candil.namespace.com#outDiscards> <http://www.w3.org/2000/01/rdf-schema#label> "out discards" .
+# 
+# http://candil.namespace.com#outErrors
+<http://candil.namespace.com#outErrors> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://candil.namespace.com#outErrors> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#InterfaceStatistics> .
+<http://candil.namespace.com#outErrors> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://candil.namespace.com#outErrors> <http://www.w3.org/2000/01/rdf-schema#comment> "For packet-oriented interfaces, the number of outbound packets that could not be transmitted because of errors." .
+<http://candil.namespace.com#outErrors> <http://www.w3.org/2000/01/rdf-schema#label> "out errors" .
+# 
+# http://candil.namespace.com#outUnicastPackets
+<http://candil.namespace.com#outUnicastPackets> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://candil.namespace.com#outUnicastPackets> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#InterfaceStatistics> .
+<http://candil.namespace.com#outUnicastPackets> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://candil.namespace.com#outUnicastPackets> <http://www.w3.org/2000/01/rdf-schema#comment> "The total number of packets that higher-level protocols requested be transmitted and that were not addressed to a multicast or broadcast address at this sub-layer, including those that were discarded or not sent." .
+<http://candil.namespace.com#outUnicastPackets> <http://www.w3.org/2000/01/rdf-schema#label> "out unicast packets" .
+# 
+# http://candil.namespace.com#outputOctets
+<http://candil.namespace.com#outputOctets> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://candil.namespace.com#outputOctets> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#InterfaceStatistics> .
+<http://candil.namespace.com#outputOctets> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://candil.namespace.com#outputOctets> <http://www.w3.org/2000/01/rdf-schema#comment> "The total number of octets transmitted out of the interface, including framing characters." .
+<http://candil.namespace.com#outputOctets> <http://www.w3.org/2000/01/rdf-schema#label> "output octets" .
+# 
+# http://candil.namespace.com#terminationPointIndetifier
+<http://candil.namespace.com#terminationPointIndetifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://candil.namespace.com#terminationPointIndetifier> <http://www.w3.org/2000/01/rdf-schema#domain> <http://candil.namespace.com#TerminationPoint> .
+<http://candil.namespace.com#terminationPointIndetifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://candil.namespace.com#terminationPointIndetifier> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifier of the termination point." .
+<http://candil.namespace.com#terminationPointIndetifier> <http://www.w3.org/2000/01/rdf-schema#label> "termination point indetifier" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://candil.namespace.com#Interface
+<http://candil.namespace.com#Interface> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://candil.namespace.com#Interface> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://candil.namespace.com#TerminationPoint> .
+<http://candil.namespace.com#Interface> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#adminStatus> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#Interface> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
+_:genid2 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#hasInterfaceStatistics> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#Interface> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
+_:genid3 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#operStatus> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#Interface> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#hasInterfaceType> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#Interface> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#interfaceEnabled> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#Interface> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#interfaceName> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#Interface> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#interfaceDescription> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#Interface> <http://www.w3.org/2000/01/rdf-schema#comment> "Interface of a network device. Can be physical or logical." .
+<http://candil.namespace.com#Interface> <http://www.w3.org/2000/01/rdf-schema#label> "Interface" .
+<http://candil.namespace.com#Interface> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "RFC8343" .
+# 
+# http://candil.namespace.com#InterfaceStatistics
+<http://candil.namespace.com#InterfaceStatistics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://candil.namespace.com#InterfaceStatistics> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#inDiscards> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#InterfaceStatistics> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#inErrors> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#InterfaceStatistics> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#inUnicastPackets> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#InterfaceStatistics> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#inputOctets> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#InterfaceStatistics> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#outDiscards> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#InterfaceStatistics> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#outErrors> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#InterfaceStatistics> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#outUnicastPackets> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#InterfaceStatistics> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#outputOctets> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#InterfaceStatistics> <http://www.w3.org/2000/01/rdf-schema#comment> "A collection of interface-related statistics objects." .
+<http://candil.namespace.com#InterfaceStatistics> <http://www.w3.org/2000/01/rdf-schema#label> "Interface Statistics" .
+<http://candil.namespace.com#InterfaceStatistics> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "RFC8343" .
+# 
+# http://candil.namespace.com#InterfaceStatus
+<http://candil.namespace.com#InterfaceStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://candil.namespace.com#InterfaceStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the state of the interface." .
+<http://candil.namespace.com#InterfaceStatus> <http://www.w3.org/2000/01/rdf-schema#label> "Interface Status" .
+<http://candil.namespace.com#InterfaceStatus> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "RFC8343" .
+# 
+# http://candil.namespace.com#InterfaceType
+<http://candil.namespace.com#InterfaceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://candil.namespace.com#InterfaceType> <http://www.w3.org/2000/01/rdf-schema#comment> "The type of the interface." .
+<http://candil.namespace.com#InterfaceType> <http://www.w3.org/2000/01/rdf-schema#label> "Interface Type" .
+<http://candil.namespace.com#InterfaceType> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "RFC8343" .
+# 
+# http://candil.namespace.com#Link
+<http://candil.namespace.com#Link> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://candil.namespace.com#Link> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/2002/07/owl#cardinality> "2"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#connectsNode> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#Link> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#linkIdentifier> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#Link> <http://www.w3.org/2000/01/rdf-schema#comment> "Unidirectional and point-to-point connections between nodes." .
+<http://candil.namespace.com#Link> <http://www.w3.org/2000/01/rdf-schema#label> "Link" .
+<http://candil.namespace.com#Link> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "RFC8345" .
+# 
+# http://candil.namespace.com#Network
+<http://candil.namespace.com#Network> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://candil.namespace.com#Network> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+_:genid18 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#networkIdentifier> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#Network> <http://www.w3.org/2000/01/rdf-schema#comment> "Set of devices arranged in a topology." .
+<http://candil.namespace.com#Network> <http://www.w3.org/2000/01/rdf-schema#label> "Network" .
+<http://candil.namespace.com#Network> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "RFC8345" .
+# 
+# http://candil.namespace.com#Node
+<http://candil.namespace.com#Node> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://candil.namespace.com#Node> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#isContainedInNetwork> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#Node> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#nodeIdentifier> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#Node> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents an abstraction of the device for the particular network of which it is part." .
+<http://candil.namespace.com#Node> <http://www.w3.org/2000/01/rdf-schema#label> "Node" .
+<http://candil.namespace.com#Node> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "RFC8345" .
+# 
+# http://candil.namespace.com#TerminationPoint
+<http://candil.namespace.com#TerminationPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://candil.namespace.com#TerminationPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#inNode> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#TerminationPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#terminatesLink> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#TerminationPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
+_:genid23 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <http://candil.namespace.com#terminationPointIndetifier> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://candil.namespace.com#TerminationPoint> <http://www.w3.org/2000/01/rdf-schema#comment> "Termination of a link. Can be a physical or logical port, or, more generally, an interface." .
+<http://candil.namespace.com#TerminationPoint> <http://www.w3.org/2000/01/rdf-schema#label> "Termination Point" .
+<http://candil.namespace.com#TerminationPoint> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "RFC8345" .
+# 
+# http://candil.namespace.com#lnterfaceIANA
+<http://candil.namespace.com#lnterfaceIANA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://candil.namespace.com#lnterfaceIANA> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://candil.namespace.com#InterfaceType> .
+<http://candil.namespace.com#lnterfaceIANA> <http://www.w3.org/2000/01/rdf-schema#comment> "Interface types standardized by IANA. Some examples are ethernedCsmacd (for For all Ethernet-like interfaces, regardless of speed, as per RFC 3635.), l2vlan (for Layer 2 Virtual LAN using 802.1Q), tunnel (Encapsulation interface), or softwareLoopback." .
+<http://candil.namespace.com#lnterfaceIANA> <http://www.w3.org/2000/01/rdf-schema#label> "lnterface IANA" .
+<http://candil.namespace.com#lnterfaceIANA> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "RFC7224" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://candil.namespace.com#InterfaceStatusDOWN
+<http://candil.namespace.com#InterfaceStatusDOWN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://candil.namespace.com#InterfaceStatusDOWN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://candil.namespace.com#InterfaceStatus> .
+<http://candil.namespace.com#InterfaceStatusDOWN> <http://www.w3.org/2000/01/rdf-schema#comment> "Not ready to pass packets and not in some test mode." .
+<http://candil.namespace.com#InterfaceStatusDOWN> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "RFC8343" .
+# 
+# http://candil.namespace.com#InterfaceStatusUP
+<http://candil.namespace.com#InterfaceStatusUP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://candil.namespace.com#InterfaceStatusUP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://candil.namespace.com#InterfaceStatus> .
+<http://candil.namespace.com#InterfaceStatusUP> <http://www.w3.org/2000/01/rdf-schema#comment> "Ready to pass packets." .
+<http://candil.namespace.com#InterfaceStatusUP> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "RFC8343" .
+# 
+# http://candil.namespace.com#ethernetCsmacd
+<http://candil.namespace.com#ethernetCsmacd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://candil.namespace.com#ethernetCsmacd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://candil.namespace.com#lnterfaceIANA> .
+<http://candil.namespace.com#ethernetCsmacd> <http://www.w3.org/2000/01/rdf-schema#comment> "For all Ethernet-like interfaces, regardless of speed, as per RFC 3635." .
+<http://candil.namespace.com#ethernetCsmacd> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "RFC3635" .
+# 
+# http://candil.namespace.com#l2vlan
+<http://candil.namespace.com#l2vlan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://candil.namespace.com#l2vlan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://candil.namespace.com#lnterfaceIANA> .
+<http://candil.namespace.com#l2vlan> <http://www.w3.org/2000/01/rdf-schema#comment> "Layer 2 Virtual LAN using 802.1Q." .
+<http://candil.namespace.com#l2vlan> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "RFC7224" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

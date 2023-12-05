@@ -1,0 +1,12 @@
+﻿Domain;Concept;Other names;Description;Provenance
+Topology;Network;;Set of devices arranged in a topology.;RFC8345
+Topology;Node;;Represents an abstraction of the device for the particular network of which it is part.;RFC8345
+Topology;Link;;Unidirectional and point-to-point connections between nodes;RFC8345
+Topology;TerminationPoint;;Termination of a link. Can be a physical or logical port, or, more generally, an interface;RFC8345
+Interface Management;Interface;;Interface of a network device. Can be physical or logical.;RFC8343
+Interface Management;InterfaceStatistics;InterfaceCounters;A collection of interface-related statistics objects.;RFC8343
+Interface Management;InterfaceType;;The type of the interface;RFC8343
+Interface Management;IANAInterfaceType;;Interface types standardized by IANA. Some examples are ethernedCsmacd (for For all Ethernet-like interfaces, regardless of speed, as per RFC 3635.), l2vlan (for Layer 2 Virtual LAN using 802.1Q), tunnel (Encapsulation interface), or softwareLoopback.;RFC7224
+Interface Management;LinkUpDownTrapEnable;;Switch for linkUp/linkDown SNMP notifications. Can be {disabled, enabled};RFC8343
+Interface Management;InterfaceAdminStatus;;Represents the desired state of the interface. Can be {up, down, testing}.;RFC8343
+Interface Management;InterfaceOperStatus;;Represents the current operational state of the interface. Can be {up, down, testing, unknown, dormant, not-present, lower-layer-down}.;RFC8343

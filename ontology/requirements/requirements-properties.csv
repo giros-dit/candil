@@ -1,0 +1,27 @@
+﻿Domain;"Concept  (must appear in ""Concept list"")";Property;Description;Datatype expected (Integer, boolean, string, float, list of expected values);Cardinality;Unit of measure (if applicable);Provenance
+Topology;Network;hasNetworkType;A network has a certin type such as L2, L3, OSPF, or IS-IS;String;0..1;None;RFC8345
+Topology;Network;networkId;Identifier of the network;String;1..1;None;RFC8345
+Topology;Node;nodeId;Identifier of the node;String;1..1;None;RFC8345
+Topology;TerminationPoint;terminationPointId;Identifier of the termination point;String;1..1;None;RFC8345
+Topology;Link;linkId;Identifier of the link within a topology;String;1..1;None;RFC8345
+Interface Management;Interface;name;Name that identifies the interface;String;1..1;None;RFC8343
+Interface Management;Interface;description;A textual description of the interface;String;0..1;None;RFC8343
+Interface Management;Interface;interfaceEnabled;Contains the configured, desired state of the interface;Boolean;0..1;None;RFC8343
+Interface Management;Interface;lastChange;The time the interface entered its current operational state;DateTime;0..1;None;RFC8343
+Interface Management;Interface;ifIndex;The ifIndex value for the ifEntry represented by this interface;Integer;1..1;None;RFC8343
+Interface Management;Interface;physicalAddress;The interface's address at its protocol sub-layer;String;0..1;None;RFC8343
+Interface Management;Interface;speed;An estimate of the interface's current bandwidth in bits per second;Float;0..1;bits/second;RFC8343
+Interface Management;InterfaceStatistics;discontinuityTime;The time on the most recent occasion at which any one or more of this interface's counters suffered a discontinuity;DateTime;1..1;None;RFC8343
+Interface Management;InterfaceStatistics;inputOctets;The total number of octets received on the interface, including framing characters;Integer;0..1;None;RFC8344
+Interface Management;InterfaceStatistics;inUnicastPackets;The number of packets, delivered by this sub-layer to a higher (sub-)layer, that were not addressed to a multicast or broadcast address at this sub-layer.;Integer;0..1;None;RFC8345
+Interface Management;InterfaceStatistics;inBroadcastPackets;The number of packets, delivered by this sub-layer to a higher (sub-)layer, that were not addressed to a broadcast address at this sub-layer.;Integer;0..1;None;RFC8346
+Interface Management;InterfaceStatistics;inMulticastPackets;The number of packets, delivered by this sub-layer to a higher (sub-)layer, that were not addressed to a multicast address at this sub-layer.;Integer;0..1;None;RFC8347
+Interface Management;InterfaceStatistics;inDiscards;The number of inbound packets that were chosen to be discarded even though no errors had been detected to prevent their being deliverable to a higher-layer protocol;Integer;0..1;None;RFC8348
+Interface Management;InterfaceStatistics;inErrors;For packet-oriented interfaces, the number of packets received via the interface that were discarded because of an unknown or unsupported protocol.;Integer;0..1;None;RFC8348
+Interface Management;InterfaceStatistics;inUnknownProtos;For packet-oriented interfaces, the number of packets received via the interface that were discarded because of an unknown or unsupported protocol.;Integer;0..1;None;RFC8349
+Interface Management;InterfaceStatistics;outOctets;The total number of octets transmitted out of the interface, including framing characters.;Integer;0..1;None;RFC8348
+Interface Management;InterfaceStatistics;outUnicastPackets;The total number of packets that higher-level protocols requested be transmitted and that were not addressed to a multicast or broadcast address at this sub-layer, including those that were discarded or not sent.;Integer;0..1;None;RFC8348
+Interface Management;InterfaceStatistics;outBroadcastPackets;The total number of packets that higher-level protocols requested be transmitted and that were addressed to a broadcast address at this sub-layer, including those that were discarded or not sent.;Integer;0..1;None;RFC8349
+Interface Management;InterfaceStatistics;outMulticastPackets;The total number of packets that higher-level protocols requested be transmitted and that were addressed to a multicast address at this sub-layer, including those that were discarded or not sent.;Integer;0..1;None;RFC8348
+Interface Management;InterfaceStatistics;outDiscards;The number of outbound packets that were chosen to be discarded even though no errors had been detected to prevent their being transmitted.;Integer;0..1;None;RFC8348
+Interface Management;InterfaceStatistics;outErrors;For packet-oriented interfaces, the number of outbound packets that could not be transmitted because of errors.;Integer;0..1;None;RFC8349

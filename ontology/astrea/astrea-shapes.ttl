@@ -8,6 +8,15 @@
 @prefix candil: <http://candil.namespace.com#> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
+<https://astrea.linkeddata.es/shapes#06552faa8d4f35412ddbc3ed8e3e29b8>
+a               sh:NodeShape ;
+rdfs:label      "Interface Status" ;
+rdfs:seeAlso    "RFC8343" ;
+sh:description  "Represents the state of the interface." ;
+sh:name         "Interface Status" ;
+sh:nodeKind     sh:IRI ;
+sh:targetClass  candil:InterfaceStatus .
+
 <https://astrea.linkeddata.es/shapes#c90121a2922f8546bdce3c88f0ee5f9d>
 a            sh:PropertyShape ;
 sh:maxCount  "1"^^xsd:nonNegativeInteger ;
@@ -16,27 +25,32 @@ sh:nodeKind  sh:IRIOrLiteral ;
 sh:path      candil:inErrors .
 
 <https://astrea.linkeddata.es/shapes#f9912f8d23b03aa6f41fa8befa8a29c4>
-a            sh:PropertyShape ;
-rdfs:label   "in node" ;
-sh:name      "in node" ;
-sh:nodeKind  sh:BlankNodeOrIRI ;
-sh:path      candil:inNode .
+a               sh:PropertyShape ;
+rdfs:label      "in node" , "The node that the termination point is contained in." ;
+sh:class        candil:Node ;
+sh:description  "The node that the termination point is contained in." ;
+sh:name         "in node" ;
+sh:nodeKind     sh:BlankNodeOrIRI ;
+sh:path         candil:inNode .
 
 <https://astrea.linkeddata.es/shapes#dca9a8aa855675f38b628775595577f1>
-a            sh:PropertyShape ;
-rdfs:label   "out errors" ;
-sh:class     xsd:Integer ;
-sh:datatype  xsd:Integer ;
-sh:name      "out errors" ;
-sh:nodeKind  sh:Literal , sh:BlankNodeOrIRI ;
-sh:path      candil:outErrors .
+a               sh:PropertyShape ;
+rdfs:label      "out errors" , "For packet-oriented interfaces, the number of outbound packets that could not be transmitted because of errors." ;
+sh:datatype     xsd:integer ;
+sh:description  "For packet-oriented interfaces, the number of outbound packets that could not be transmitted because of errors." ;
+sh:name         "out errors" ;
+sh:nodeKind     sh:Literal ;
+sh:path         candil:outErrors ;
+sh:pattern      "[\\-+]?[0-9]+" .
 
 <https://astrea.linkeddata.es/shapes#8e1fc919180e93085b828faaacdb39ef>
 a               sh:NodeShape ;
 rdfs:label      "Node" ;
+rdfs:seeAlso    "RFC8345" ;
+sh:description  "Represents an abstraction of the device for the particular network of which it is part." ;
 sh:name         "Node" ;
 sh:nodeKind     sh:IRI ;
-sh:property     <https://astrea.linkeddata.es/shapes#ec2334053afe4becb330e6cadf03a441> , <https://astrea.linkeddata.es/shapes#49c90290005399f83aa8c318d986114a> , <https://astrea.linkeddata.es/shapes#9d5f374886c5592f26604fd250d456ed> ;
+sh:property     <https://astrea.linkeddata.es/shapes#1eed1b5c9fd38fc54d706cf1bd657cf3> , <https://astrea.linkeddata.es/shapes#49c90290005399f83aa8c318d986114a> , <https://astrea.linkeddata.es/shapes#9d5f374886c5592f26604fd250d456ed> , <https://astrea.linkeddata.es/shapes#ec2334053afe4becb330e6cadf03a441> ;
 sh:targetClass  candil:Node .
 
 <https://astrea.linkeddata.es/shapes#d8316c02d9fea54b853349fa946fd9d0>
@@ -46,27 +60,23 @@ sh:nodeKind  sh:IRIOrLiteral ;
 sh:path      candil:interfaceDescription .
 
 <https://astrea.linkeddata.es/shapes#b59c8cf6e1f9b4519d7b5d4fa75b9113>
-a            sh:PropertyShape ;
-rdfs:label   "has interface type" ;
-sh:name      "has interface type" ;
-sh:nodeKind  sh:BlankNodeOrIRI ;
-sh:path      candil:hasInterfaceType .
+a               sh:PropertyShape ;
+rdfs:label      "has interface type" , "Referts to the type of the interface." ;
+sh:class        candil:InterfaceType ;
+sh:description  "Referts to the type of the interface." ;
+sh:name         "has interface type" ;
+sh:nodeKind     sh:BlankNodeOrIRI ;
+sh:path         candil:hasInterfaceType .
 
 <https://astrea.linkeddata.es/shapes#f814ab5d95a6e237279b860da63d1812>
-a            sh:PropertyShape ;
-rdfs:label   "input octets" ;
-sh:class     xsd:Integer ;
-sh:datatype  xsd:Integer ;
-sh:name      "input octets" ;
-sh:nodeKind  sh:Literal , sh:BlankNodeOrIRI ;
-sh:path      candil:inputOctets .
-
-<https://astrea.linkeddata.es/shapes#b0c4e6b85b76c29915fadc14028747ab>
-a            sh:PropertyShape ;
-rdfs:label   "has oper status" ;
-sh:name      "has oper status" ;
-sh:nodeKind  sh:BlankNodeOrIRI ;
-sh:path      candil:hasOperStatus .
+a               sh:PropertyShape ;
+rdfs:label      "input octets" , "The total number of octets received on the interface, including framing characters." ;
+sh:datatype     xsd:integer ;
+sh:description  "The total number of octets received on the interface, including framing characters." ;
+sh:name         "input octets" ;
+sh:nodeKind     sh:Literal ;
+sh:path         candil:inputOctets ;
+sh:pattern      "[\\-+]?[0-9]+" .
 
 <https://astrea.linkeddata.es/shapes#dc33cde816a5018dcc9274a0449b362f>
 a            sh:PropertyShape ;
@@ -75,11 +85,13 @@ sh:nodeKind  sh:IRIOrLiteral ;
 sh:path      candil:hasInterfaceType .
 
 <https://astrea.linkeddata.es/shapes#0d3f618f2d4f6aaeb259d924ec08a28c>
-a               sh:NodeShape ;
-rdfs:label      "Oper Status" ;
-sh:name         "Oper Status" ;
-sh:nodeKind     sh:IRI ;
-sh:targetClass  candil:operStatus .
+a               sh:PropertyShape ;
+rdfs:label      "oper status" , "Refers current operational state of the interface." ;
+sh:class        candil:InterfaceType ;
+sh:description  "Refers current operational state of the interface." ;
+sh:name         "oper status" ;
+sh:nodeKind     sh:BlankNodeOrIRI ;
+sh:path         candil:operStatus .
 
 <https://astrea.linkeddata.es/shapes#5ae6314719ea52fab7045c6fc215a3df>
 a            sh:PropertyShape ;
@@ -117,13 +129,14 @@ a       <https://w3id.org/def/astrea#ReportEntry> ;
 "200"^^xsd:int .
 
 <https://astrea.linkeddata.es/shapes#585fe0f8be6f162395f91542dd0cf2d2>
-a            sh:PropertyShape ;
-rdfs:label   "in unicast packets" ;
-sh:class     xsd:Integer ;
-sh:datatype  xsd:Integer ;
-sh:name      "in unicast packets" ;
-sh:nodeKind  sh:Literal , sh:BlankNodeOrIRI ;
-sh:path      candil:inUnicastPackets .
+a               sh:PropertyShape ;
+rdfs:label      "in unicast packets" , "The number of packets, delivered by this sub-layer to a higher (sub-)layer, that were not addressed to a multicast or broadcast address at this sub-layer." ;
+sh:datatype     xsd:integer ;
+sh:description  "The number of packets, delivered by this sub-layer to a higher (sub-)layer, that were not addressed to a multicast or broadcast address at this sub-layer." ;
+sh:name         "in unicast packets" ;
+sh:nodeKind     sh:Literal ;
+sh:path         candil:inUnicastPackets ;
+sh:pattern      "[\\-+]?[0-9]+" .
 
 <https://astrea.linkeddata.es/shapes#c01a68598af4c6190387b30de1dae14c>
 a            sh:PropertyShape ;
@@ -140,51 +153,52 @@ sh:nodeKind  sh:IRIOrLiteral ;
 sh:path      candil:terminationPointIndetifier .
 
 <https://astrea.linkeddata.es/shapes#ec2334053afe4becb330e6cadf03a441>
-a            sh:PropertyShape ;
-rdfs:label   "node identifier" ;
-sh:class     xsd:String ;
-sh:datatype  xsd:String ;
-sh:name      "node identifier" ;
-sh:nodeKind  sh:Literal , sh:BlankNodeOrIRI ;
-sh:path      candil:nodeIdentifier .
+a               sh:PropertyShape ;
+rdfs:label      "node identifier" , "Identifier of the node." ;
+sh:datatype     xsd:string ;
+sh:description  "Identifier of the node." ;
+sh:name         "node identifier" ;
+sh:nodeKind     sh:Literal ;
+sh:path         candil:nodeIdentifier ;
+sh:pattern      ".*" .
 
 <https://astrea.linkeddata.es/shapes#783d763570dfc98dbf2f6a5850046ee0>
 a               sh:NodeShape ;
 rdfs:label      "Termination Point" ;
+rdfs:seeAlso    "RFC8345" ;
+sh:description  "Termination of a link. Can be a physical or logical port, or, more generally, an interface." ;
 sh:name         "Termination Point" ;
 sh:nodeKind     sh:IRI ;
-sh:property     <https://astrea.linkeddata.es/shapes#34c2d7beded6b86c53991e9373355beb> , <https://astrea.linkeddata.es/shapes#d9b39a1a8a868e0e063b7af37e08f078> , <https://astrea.linkeddata.es/shapes#dcd35673d356b7aef863cc7e5b58d77c> , <https://astrea.linkeddata.es/shapes#96061f1185b344e293e1a88192d4354a> , <https://astrea.linkeddata.es/shapes#bf97670a3a6ee4478c295e164d01e50e> , <https://astrea.linkeddata.es/shapes#47585727d31c5a54d10bafdfd5acbed4> ;
+sh:property     <https://astrea.linkeddata.es/shapes#aa826cd73c40a19409bc7ffca0739bf1> , <https://astrea.linkeddata.es/shapes#34c2d7beded6b86c53991e9373355beb> , <https://astrea.linkeddata.es/shapes#96061f1185b344e293e1a88192d4354a> , <https://astrea.linkeddata.es/shapes#bf97670a3a6ee4478c295e164d01e50e> , <https://astrea.linkeddata.es/shapes#47585727d31c5a54d10bafdfd5acbed4> ;
 sh:targetClass  candil:TerminationPoint .
 
 <https://astrea.linkeddata.es/shapes#085ad5708c3b484d5aef5bb60e8579e8>
-a            sh:PropertyShape ;
-rdfs:label   "out discards" ;
-sh:class     xsd:Integer ;
-sh:datatype  xsd:Integer ;
-sh:name      "out discards" ;
-sh:nodeKind  sh:Literal , sh:BlankNodeOrIRI ;
-sh:path      candil:outDiscards .
+a               sh:PropertyShape ;
+rdfs:label      "out discards" , "The number of outbound packets that were chosen to be discarded even though no errors had been detected to prevent their being transmitted." ;
+sh:datatype     xsd:integer ;
+sh:description  "The number of outbound packets that were chosen to be discarded even though no errors had been detected to prevent their being transmitted." ;
+sh:name         "out discards" ;
+sh:nodeKind     sh:Literal ;
+sh:path         candil:outDiscards ;
+sh:pattern      "[\\-+]?[0-9]+" .
 
 <https://astrea.linkeddata.es/shapes#4b6dce026af0b2a94fda43df312f0a58>
 a               sh:NodeShape ;
 rdfs:label      "lnterface IANA" ;
+rdfs:seeAlso    "RFC7224" ;
+sh:description  "Interface types standardized by IANA. Some examples are ethernedCsmacd (for For all Ethernet-like interfaces, regardless of speed, as per RFC 3635.), l2vlan (for Layer 2 Virtual LAN using 802.1Q), tunnel (Encapsulation interface), or softwareLoopback." ;
 sh:name         "lnterface IANA" ;
 sh:nodeKind     sh:IRI ;
 sh:targetClass  candil:lnterfaceIANA .
 
-<https://astrea.linkeddata.es/shapes#aff4d3800f2bc74ac55982b86442de53>
-a            sh:PropertyShape ;
-sh:maxCount  "1"^^xsd:nonNegativeInteger ;
-sh:minCount  "1"^^xsd:nonNegativeInteger ;
-sh:nodeKind  sh:IRIOrLiteral ;
-sh:path      candil:hasOperStatus .
-
 <https://astrea.linkeddata.es/shapes#6a0e1bf61b9945a2cbc62814a542960d>
-a            sh:PropertyShape ;
-rdfs:label   "connects node" ;
-sh:name      "connects node" ;
-sh:nodeKind  sh:BlankNodeOrIRI ;
-sh:path      candil:connectsNode .
+a               sh:PropertyShape ;
+rdfs:label      "connects node" , "Refers to the node that this link is connected to." ;
+sh:class        candil:Node ;
+sh:description  "Refers to the node that this link is connected to." ;
+sh:name         "connects node" ;
+sh:nodeKind     sh:BlankNodeOrIRI ;
+sh:path         candil:connectsNode .
 
 <https://astrea.linkeddata.es/shapes#62df0ecdafb3ebdb317d2ba17a2ded21>
 a            sh:PropertyShape ;
@@ -194,25 +208,32 @@ sh:nodeKind  sh:IRIOrLiteral ;
 sh:path      candil:interfaceName .
 
 <https://astrea.linkeddata.es/shapes#d9b39a1a8a868e0e063b7af37e08f078>
-a            sh:PropertyShape ;
-rdfs:label   "link identifier" ;
-sh:class     xsd:String ;
-sh:datatype  xsd:String ;
-sh:name      "link identifier" ;
-sh:nodeKind  sh:Literal , sh:BlankNodeOrIRI ;
-sh:path      candil:linkIdentifier .
+a               sh:PropertyShape ;
+rdfs:label      "link identifier" , "Identifier of the link within a topology." ;
+sh:datatype     xsd:string ;
+sh:description  "Identifier of the link within a topology." ;
+sh:name         "link identifier" ;
+sh:nodeKind     sh:Literal ;
+sh:path         candil:linkIdentifier ;
+sh:pattern      ".*" .
 
-<https://astrea.linkeddata.es/shapes#1f9db41ae0b33aa4d8c97765f0aa7df3>
-a               sh:NodeShape ;
-sh:nodeKind     sh:IRI ;
-sh:targetClass  xsd:Integer .
+<https://astrea.linkeddata.es/shapes#06e87c28b37c0b64c839ca435510c2b1>
+a               sh:PropertyShape ;
+rdfs:label      "admin status" , "Refers to the desired state of the interface." ;
+sh:class        candil:InterfaceStatus ;
+sh:description  "Refers to the desired state of the interface." ;
+sh:name         "admin status" ;
+sh:nodeKind     sh:BlankNodeOrIRI ;
+sh:path         candil:adminStatus .
 
 <https://astrea.linkeddata.es/shapes#a6f89ae6da95dfe068f5f5b995a3575e>
 a               sh:NodeShape ;
 rdfs:label      "Interface" ;
+rdfs:seeAlso    "RFC8343" ;
+sh:description  "Interface of a network device. Can be physical or logical." ;
 sh:name         "Interface" ;
 sh:nodeKind     sh:IRI ;
-sh:property     <https://astrea.linkeddata.es/shapes#456f7a611481c7a903fdc8b785c9049f> , <https://astrea.linkeddata.es/shapes#7ee402d849811570f74fb7a4013c7d85> , <https://astrea.linkeddata.es/shapes#3cbb2525cdd8e18db3b406c5cb3229aa> , <https://astrea.linkeddata.es/shapes#dc33cde816a5018dcc9274a0449b362f> , <https://astrea.linkeddata.es/shapes#cd858d912ec2a3fc4a8171c244fc6bba> , <https://astrea.linkeddata.es/shapes#d8316c02d9fea54b853349fa946fd9d0> , <https://astrea.linkeddata.es/shapes#62df0ecdafb3ebdb317d2ba17a2ded21> , <https://astrea.linkeddata.es/shapes#5bd82af6020ca5eeae6fec805fe82555> , <https://astrea.linkeddata.es/shapes#aff4d3800f2bc74ac55982b86442de53> ;
+sh:property     <https://astrea.linkeddata.es/shapes#0d3f618f2d4f6aaeb259d924ec08a28c> , <https://astrea.linkeddata.es/shapes#06e87c28b37c0b64c839ca435510c2b1> , <https://astrea.linkeddata.es/shapes#456f7a611481c7a903fdc8b785c9049f> , <https://astrea.linkeddata.es/shapes#67e5044924c7d9c55bdff203c1e7d0bf> , <https://astrea.linkeddata.es/shapes#7ee402d849811570f74fb7a4013c7d85> , <https://astrea.linkeddata.es/shapes#3cbb2525cdd8e18db3b406c5cb3229aa> , <https://astrea.linkeddata.es/shapes#f9912f8d23b03aa6f41fa8befa8a29c4> , <https://astrea.linkeddata.es/shapes#3d6356b6ab1adff4817a03e8970ccb79> , <https://astrea.linkeddata.es/shapes#dc33cde816a5018dcc9274a0449b362f> , <https://astrea.linkeddata.es/shapes#cd858d912ec2a3fc4a8171c244fc6bba> , <https://astrea.linkeddata.es/shapes#d8316c02d9fea54b853349fa946fd9d0> , <https://astrea.linkeddata.es/shapes#386076dd3e3e3d7304593e8a2a387a19> , <https://astrea.linkeddata.es/shapes#b59c8cf6e1f9b4519d7b5d4fa75b9113> , <https://astrea.linkeddata.es/shapes#62df0ecdafb3ebdb317d2ba17a2ded21> , <https://astrea.linkeddata.es/shapes#5bd82af6020ca5eeae6fec805fe82555> ;
 sh:targetClass  candil:Interface .
 
 <https://astrea.linkeddata.es/shapes#47585727d31c5a54d10bafdfd5acbed4>
@@ -223,36 +244,40 @@ sh:nodeKind  sh:IRIOrLiteral ;
 sh:path      candil:terminatesLink .
 
 <https://astrea.linkeddata.es/shapes#3cbb2525cdd8e18db3b406c5cb3229aa>
-a            sh:PropertyShape ;
-rdfs:label   "interface name" ;
-sh:class     xsd:String ;
-sh:datatype  xsd:String ;
-sh:name      "interface name" ;
-sh:nodeKind  sh:Literal , sh:BlankNodeOrIRI ;
-sh:path      candil:interfaceName .
+a               sh:PropertyShape ;
+rdfs:label      "interface name" , "Name that identifies the interface." ;
+sh:datatype     xsd:string ;
+sh:description  "Name that identifies the interface." ;
+sh:name         "interface name" ;
+sh:nodeKind     sh:Literal ;
+sh:path         candil:interfaceName ;
+sh:pattern      ".*" .
 
 <https://astrea.linkeddata.es/shapes#7ee402d849811570f74fb7a4013c7d85>
-a            sh:PropertyShape ;
-rdfs:label   "interface description" ;
-sh:class     xsd:String ;
-sh:datatype  xsd:String ;
-sh:name      "interface description" ;
-sh:nodeKind  sh:Literal , sh:BlankNodeOrIRI ;
-sh:path      candil:interfaceDescription .
+a               sh:PropertyShape ;
+rdfs:label      "interface description" , "A textual description of the interface." ;
+sh:datatype     xsd:string ;
+sh:description  "A textual description of the interface." ;
+sh:name         "interface description" ;
+sh:nodeKind     sh:Literal ;
+sh:path         candil:interfaceDescription ;
+sh:pattern      ".*" .
 
 <https://astrea.linkeddata.es/shapes#a6ad4237b0d726353c1341bf71f3765f>
 a            sh:PropertyShape ;
-sh:maxCount  "1"^^xsd:nonNegativeInteger ;
-sh:minCount  "1"^^xsd:nonNegativeInteger ;
+sh:maxCount  "2"^^xsd:nonNegativeInteger ;
+sh:minCount  "2"^^xsd:nonNegativeInteger ;
 sh:nodeKind  sh:IRIOrLiteral ;
 sh:path      candil:connectsNode .
 
 <https://astrea.linkeddata.es/shapes#386076dd3e3e3d7304593e8a2a387a19>
-a            sh:PropertyShape ;
-rdfs:label   "has interface statistics" ;
-sh:name      "has interface statistics" ;
-sh:nodeKind  sh:BlankNodeOrIRI ;
-sh:path      candil:hasInterfaceStatistics .
+a               sh:PropertyShape ;
+rdfs:label      "has interface statistics" , "Refers to the collection of interface-related statistics gather by the interface." ;
+sh:class        candil:InterfaceStatistics ;
+sh:description  "Refers to the collection of interface-related statistics gather by the interface." ;
+sh:name         "has interface statistics" ;
+sh:nodeKind     sh:BlankNodeOrIRI ;
+sh:path         candil:hasInterfaceStatistics .
 
 <https://astrea.linkeddata.es/shapes#8f158fc8b1b5085a376055e65a689f6d>
 a            sh:PropertyShape ;
@@ -268,11 +293,6 @@ sh:minCount  "1"^^xsd:nonNegativeInteger ;
 sh:nodeKind  sh:IRIOrLiteral ;
 sh:path      candil:networkIdentifier .
 
-<https://astrea.linkeddata.es/shapes#1f286e71f09e6df053814ad61d8942ad>
-a               sh:NodeShape ;
-sh:nodeKind     sh:IRI ;
-sh:targetClass  xsd:String .
-
 <https://astrea.linkeddata.es/shapes#49c90290005399f83aa8c318d986114a>
 a            sh:PropertyShape ;
 sh:maxCount  "1"^^xsd:nonNegativeInteger ;
@@ -280,9 +300,25 @@ sh:minCount  "1"^^xsd:nonNegativeInteger ;
 sh:nodeKind  sh:IRIOrLiteral ;
 sh:path      candil:isContainedInNetwork .
 
+<https://astrea.linkeddata.es/shapes#3d6356b6ab1adff4817a03e8970ccb79>
+a            sh:PropertyShape ;
+sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+sh:minCount  "1"^^xsd:nonNegativeInteger ;
+sh:nodeKind  sh:IRIOrLiteral ;
+sh:path      candil:adminStatus .
+
+<https://astrea.linkeddata.es/shapes#67e5044924c7d9c55bdff203c1e7d0bf>
+a            sh:PropertyShape ;
+sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+sh:minCount  "1"^^xsd:nonNegativeInteger ;
+sh:nodeKind  sh:IRIOrLiteral ;
+sh:path      candil:operStatus .
+
 <https://astrea.linkeddata.es/shapes#4c4a0fb922f28231da11d2e8f1cbfadd>
 a               sh:NodeShape ;
 rdfs:label      "Interface Statistics" ;
+rdfs:seeAlso    "RFC8343" ;
+sh:description  "A collection of interface-related statistics objects." ;
 sh:name         "Interface Statistics" ;
 sh:nodeKind     sh:IRI ;
 sh:property     <https://astrea.linkeddata.es/shapes#0eeca129a874556d730124112328aa7d> , <https://astrea.linkeddata.es/shapes#c01a68598af4c6190387b30de1dae14c> , <https://astrea.linkeddata.es/shapes#585fe0f8be6f162395f91542dd0cf2d2> , <https://astrea.linkeddata.es/shapes#dca9a8aa855675f38b628775595577f1> , <https://astrea.linkeddata.es/shapes#9af8575b52e790be938840f1c5ca1a89> , <https://astrea.linkeddata.es/shapes#b1c93ca76cae7faa36255c884b4c1610> , <https://astrea.linkeddata.es/shapes#45dff1c6be6703a56ae25895d1f49779> , <https://astrea.linkeddata.es/shapes#45aaf557f5abad896e685958e513bba1> , <https://astrea.linkeddata.es/shapes#8f158fc8b1b5085a376055e65a689f6d> , <https://astrea.linkeddata.es/shapes#085ad5708c3b484d5aef5bb60e8579e8> , <https://astrea.linkeddata.es/shapes#130945cb43f9c4da059527177c2da8c0> , <https://astrea.linkeddata.es/shapes#f814ab5d95a6e237279b860da63d1812> , <https://astrea.linkeddata.es/shapes#5f078bb49a370fdbfa3905b3a3ebe9d6> , <https://astrea.linkeddata.es/shapes#5ae6314719ea52fab7045c6fc215a3df> , <https://astrea.linkeddata.es/shapes#c90121a2922f8546bdce3c88f0ee5f9d> , <https://astrea.linkeddata.es/shapes#5ce0b24dcb6d17d56315c90a0461dcc7> ;
@@ -303,115 +339,132 @@ sh:nodeKind  sh:IRIOrLiteral ;
 sh:path      candil:inputOctets .
 
 <https://astrea.linkeddata.es/shapes#cd858d912ec2a3fc4a8171c244fc6bba>
-a            sh:PropertyShape ;
-rdfs:label   "interface enabled" ;
-sh:class     xsd:String ;
-sh:datatype  xsd:String ;
-sh:name      "interface enabled" ;
-sh:nodeKind  sh:Literal , sh:BlankNodeOrIRI ;
-sh:path      candil:interfaceEnabled .
+a               sh:PropertyShape ;
+rdfs:label      "interface enabled" , "Contains the configured, desired state of the interface." ;
+sh:datatype     xsd:boolean ;
+sh:description  "Contains the configured, desired state of the interface." ;
+sh:name         "interface enabled" ;
+sh:nodeKind     sh:Literal ;
+sh:path         candil:interfaceEnabled ;
+sh:pattern      "true|false|0|1" .
 
 <https://astrea.linkeddata.es/shapes#5ce0b24dcb6d17d56315c90a0461dcc7>
-a            sh:PropertyShape ;
-rdfs:label   "in errors" ;
-sh:class     xsd:Integer ;
-sh:datatype  xsd:Integer ;
-sh:name      "in errors" ;
-sh:nodeKind  sh:Literal , sh:BlankNodeOrIRI ;
-sh:path      candil:inErrors .
+a               sh:PropertyShape ;
+rdfs:label      "in errors" , "For packet-oriented interfaces, the number of packets received via the interface that were discarded because of an unknown or unsupported protocol." ;
+sh:datatype     xsd:integer ;
+sh:description  "For packet-oriented interfaces, the number of packets received via the interface that were discarded because of an unknown or unsupported protocol." ;
+sh:name         "in errors" ;
+sh:nodeKind     sh:Literal ;
+sh:path         candil:inErrors ;
+sh:pattern      "[\\-+]?[0-9]+" .
 
 <https://astrea.linkeddata.es/shapes#3b65150766fc34601359cb28dd12318f>
 a               sh:NodeShape ;
 rdfs:label      "Network" ;
+rdfs:seeAlso    "RFC8345" ;
+sh:description  "Set of devices arranged in a topology." ;
 sh:name         "Network" ;
 sh:nodeKind     sh:IRI ;
 sh:property     <https://astrea.linkeddata.es/shapes#237dc251d533fbde3e5df76abe9130a4> , <https://astrea.linkeddata.es/shapes#6ba6c6eff86d486cbaefb321416f472b> ;
 sh:targetClass  candil:Network .
 
-<http://astrea.linkeddata.es/report>
-a       <https://w3id.org/def/astrea#ShapeReport> ;
-<https://w3id.org/def/astrea#contains>
-<https://astrea.linkeddata.es/shapes#62df0ecdafb3ebdb317d2ba17a2ded21> , <https://astrea.linkeddata.es/shapes#7ee402d849811570f74fb7a4013c7d85> , <https://astrea.linkeddata.es/shapes#b0c4e6b85b76c29915fadc14028747ab> , <https://astrea.linkeddata.es/shapes#5ae6314719ea52fab7045c6fc215a3df> , <https://astrea.linkeddata.es/shapes#5bd82af6020ca5eeae6fec805fe82555> , <https://astrea.linkeddata.es/shapes#b1c93ca76cae7faa36255c884b4c1610> , <https://astrea.linkeddata.es/shapes#6ba6c6eff86d486cbaefb321416f472b> , <https://astrea.linkeddata.es/shapes#a6f89ae6da95dfe068f5f5b995a3575e> , <https://astrea.linkeddata.es/shapes#dc33cde816a5018dcc9274a0449b362f> , <https://astrea.linkeddata.es/shapes#34c2d7beded6b86c53991e9373355beb> , <https://astrea.linkeddata.es/shapes#9d5f374886c5592f26604fd250d456ed> , <https://astrea.linkeddata.es/shapes#a6ad4237b0d726353c1341bf71f3765f> , <https://astrea.linkeddata.es/shapes#ec2334053afe4becb330e6cadf03a441> , <https://astrea.linkeddata.es/shapes#1eed1b5c9fd38fc54d706cf1bd657cf3> , <https://astrea.linkeddata.es/shapes#f9912f8d23b03aa6f41fa8befa8a29c4> , <https://astrea.linkeddata.es/shapes#aff4d3800f2bc74ac55982b86442de53> , <https://astrea.linkeddata.es/shapes#456f7a611481c7a903fdc8b785c9049f> , <https://astrea.linkeddata.es/shapes#5ce0b24dcb6d17d56315c90a0461dcc7> , <https://astrea.linkeddata.es/shapes#b585d4fc35f4ff39353aed32acbba6a5> , <https://astrea.linkeddata.es/shapes#585fe0f8be6f162395f91542dd0cf2d2> , <https://astrea.linkeddata.es/shapes#8e1fc919180e93085b828faaacdb39ef> , <https://astrea.linkeddata.es/shapes#8f158fc8b1b5085a376055e65a689f6d> , <https://astrea.linkeddata.es/shapes#1f9db41ae0b33aa4d8c97765f0aa7df3> , <https://astrea.linkeddata.es/shapes#c01a68598af4c6190387b30de1dae14c> , <https://astrea.linkeddata.es/shapes#0eeca129a874556d730124112328aa7d> , <https://astrea.linkeddata.es/shapes#0d3f618f2d4f6aaeb259d924ec08a28c> , <https://astrea.linkeddata.es/shapes#d8316c02d9fea54b853349fa946fd9d0> , <https://astrea.linkeddata.es/shapes#130945cb43f9c4da059527177c2da8c0> , <https://astrea.linkeddata.es/shapes#4c4a0fb922f28231da11d2e8f1cbfadd> , <https://astrea.linkeddata.es/shapes#bf97670a3a6ee4478c295e164d01e50e> , <https://astrea.linkeddata.es/shapes#6a0e1bf61b9945a2cbc62814a542960d> , <https://astrea.linkeddata.es/shapes#b59c8cf6e1f9b4519d7b5d4fa75b9113> , <https://astrea.linkeddata.es/shapes#085ad5708c3b484d5aef5bb60e8579e8> , <https://astrea.linkeddata.es/shapes#c90121a2922f8546bdce3c88f0ee5f9d> , <https://astrea.linkeddata.es/shapes#1f286e71f09e6df053814ad61d8942ad> , <https://astrea.linkeddata.es/shapes#9af8575b52e790be938840f1c5ca1a89> , <https://astrea.linkeddata.es/shapes#f814ab5d95a6e237279b860da63d1812> , <https://astrea.linkeddata.es/shapes#d9b39a1a8a868e0e063b7af37e08f078> , <https://astrea.linkeddata.es/shapes#237dc251d533fbde3e5df76abe9130a4> , <https://astrea.linkeddata.es/shapes#5f078bb49a370fdbfa3905b3a3ebe9d6> , <https://astrea.linkeddata.es/shapes#45dff1c6be6703a56ae25895d1f49779> , <https://astrea.linkeddata.es/shapes#3cbb2525cdd8e18db3b406c5cb3229aa> , <https://astrea.linkeddata.es/shapes#386076dd3e3e3d7304593e8a2a387a19> , <https://astrea.linkeddata.es/shapes#45aaf557f5abad896e685958e513bba1> , <https://astrea.linkeddata.es/shapes#96061f1185b344e293e1a88192d4354a> , <https://astrea.linkeddata.es/shapes#dca9a8aa855675f38b628775595577f1> , <https://astrea.linkeddata.es/shapes#cd858d912ec2a3fc4a8171c244fc6bba> , <https://astrea.linkeddata.es/shapes#49c90290005399f83aa8c318d986114a> , <https://astrea.linkeddata.es/shapes#4b6dce026af0b2a94fda43df312f0a58> , <https://astrea.linkeddata.es/shapes#7a9901e62e771a266035b9597d48d834> , <https://astrea.linkeddata.es/shapes#3b65150766fc34601359cb28dd12318f> , <https://astrea.linkeddata.es/shapes#dcd35673d356b7aef863cc7e5b58d77c> , <https://astrea.linkeddata.es/shapes#783d763570dfc98dbf2f6a5850046ee0> , <https://astrea.linkeddata.es/shapes#aa826cd73c40a19409bc7ffca0739bf1> , <https://astrea.linkeddata.es/shapes#47585727d31c5a54d10bafdfd5acbed4> ;
-<https://w3id.org/def/astrea#generatedShapesFrom>
-<https://astrea.linkeddata.es/report/0620946147> .
-
-<https://astrea.linkeddata.es/shapes#45dff1c6be6703a56ae25895d1f49779>
-a            sh:PropertyShape ;
-rdfs:label   "out unicast packets" ;
-sh:class     xsd:Integer ;
-sh:datatype  xsd:Integer ;
-sh:name      "out unicast packets" ;
-sh:nodeKind  sh:Literal , sh:BlankNodeOrIRI ;
-sh:path      candil:outUnicastPackets .
-
-<https://astrea.linkeddata.es/shapes#b585d4fc35f4ff39353aed32acbba6a5>
-a               sh:NodeShape ;
-rdfs:label      "Link" ;
-sh:name         "Link" ;
-sh:nodeKind     sh:IRI ;
-sh:property     <https://astrea.linkeddata.es/shapes#a6ad4237b0d726353c1341bf71f3765f> ;
-sh:targetClass  candil:Link .
-
-<https://astrea.linkeddata.es/shapes#237dc251d533fbde3e5df76abe9130a4>
-a            sh:PropertyShape ;
-rdfs:label   "network identifier" ;
-sh:class     xsd:String ;
-sh:datatype  xsd:String ;
-sh:name      "network identifier" ;
-sh:nodeKind  sh:Literal , sh:BlankNodeOrIRI ;
-sh:path      candil:networkIdentifier .
-
-<https://astrea.linkeddata.es/shapes#bf97670a3a6ee4478c295e164d01e50e>
-a            sh:PropertyShape ;
-sh:minCount  "1"^^xsd:nonNegativeInteger ;
-sh:nodeKind  sh:IRIOrLiteral ;
-sh:path      candil:inNode .
-
-<https://astrea.linkeddata.es/shapes#1eed1b5c9fd38fc54d706cf1bd657cf3>
-a            sh:PropertyShape ;
-rdfs:label   "is contained in network" ;
-sh:name      "is contained in network" ;
-sh:nodeKind  sh:BlankNodeOrIRI ;
-sh:path      candil:isContainedInNetwork .
-
-<https://astrea.linkeddata.es/shapes#0eeca129a874556d730124112328aa7d>
-a            sh:PropertyShape ;
-rdfs:label   "in discards" ;
-sh:class     xsd:Integer ;
-sh:datatype  xsd:Integer ;
-sh:name      "in discards" ;
-sh:nodeKind  sh:Literal , sh:BlankNodeOrIRI ;
-sh:path      candil:inDiscards .
-
-<https://astrea.linkeddata.es/shapes#aa826cd73c40a19409bc7ffca0739bf1>
-a            sh:PropertyShape ;
-rdfs:label   "terminates link" ;
-sh:name      "terminates link" ;
-sh:nodeKind  sh:BlankNodeOrIRI ;
-sh:path      candil:terminatesLink .
-
-<https://astrea.linkeddata.es/shapes#7a9901e62e771a266035b9597d48d834>
-a               sh:NodeShape ;
-rdfs:label      "Interface Type" ;
-sh:name         "Interface Type" ;
-sh:nodeKind     sh:IRI ;
-sh:targetClass  candil:InterfaceType .
-
-<https://astrea.linkeddata.es/shapes#dcd35673d356b7aef863cc7e5b58d77c>
+<https://astrea.linkeddata.es/shapes#f5bb70458e0db91666155ad48cff13a4>
 a            sh:PropertyShape ;
 sh:maxCount  "1"^^xsd:nonNegativeInteger ;
 sh:minCount  "1"^^xsd:nonNegativeInteger ;
 sh:nodeKind  sh:IRIOrLiteral ;
 sh:path      candil:linkIdentifier .
 
-<https://astrea.linkeddata.es/shapes#96061f1185b344e293e1a88192d4354a>
+<http://astrea.linkeddata.es/report>
+a       <https://w3id.org/def/astrea#ShapeReport> ;
+<https://w3id.org/def/astrea#contains>
+<https://astrea.linkeddata.es/shapes#3d6356b6ab1adff4817a03e8970ccb79> , <https://astrea.linkeddata.es/shapes#62df0ecdafb3ebdb317d2ba17a2ded21> , <https://astrea.linkeddata.es/shapes#7ee402d849811570f74fb7a4013c7d85> , <https://astrea.linkeddata.es/shapes#5ae6314719ea52fab7045c6fc215a3df> , <https://astrea.linkeddata.es/shapes#5bd82af6020ca5eeae6fec805fe82555> , <https://astrea.linkeddata.es/shapes#b1c93ca76cae7faa36255c884b4c1610> , <https://astrea.linkeddata.es/shapes#6ba6c6eff86d486cbaefb321416f472b> , <https://astrea.linkeddata.es/shapes#a6f89ae6da95dfe068f5f5b995a3575e> , <https://astrea.linkeddata.es/shapes#dc33cde816a5018dcc9274a0449b362f> , <https://astrea.linkeddata.es/shapes#34c2d7beded6b86c53991e9373355beb> , <https://astrea.linkeddata.es/shapes#06552faa8d4f35412ddbc3ed8e3e29b8> , <https://astrea.linkeddata.es/shapes#9d5f374886c5592f26604fd250d456ed> , <https://astrea.linkeddata.es/shapes#a6ad4237b0d726353c1341bf71f3765f> , <https://astrea.linkeddata.es/shapes#ec2334053afe4becb330e6cadf03a441> , <https://astrea.linkeddata.es/shapes#1eed1b5c9fd38fc54d706cf1bd657cf3> , <https://astrea.linkeddata.es/shapes#f9912f8d23b03aa6f41fa8befa8a29c4> , <https://astrea.linkeddata.es/shapes#06e87c28b37c0b64c839ca435510c2b1> , <https://astrea.linkeddata.es/shapes#67e5044924c7d9c55bdff203c1e7d0bf> , <https://astrea.linkeddata.es/shapes#456f7a611481c7a903fdc8b785c9049f> , <https://astrea.linkeddata.es/shapes#5ce0b24dcb6d17d56315c90a0461dcc7> , <https://astrea.linkeddata.es/shapes#b585d4fc35f4ff39353aed32acbba6a5> , <https://astrea.linkeddata.es/shapes#585fe0f8be6f162395f91542dd0cf2d2> , <https://astrea.linkeddata.es/shapes#8e1fc919180e93085b828faaacdb39ef> , <https://astrea.linkeddata.es/shapes#8f158fc8b1b5085a376055e65a689f6d> , <https://astrea.linkeddata.es/shapes#0d3f618f2d4f6aaeb259d924ec08a28c> , <https://astrea.linkeddata.es/shapes#0eeca129a874556d730124112328aa7d> , <https://astrea.linkeddata.es/shapes#c01a68598af4c6190387b30de1dae14c> , <https://astrea.linkeddata.es/shapes#d8316c02d9fea54b853349fa946fd9d0> , <https://astrea.linkeddata.es/shapes#130945cb43f9c4da059527177c2da8c0> , <https://astrea.linkeddata.es/shapes#4c4a0fb922f28231da11d2e8f1cbfadd> , <https://astrea.linkeddata.es/shapes#bf97670a3a6ee4478c295e164d01e50e> , <https://astrea.linkeddata.es/shapes#6a0e1bf61b9945a2cbc62814a542960d> , <https://astrea.linkeddata.es/shapes#b59c8cf6e1f9b4519d7b5d4fa75b9113> , <https://astrea.linkeddata.es/shapes#085ad5708c3b484d5aef5bb60e8579e8> , <https://astrea.linkeddata.es/shapes#c90121a2922f8546bdce3c88f0ee5f9d> , <https://astrea.linkeddata.es/shapes#9af8575b52e790be938840f1c5ca1a89> , <https://astrea.linkeddata.es/shapes#f814ab5d95a6e237279b860da63d1812> , <https://astrea.linkeddata.es/shapes#d9b39a1a8a868e0e063b7af37e08f078> , <https://astrea.linkeddata.es/shapes#237dc251d533fbde3e5df76abe9130a4> , <https://astrea.linkeddata.es/shapes#5f078bb49a370fdbfa3905b3a3ebe9d6> , <https://astrea.linkeddata.es/shapes#f5bb70458e0db91666155ad48cff13a4> , <https://astrea.linkeddata.es/shapes#45dff1c6be6703a56ae25895d1f49779> , <https://astrea.linkeddata.es/shapes#3cbb2525cdd8e18db3b406c5cb3229aa> , <https://astrea.linkeddata.es/shapes#386076dd3e3e3d7304593e8a2a387a19> , <https://astrea.linkeddata.es/shapes#45aaf557f5abad896e685958e513bba1> , <https://astrea.linkeddata.es/shapes#96061f1185b344e293e1a88192d4354a> , <https://astrea.linkeddata.es/shapes#dca9a8aa855675f38b628775595577f1> , <https://astrea.linkeddata.es/shapes#cd858d912ec2a3fc4a8171c244fc6bba> , <https://astrea.linkeddata.es/shapes#49c90290005399f83aa8c318d986114a> , <https://astrea.linkeddata.es/shapes#4b6dce026af0b2a94fda43df312f0a58> , <https://astrea.linkeddata.es/shapes#7a9901e62e771a266035b9597d48d834> , <https://astrea.linkeddata.es/shapes#3b65150766fc34601359cb28dd12318f> , <https://astrea.linkeddata.es/shapes#783d763570dfc98dbf2f6a5850046ee0> , <https://astrea.linkeddata.es/shapes#aa826cd73c40a19409bc7ffca0739bf1> , <https://astrea.linkeddata.es/shapes#47585727d31c5a54d10bafdfd5acbed4> ;
+<https://w3id.org/def/astrea#generatedShapesFrom>
+<https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#45dff1c6be6703a56ae25895d1f49779>
+a               sh:PropertyShape ;
+rdfs:label      "out unicast packets" , "The total number of packets that higher-level protocols requested be transmitted and that were not addressed to a multicast or broadcast address at this sub-layer, including those that were discarded or not sent." ;
+sh:datatype     xsd:integer ;
+sh:description  "The total number of packets that higher-level protocols requested be transmitted and that were not addressed to a multicast or broadcast address at this sub-layer, including those that were discarded or not sent." ;
+sh:name         "out unicast packets" ;
+sh:nodeKind     sh:Literal ;
+sh:path         candil:outUnicastPackets ;
+sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#b585d4fc35f4ff39353aed32acbba6a5>
+a               sh:NodeShape ;
+rdfs:label      "Link" ;
+rdfs:seeAlso    "RFC8345" ;
+sh:description  "Unidirectional and point-to-point connections between nodes." ;
+sh:name         "Link" ;
+sh:nodeKind     sh:IRI ;
+sh:property     <https://astrea.linkeddata.es/shapes#d9b39a1a8a868e0e063b7af37e08f078> , <https://astrea.linkeddata.es/shapes#a6ad4237b0d726353c1341bf71f3765f> , <https://astrea.linkeddata.es/shapes#6a0e1bf61b9945a2cbc62814a542960d> , <https://astrea.linkeddata.es/shapes#f5bb70458e0db91666155ad48cff13a4> ;
+sh:targetClass  candil:Link .
+
+<https://astrea.linkeddata.es/shapes#237dc251d533fbde3e5df76abe9130a4>
+a               sh:PropertyShape ;
+rdfs:label      "network identifier" , "Identifier of the network." ;
+sh:datatype     xsd:string ;
+sh:description  "Identifier of the network." ;
+sh:name         "network identifier" ;
+sh:nodeKind     sh:Literal ;
+sh:path         candil:networkIdentifier ;
+sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#bf97670a3a6ee4478c295e164d01e50e>
 a            sh:PropertyShape ;
-rdfs:label   "termination point indetifier" ;
-sh:class     xsd:String ;
-sh:datatype  xsd:String ;
-sh:name      "termination point indetifier" ;
-sh:nodeKind  sh:Literal , sh:BlankNodeOrIRI ;
-sh:path      candil:terminationPointIndetifier .
+sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+sh:minCount  "1"^^xsd:nonNegativeInteger ;
+sh:nodeKind  sh:IRIOrLiteral ;
+sh:path      candil:inNode .
+
+<https://astrea.linkeddata.es/shapes#1eed1b5c9fd38fc54d706cf1bd657cf3>
+a               sh:PropertyShape ;
+rdfs:label      "is contained in network" , "The network that node is contained in (can only be part of one network)." ;
+sh:class        candil:Network ;
+sh:description  "The network that node is contained in (can only be part of one network)." ;
+sh:name         "is contained in network" ;
+sh:nodeKind     sh:BlankNodeOrIRI ;
+sh:path         candil:isContainedInNetwork .
+
+<https://astrea.linkeddata.es/shapes#0eeca129a874556d730124112328aa7d>
+a               sh:PropertyShape ;
+rdfs:label      "in discards" , "The number of inbound packets that were chosen to be discarded even though no errors had been detected to prevent their being deliverable to a higher-layer protocol." ;
+sh:datatype     xsd:integer ;
+sh:description  "The number of inbound packets that were chosen to be discarded even though no errors had been detected to prevent their being deliverable to a higher-layer protocol." ;
+sh:name         "in discards" ;
+sh:nodeKind     sh:Literal ;
+sh:path         candil:inDiscards ;
+sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#aa826cd73c40a19409bc7ffca0739bf1>
+a               sh:PropertyShape ;
+rdfs:label      "terminates link" , "The link that the termination point terminates (could be source or destination terminations when using unidirectional links)." ;
+sh:class        candil:Link ;
+sh:description  "The link that the termination point terminates (could be source or destination terminations when using unidirectional links)." ;
+sh:name         "terminates link" ;
+sh:nodeKind     sh:BlankNodeOrIRI ;
+sh:path         candil:terminatesLink .
+
+<https://astrea.linkeddata.es/shapes#7a9901e62e771a266035b9597d48d834>
+a               sh:NodeShape ;
+rdfs:label      "Interface Type" ;
+rdfs:seeAlso    "RFC8343" ;
+sh:description  "The type of the interface." ;
+sh:name         "Interface Type" ;
+sh:nodeKind     sh:IRI ;
+sh:targetClass  candil:InterfaceType .
+
+<https://astrea.linkeddata.es/shapes#96061f1185b344e293e1a88192d4354a>
+a               sh:PropertyShape ;
+rdfs:label      "termination point indetifier" , "Identifier of the termination point." ;
+sh:datatype     xsd:string ;
+sh:description  "Identifier of the termination point." ;
+sh:name         "termination point indetifier" ;
+sh:nodeKind     sh:Literal ;
+sh:path         candil:terminationPointIndetifier ;
+sh:pattern      ".*" .
 
 <https://astrea.linkeddata.es/shapes#130945cb43f9c4da059527177c2da8c0>
 a            sh:PropertyShape ;
@@ -428,10 +481,11 @@ sh:nodeKind  sh:IRIOrLiteral ;
 sh:path      candil:nodeIdentifier .
 
 <https://astrea.linkeddata.es/shapes#5f078bb49a370fdbfa3905b3a3ebe9d6>
-a            sh:PropertyShape ;
-rdfs:label   "output octets" ;
-sh:class     xsd:Integer ;
-sh:datatype  xsd:Integer ;
-sh:name      "output octets" ;
-sh:nodeKind  sh:Literal , sh:BlankNodeOrIRI ;
-sh:path      candil:outputOctets .
+a               sh:PropertyShape ;
+rdfs:label      "output octets" , "The total number of octets transmitted out of the interface, including framing characters." ;
+sh:datatype     xsd:integer ;
+sh:description  "The total number of octets transmitted out of the interface, including framing characters." ;
+sh:name         "output octets" ;
+sh:nodeKind     sh:Literal ;
+sh:path         candil:outputOctets ;
+sh:pattern      "[\\-+]?[0-9]+" .
