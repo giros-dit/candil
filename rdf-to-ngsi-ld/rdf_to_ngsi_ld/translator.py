@@ -126,8 +126,6 @@ for msg in consumer:
 
     # Set timestamp output
     time_out = time.time() * 1000
-
     writer.writerow([len(subjects), len(triples), time_in, time_out])
-
     logger.info("Closing file")
     csv_file.close()

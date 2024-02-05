@@ -12,7 +12,7 @@ KAFKA_BROKER = os.getenv("KAFKA_BROKER", "kafka:9092")
 KAFKA_TOPIC = os.getenv("KAFKA_TOPIC", "rdf-streams")
 
 # RDF generator
-ENTITIES = [1, 2, 5, 10, 25, 50, 100, 200, 500, 1000]
+ENTITIES = [1, 2, 5, 10, 50, 100, 200, 500, 1000]
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
