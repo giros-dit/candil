@@ -1,4 +1,7 @@
+import csv
+import logging
 import os
+import time
 from io import BytesIO
 
 import ngsi_ld_client
@@ -10,6 +13,19 @@ from ngsi_ld_client.models.query_entity200_response_inner import \
     QueryEntity200ResponseInner
 from pyoxigraph import Literal, parse
 
+logging.basicConfig(
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    level=logging.INFO)
+
+logger = logging.getLogger(__name__)
+
+# Kafka information
+KAFKA_BROKER = os.getenv("KAFKA_BROKER", "kafka:9092")
+KAFKA_TOPIC = os.getenv("KAFKA_TOPIC", "containerlab")
+
+# NGSI-LD Context Broker
+BROKER_URI = os.getenv("BROKER_URI", "http://localhost:9099/ngsi-ld/v1")
+DEBUG = os.getenv("DEBUG", False)
 
 class PreEntity(object):
 
@@ -18,14 +34,6 @@ class PreEntity(object):
         self.entity_type = None
         self.attributes = {}
 
-# Kafka information
-KAFKA_BROKER = os.getenv("KAFKA_BROKER", "kafka:9092")
-KAFKA_TOPIC = os.getenv("KAFKA_TOPIC", "containerlab")
-
-# NGSI-LD Context Broker
-BROKER_URI = os.getenv("BROKER_URI", "http://localhost:9099/ngsi-ld/v1")
-DEBUG = os.getenv("DEBUG", True)
-
 # Init NGSI-LD Client
 configuration = NGSILDConfiguration(host=BROKER_URI)
 configuration.debug = DEBUG
@@ -33,26 +41,37 @@ ngsi_ld = NGSILDClient(configuration=configuration)
 api_instance = ngsi_ld_client.ContextInformationProvisionApi(ngsi_ld)
 
 # Initialize consumer
-disconnected = True
 consumer = None
-while disconnected:
+while True:
     try:
         consumer = KafkaConsumer(KAFKA_TOPIC, bootstrap_servers=KAFKA_BROKER)
-    except:
+    except Exception as error:
+        print("An exception occurred:", error)
+        time.sleep(5)
         continue
-    disconnected = False
+    break
 
 entity_cache = []
+csv_file = open('/tmp/results.csv', 'a', newline='')
+writer = csv.writer(csv_file)
+fields = ["Subjects", "Triples", "Start_time", "End_time"]
+writer.writerow(fields)
+csv_file.close()
 for msg in consumer:
-    subjects = []
-
+    csv_file = open('/tmp/results.csv', 'a', newline='')
+    writer = csv.writer(csv_file)
+    logger.info("Message consumed from Kafka")
+    # Set timestamp input
+    time_in = msg.timestamp
     triples = list(parse(BytesIO(msg.value), 'application/n-quads'))
-
     subjects = []
     for triple in triples:
         if triple.subject in subjects:
             continue
         subjects.append(triple.subject)
+
+    logger.info("Number of triples in RDF dataset: {0}".format(len(triples)))
+    logger.info("Number of subjects in RDF dataset: {0}".format(len(subjects)))
 
     for subject in subjects:
         pre_entity = PreEntity(str(subject.value))
@@ -96,8 +115,19 @@ for msg in consumer:
                     additional_properties=pre_entity.attributes)
             )
             entity_cache.append(pre_entity.id)
+            logger.info("Entity {0} created in Context Broker".format(pre_entity.id))
         else:
-            import pdb; pdb.set_trace()
-            api_instance.update_entity(entity_id=pre_entity.id, entity=ngsi_ld_client.Entity(
+            api_instance.update_entity(
+                entity_id=pre_entity.id,
+                entity=ngsi_ld_client.Entity(
                 additional_properties=pre_entity.attributes
             ))
+            logger.info("Entity {0} updated in Context Broker".format(pre_entity.id))
+
+    # Set timestamp output
+    time_out = time.time() * 1000
+
+    writer.writerow([len(subjects), len(triples), time_in, time_out])
+
+    logger.info("Closing file")
+    csv_file.close()

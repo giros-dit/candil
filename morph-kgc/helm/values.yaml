@@ -1,0 +1,15 @@
+name: morph-kgc-app
+
+morph_kgc_config: config/config.ini
+configmap_config: configmap-config
+configmap_mapping: configmap-mapping
+
+image:
+  repository: registry.gitlab.aeros-project.eu/aeros-public/common-deployments/data-fabric/morph-kgc
+  tag: latest
+  pullPolicy: IfNotPresent
+
+cronJob:
+  enabled: false
+  schedule: "* * * * *"
+

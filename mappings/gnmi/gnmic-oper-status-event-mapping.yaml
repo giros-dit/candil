@@ -12,7 +12,7 @@ mappings:
   interfaces:
     sources:
       - interfaces-file
-    s: candil:r1_e1-1
+    s: candil:r1_$(tags.interface_name)
     po:
       - [a, candil:Interface]
       - [candil:interfaceName, $(tags.interface_name), xsd:string]

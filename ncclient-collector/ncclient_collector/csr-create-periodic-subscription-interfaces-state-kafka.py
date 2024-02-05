@@ -1,7 +1,7 @@
 import sys
+import time
 
 from kafka import KafkaProducer
-
 from ncclient import manager
 from ncclient.xml_ import to_ele
 
@@ -24,7 +24,25 @@ r = {
 
 print(container_name)
 
-session = manager.connect(**r)
+while True:
+    print("Connecting to kafka")
+    try:
+        producer = KafkaProducer(bootstrap_servers=['kafka:9092'])
+    except Exception as error:
+        print("An exception occurred:", error)
+        time.sleep(5)
+        continue
+    break
+
+while True:
+    print("Connecting to NETCONF server")
+    try:
+        session = manager.connect(**r)
+    except Exception as error:
+        print("An exception occurred:", error)
+        time.sleep(5)
+        continue
+    break
 
 print ("\nSession ID: ", session.session_id)
 
@@ -50,8 +68,6 @@ rpc = """
 request = session.dispatch(to_ele(rpc))
 
 print(request)
-
-producer = KafkaProducer(bootstrap_servers=['kafka:9092'])
 
 print("\nYANG-Push notifications for XPath " + xpath + " of network device "+ container_name + ": \n")
 
