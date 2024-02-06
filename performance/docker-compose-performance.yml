@@ -48,7 +48,7 @@ services:
       BROKER_URI: http://scorpio:9090/ngsi-ld/v1
       DEBUG: False
     volumes:
-      - ./performance/:/tmp
+      - ./results:/tmp
     depends_on:
       - kafka
       - scorpio

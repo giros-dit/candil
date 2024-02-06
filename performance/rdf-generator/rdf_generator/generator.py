@@ -12,7 +12,7 @@ KAFKA_BROKER = os.getenv("KAFKA_BROKER", "kafka:9092")
 KAFKA_TOPIC = os.getenv("KAFKA_TOPIC", "rdf-streams")
 
 # RDF generator
-ENTITIES = [1, 2, 5, 10, 50, 100, 200, 500, 1000]
+ENTITIES = os.getenv("ENTITIES", [1, 2, 5, 10, 50, 100, 200, 500, 1000, 2000, 5000])
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -30,7 +30,8 @@ while True:
         continue
     break
 
-for test in range(100):
+for experiment in range(100):
+    logger.info("Starting experiment {0}".format(experiment))
     round = 0
     for amount in ENTITIES:
         store = Store()
@@ -46,7 +47,7 @@ for test in range(100):
                 subject,
                 NamedNode("http://example.com#name"),
                 Literal("entity-{0}".format(n))
-        ))
+            ))
         output = io.BytesIO()
         store.dump(output,"application/n-triples")
 
@@ -55,8 +56,8 @@ for test in range(100):
         producer.send(KAFKA_TOPIC, value=output.getvalue())
         producer.flush()
 
-        time.sleep(5)
+        time.sleep(2)
         round += 1
 
-    test += 1
+    experiment += 1
 

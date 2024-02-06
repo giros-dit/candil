@@ -47,22 +47,24 @@ while True:
         consumer = KafkaConsumer(KAFKA_TOPIC, bootstrap_servers=KAFKA_BROKER)
     except Exception as error:
         print("An exception occurred:", error)
-        time.sleep(5)
+        time.sleep(10)
         continue
     break
 
 entity_cache = []
 csv_file = open('/tmp/results.csv', 'a', newline='')
 writer = csv.writer(csv_file)
-fields = ["Subjects", "Triples", "Start_time", "End_time"]
+fields = ["Subjects", "Triples", "Kafka_in", "Kafka_out","End_time"]
 writer.writerow(fields)
 csv_file.close()
 for msg in consumer:
+    # Set timestamp when message read from kafka
+    kafka_out_tstamp = time.time() * 1000
     csv_file = open('/tmp/results.csv', 'a', newline='')
     writer = csv.writer(csv_file)
     logger.info("Message consumed from Kafka")
-    # Set timestamp input
-    time_in = msg.timestamp
+    # Get timestamp when message was written in kafka
+    kafka_in_tstamp = msg.timestamp
     triples = list(parse(BytesIO(msg.value), 'application/n-quads'))
     subjects = []
     for triple in triples:
@@ -125,7 +127,7 @@ for msg in consumer:
             logger.info("Entity {0} updated in Context Broker".format(pre_entity.id))
 
     # Set timestamp output
-    time_out = time.time() * 1000
-    writer.writerow([len(subjects), len(triples), time_in, time_out])
+    end_tstamp = time.time() * 1000
+    writer.writerow([len(subjects), len(triples), kafka_in_tstamp, kafka_out_tstamp, end_tstamp])
     logger.info("Closing file")
     csv_file.close()
