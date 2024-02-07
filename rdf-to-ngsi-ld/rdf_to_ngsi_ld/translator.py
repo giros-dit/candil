@@ -13,12 +13,6 @@ from ngsi_ld_client.models.query_entity200_response_inner import \
     QueryEntity200ResponseInner
 from pyoxigraph import Literal, parse
 
-logging.basicConfig(
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    level=logging.INFO)
-
-logger = logging.getLogger(__name__)
-
 # Kafka information
 KAFKA_BROKER = os.getenv("KAFKA_BROKER", "kafka:9092")
 KAFKA_TOPIC = os.getenv("KAFKA_TOPIC", "containerlab")
@@ -26,6 +20,14 @@ KAFKA_TOPIC = os.getenv("KAFKA_TOPIC", "containerlab")
 # NGSI-LD Context Broker
 BROKER_URI = os.getenv("BROKER_URI", "http://localhost:9099/ngsi-ld/v1")
 DEBUG = os.getenv("DEBUG", False)
+
+# Configure Python logging
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+if DEBUG:
+    logging.getLogger().setLevel(logging.DEBUG)
+else:
+    logging.getLogger().setLevel(logging.INFO)
+logger = logging.getLogger(__name__)
 
 class PreEntity(object):
 
