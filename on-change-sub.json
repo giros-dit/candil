@@ -3,7 +3,7 @@
   "type": "Subscription",
   "entities": [
     {
-      "type": "Interface",
+      "type": "candil:Interface",
       "id": "candil:r1_e1-1"
     }
   ],
