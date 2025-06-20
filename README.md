@@ -79,4 +79,4 @@ docker run -it -v ./mappings/containerlab/:/files morph-kgc-new /files/config.in
 
 This work has been partly supported by project [ECTICS](https://www.dit.upm.es/~giros/project/ectics/) (PID2019-105257RB-C21), funded by:
 
-![](docs/logos/MICIU_AEI_w400.jpg)
+![](MICIU_AEI_w400.jpg)
