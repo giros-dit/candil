@@ -1,0 +1,166 @@
+<https://w3id.org/candil/interface#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/candil/interface#> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/candil/topology> .
+<https://w3id.org/candil/interface#> <http://purl.org/dc/terms/created> "2024-02-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/candil/interface#> <http://purl.org/dc/terms/creator> "Ignacio Dominguez Martinez-Casanueva (https://orcid.org/0000-0002-8573-127X)" .
+<https://w3id.org/candil/interface#> <http://purl.org/dc/terms/description> "An ontology for representing network topologies" .
+<https://w3id.org/candil/interface#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/APACHE2.0> .
+<https://w3id.org/candil/interface#> <http://purl.org/dc/terms/publisher> <https://github.com/giros-dit> .
+<https://w3id.org/candil/interface#> <http://purl.org/dc/terms/title> "The CANDIL Ontology – Topology" .
+<https://w3id.org/candil/interface#> <http://purl.org/vocab/vann/preferredNamespacePrefix> "candil-tp" .
+<https://w3id.org/candil/interface#> <http://purl.org/vocab/vann/preferredNamespaceUri> <https://w3id.org/candil/topology#> .
+<https://w3id.org/candil/interface#> <http://www.owl-ontologies.com/schema#codeRepository> "https://github.com/giros-dit/candil"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/candil/interface#> <http://www.w3.org/2002/07/owl#priorVersion> <https://w3id.org/candil/topology> .
+<https://w3id.org/candil/interface#> <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" .
+<https://w3id.org/candil/interface#> <https://w3id.org/mod#createdWith> <https://chowlk.linkeddata.es/> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.owl-ontologies.com/schema#codeRepository
+<http://www.owl-ontologies.com/schema#codeRepository> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2002/07/owl#priorVersion
+<http://www.w3.org/2002/07/owl#priorVersion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2002/07/owl#versionIRI
+<http://www.w3.org/2002/07/owl#versionIRI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2002/07/owl#versionInfo
+<http://www.w3.org/2002/07/owl#versionInfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/mod#createdWith
+<https://w3id.org/mod#createdWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/candil/topology#connectsNode
+<https://w3id.org/candil/topology#connectsNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/candil/topology#connectsNode> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/topology#Link> .
+<https://w3id.org/candil/topology#connectsNode> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/candil/topology#Node> .
+<https://w3id.org/candil/topology#connectsNode> <http://www.w3.org/2000/01/rdf-schema#label> "connects node" .
+# 
+# https://w3id.org/candil/topology#inNode
+<https://w3id.org/candil/topology#inNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/candil/topology#inNode> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/topology#TerminationPoint> .
+<https://w3id.org/candil/topology#inNode> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/candil/topology#Node> .
+<https://w3id.org/candil/topology#inNode> <http://www.w3.org/2000/01/rdf-schema#label> "in node" .
+# 
+# https://w3id.org/candil/topology#isCointainedInNetwork
+<https://w3id.org/candil/topology#isCointainedInNetwork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/candil/topology#isCointainedInNetwork> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/topology#Node> .
+<https://w3id.org/candil/topology#isCointainedInNetwork> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/candil/topology#Network> .
+<https://w3id.org/candil/topology#isCointainedInNetwork> <http://www.w3.org/2000/01/rdf-schema#label> "is cointained in network" .
+# 
+# https://w3id.org/candil/topology#terminatesLink
+<https://w3id.org/candil/topology#terminatesLink> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/candil/topology#terminatesLink> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/topology#TerminationPoint> .
+<https://w3id.org/candil/topology#terminatesLink> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/candil/topology#Link> .
+<https://w3id.org/candil/topology#terminatesLink> <http://www.w3.org/2000/01/rdf-schema#label> "terminates link" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/candil/topology#linkIdentifier
+<https://w3id.org/candil/topology#linkIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/candil/topology#linkIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/topology#Link> .
+<https://w3id.org/candil/topology#linkIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/candil/topology#linkIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "link identifier" .
+# 
+# https://w3id.org/candil/topology#networkIdentifier
+<https://w3id.org/candil/topology#networkIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/candil/topology#networkIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/topology#Network> .
+<https://w3id.org/candil/topology#networkIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/candil/topology#networkIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "network identifier" .
+# 
+# https://w3id.org/candil/topology#nodeIdentifier
+<https://w3id.org/candil/topology#nodeIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/candil/topology#nodeIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/topology#Node> .
+<https://w3id.org/candil/topology#nodeIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/candil/topology#nodeIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "node identifier" .
+# 
+# https://w3id.org/candil/topology#terminationPointIdentifier
+<https://w3id.org/candil/topology#terminationPointIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/candil/topology#terminationPointIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/topology#TerminationPoint> .
+<https://w3id.org/candil/topology#terminationPointIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/candil/topology#terminationPointIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "termination point identifier" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/candil/topology#Link
+<https://w3id.org/candil/topology#Link> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/candil/topology#Link> <http://www.w3.org/2000/01/rdf-schema#label> "Link" .
+# 
+# https://w3id.org/candil/topology#Network
+<https://w3id.org/candil/topology#Network> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/candil/topology#Network> <http://www.w3.org/2000/01/rdf-schema#label> "Network" .
+# 
+# https://w3id.org/candil/topology#Node
+<https://w3id.org/candil/topology#Node> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/candil/topology#Node> <http://www.w3.org/2000/01/rdf-schema#label> "Node" .
+# 
+# https://w3id.org/candil/topology#TerminationPoint
+<https://w3id.org/candil/topology#TerminationPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/candil/topology#TerminationPoint> <http://www.w3.org/2000/01/rdf-schema#label> "Termination Point" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

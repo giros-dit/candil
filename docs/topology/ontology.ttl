@@ -1,0 +1,176 @@
+@prefix : <https://w3id.org/candil/interface#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/candil/interface#> .
+
+<https://w3id.org/candil/interface#> rdf:type owl:Ontology ;
+                                      owl:versionIRI <https://w3id.org/candil/topology> ;
+                                      <http://purl.org/dc/terms/created> "2024-02-05"^^xsd:date ;
+                                      <http://purl.org/dc/terms/creator> "Ignacio Dominguez Martinez-Casanueva (https://orcid.org/0000-0002-8573-127X)" ;
+                                      <http://purl.org/dc/terms/description> "An ontology for representing network topologies" ;
+                                      <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/APACHE2.0> ;
+                                      <http://purl.org/dc/terms/publisher> <https://github.com/giros-dit> ;
+                                      <http://purl.org/dc/terms/title> "The CANDIL Ontology – Topology" ;
+                                      <http://purl.org/vocab/vann/preferredNamespacePrefix> "candil-tp" ;
+                                      <http://purl.org/vocab/vann/preferredNamespaceUri> <https://w3id.org/candil/topology#> ;
+                                      <http://www.owl-ontologies.com/schema#codeRepository> "https://github.com/giros-dit/candil"^^xsd:anyURI ;
+                                      owl:priorVersion <https://w3id.org/candil/topology> ;
+                                      owl:versionInfo "1.0.0" ;
+                                      <https://w3id.org/mod#createdWith> <https://chowlk.linkeddata.es/> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.owl-ontologies.com/schema#codeRepository
+<http://www.owl-ontologies.com/schema#codeRepository> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#priorVersion
+owl:priorVersion rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionIRI
+owl:versionIRI rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/mod#createdWith
+<https://w3id.org/mod#createdWith> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/candil/topology#connectsNode
+<https://w3id.org/candil/topology#connectsNode> rdf:type owl:ObjectProperty ;
+                                                rdfs:domain <https://w3id.org/candil/topology#Link> ;
+                                                rdfs:range <https://w3id.org/candil/topology#Node> ;
+                                                rdfs:label "connects node" .
+
+
+###  https://w3id.org/candil/topology#inNode
+<https://w3id.org/candil/topology#inNode> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <https://w3id.org/candil/topology#TerminationPoint> ;
+                                          rdfs:range <https://w3id.org/candil/topology#Node> ;
+                                          rdfs:label "in node" .
+
+
+###  https://w3id.org/candil/topology#isCointainedInNetwork
+<https://w3id.org/candil/topology#isCointainedInNetwork> rdf:type owl:ObjectProperty ;
+                                                         rdfs:domain <https://w3id.org/candil/topology#Node> ;
+                                                         rdfs:range <https://w3id.org/candil/topology#Network> ;
+                                                         rdfs:label "is cointained in network" .
+
+
+###  https://w3id.org/candil/topology#terminatesLink
+<https://w3id.org/candil/topology#terminatesLink> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <https://w3id.org/candil/topology#TerminationPoint> ;
+                                                  rdfs:range <https://w3id.org/candil/topology#Link> ;
+                                                  rdfs:label "terminates link" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/candil/topology#linkIdentifier
+<https://w3id.org/candil/topology#linkIdentifier> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain <https://w3id.org/candil/topology#Link> ;
+                                                  rdfs:range xsd:string ;
+                                                  rdfs:label "link identifier" .
+
+
+###  https://w3id.org/candil/topology#networkIdentifier
+<https://w3id.org/candil/topology#networkIdentifier> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:domain <https://w3id.org/candil/topology#Network> ;
+                                                     rdfs:range xsd:string ;
+                                                     rdfs:label "network identifier" .
+
+
+###  https://w3id.org/candil/topology#nodeIdentifier
+<https://w3id.org/candil/topology#nodeIdentifier> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain <https://w3id.org/candil/topology#Node> ;
+                                                  rdfs:range xsd:string ;
+                                                  rdfs:label "node identifier" .
+
+
+###  https://w3id.org/candil/topology#terminationPointIdentifier
+<https://w3id.org/candil/topology#terminationPointIdentifier> rdf:type owl:DatatypeProperty ;
+                                                              rdfs:domain <https://w3id.org/candil/topology#TerminationPoint> ;
+                                                              rdfs:range xsd:string ;
+                                                              rdfs:label "termination point identifier" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/candil/topology#Link
+<https://w3id.org/candil/topology#Link> rdf:type owl:Class ;
+                                        rdfs:label "Link" .
+
+
+###  https://w3id.org/candil/topology#Network
+<https://w3id.org/candil/topology#Network> rdf:type owl:Class ;
+                                           rdfs:label "Network" .
+
+
+###  https://w3id.org/candil/topology#Node
+<https://w3id.org/candil/topology#Node> rdf:type owl:Class ;
+                                        rdfs:label "Node" .
+
+
+###  https://w3id.org/candil/topology#TerminationPoint
+<https://w3id.org/candil/topology#TerminationPoint> rdf:type owl:Class ;
+                                                    rdfs:label "Termination Point" .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

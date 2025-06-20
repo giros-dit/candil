@@ -1,0 +1,528 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "undefined" ],
+    "baseIris" : [ "https://w3id.org/candil/topology", "https://w3id.org/candil/interface", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema" ],
+    "title" : {
+      "undefined" : "The CANDIL Ontology – Interface"
+    },
+    "iri" : "https://w3id.org/candil/interface#",
+    "version" : "1.0.0",
+    "author" : [ "Ignacio Dominguez Martinez-Casanueva (https://orcid.org/0000-0002-8573-127X)" ],
+    "description" : {
+      "undefined" : "An ontology for representing network interfaces"
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "http://purl.org/NET/rdflicense/APACHE2.0",
+        "type" : "iri"
+      } ],
+      "priorVersion" : [ {
+        "identifier" : "priorVersion",
+        "language" : "undefined",
+        "value" : "https://w3id.org/candil/interface",
+        "type" : "iri"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Ignacio Dominguez Martinez-Casanueva (https://orcid.org/0000-0002-8573-127X)",
+        "type" : "label"
+      } ],
+      "createdWith" : [ {
+        "identifier" : "createdWith",
+        "language" : "undefined",
+        "value" : "https://chowlk.linkeddata.es/",
+        "type" : "iri"
+      } ],
+      "created" : [ {
+        "identifier" : "created",
+        "language" : "undefined",
+        "value" : "2024-02-05",
+        "type" : "label"
+      } ],
+      "preferredNamespacePrefix" : [ {
+        "identifier" : "preferredNamespacePrefix",
+        "language" : "undefined",
+        "value" : "candil-if",
+        "type" : "label"
+      } ],
+      "publisher" : [ {
+        "identifier" : "publisher",
+        "language" : "undefined",
+        "value" : "https://github.com/giros-dit",
+        "type" : "iri"
+      } ],
+      "codeRepository" : [ {
+        "identifier" : "codeRepository",
+        "language" : "undefined",
+        "value" : "https://github.com/giros-dit/candil",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "1.0.0",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://w3id.org/candil/interface#",
+        "type" : "iri"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "undefined",
+        "value" : "The CANDIL Ontology – Interface",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "12",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "17",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "19",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "5",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "21",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "22",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "24",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "7",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "16",
+    "type" : "owl:Class"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "rdfs:Datatype"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://w3id.org/candil/interface#Interface",
+    "baseIri" : "https://w3id.org/candil/interface",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Interface",
+      "undefined" : "Interface"
+    },
+    "id" : "1",
+    "superClasses" : [ "13" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "14",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "12",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "17",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://w3id.org/candil/interface#InterfaceStatus",
+    "baseIri" : "https://w3id.org/candil/interface",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "InterfaceStatus",
+      "undefined" : "Interface Status"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/candil/interface#InterfaceStatusDOWN",
+      "baseIri" : "https://w3id.org/candil/interface",
+      "labels" : {
+        "IRI-based" : "InterfaceStatusDOWN"
+      }
+    }, {
+      "iri" : "https://w3id.org/candil/interface#InterfaceStatusUP",
+      "baseIri" : "https://w3id.org/candil/interface",
+      "labels" : {
+        "IRI-based" : "InterfaceStatusUP"
+      }
+    } ],
+    "id" : "2"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "20",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "19",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "5",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "21",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "22",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "24",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "7",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "https://w3id.org/candil/interface#InterfaceType",
+    "baseIri" : "https://w3id.org/candil/interface",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "InterfaceType",
+      "undefined" : "Interface Type"
+    },
+    "subClasses" : [ "25" ],
+    "id" : "16"
+  }, {
+    "iri" : "https://w3id.org/candil/interface#lnterfaceIANA",
+    "baseIri" : "https://w3id.org/candil/interface",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "lnterfaceIANA",
+      "undefined" : "lnterface I A N A"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/candil/interface#l2vlan",
+      "baseIri" : "https://w3id.org/candil/interface",
+      "labels" : {
+        "IRI-based" : "l2vlan"
+      }
+    }, {
+      "iri" : "https://w3id.org/candil/interface#ethernetCsmacd",
+      "baseIri" : "https://w3id.org/candil/interface",
+      "labels" : {
+        "IRI-based" : "ethernetCsmacd"
+      }
+    } ],
+    "id" : "25",
+    "superClasses" : [ "16" ]
+  }, {
+    "iri" : "https://w3id.org/candil/interface#InterfaceStatistics",
+    "baseIri" : "https://w3id.org/candil/interface",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "InterfaceStatistics",
+      "undefined" : "Interface Statistics"
+    },
+    "id" : "4"
+  }, {
+    "iri" : "https://w3id.org/candil/topology#TerminationPoint",
+    "baseIri" : "https://w3id.org/candil/topology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TerminationPoint",
+      "undefined" : "Termination Point"
+    },
+    "subClasses" : [ "1" ],
+    "attributes" : [ "external" ],
+    "id" : "13"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "10",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "3",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "6",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "8",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "9",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "11",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "15",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "18",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "23",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "26",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "27",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "28",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "29",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "30",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "31",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "32",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "33",
+    "type" : "rdfs:SubClassOf"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "https://w3id.org/candil/interface#adminStatus",
+    "baseIri" : "https://w3id.org/candil/interface",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "adminStatus",
+      "undefined" : "admin status"
+    },
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "0"
+  }, {
+    "iri" : "https://w3id.org/candil/interface#outDiscards",
+    "baseIri" : "https://w3id.org/candil/interface",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "outDiscards",
+      "undefined" : "out discards"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "3"
+  }, {
+    "iri" : "https://w3id.org/candil/interface#inErrors",
+    "baseIri" : "https://w3id.org/candil/interface",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "inErrors",
+      "undefined" : "in errors"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "6"
+  }, {
+    "iri" : "https://w3id.org/candil/interface#hasInterfaceStatistics",
+    "baseIri" : "https://w3id.org/candil/interface",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "hasInterfaceStatistics",
+      "undefined" : "has interface statistics"
+    },
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "8"
+  }, {
+    "iri" : "https://w3id.org/candil/interface#outputOctets",
+    "baseIri" : "https://w3id.org/candil/interface",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "outputOctets",
+      "undefined" : "output octets"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "9"
+  }, {
+    "iri" : "https://w3id.org/candil/interface#inputOctets",
+    "baseIri" : "https://w3id.org/candil/interface",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "inputOctets",
+      "undefined" : "input octets"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "11"
+  }, {
+    "iri" : "https://w3id.org/candil/interface#hasInterfaceType",
+    "baseIri" : "https://w3id.org/candil/interface",
+    "range" : "16",
+    "label" : {
+      "IRI-based" : "hasInterfaceType",
+      "undefined" : "has interface type"
+    },
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "15"
+  }, {
+    "iri" : "https://w3id.org/candil/interface#interfaceName",
+    "baseIri" : "https://w3id.org/candil/interface",
+    "range" : "19",
+    "label" : {
+      "IRI-based" : "interfaceName",
+      "undefined" : "interface name"
+    },
+    "domain" : "1",
+    "attributes" : [ "datatype" ],
+    "id" : "18"
+  }, {
+    "iri" : "https://w3id.org/candil/interface#outUnicastPackets",
+    "baseIri" : "https://w3id.org/candil/interface",
+    "range" : "22",
+    "label" : {
+      "IRI-based" : "outUnicastPackets",
+      "undefined" : "out unicast packets"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "23"
+  }, {
+    "iri" : "https://w3id.org/candil/interface#inUnicastPackets",
+    "baseIri" : "https://w3id.org/candil/interface",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "inUnicastPackets",
+      "undefined" : "in unicast packets"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "26"
+  }, {
+    "iri" : "https://w3id.org/candil/interface#interfaceDescription",
+    "baseIri" : "https://w3id.org/candil/interface",
+    "range" : "17",
+    "label" : {
+      "IRI-based" : "interfaceDescription",
+      "undefined" : "interface description"
+    },
+    "domain" : "1",
+    "attributes" : [ "datatype" ],
+    "id" : "27"
+  }, {
+    "iri" : "https://w3id.org/candil/interface#outErrors",
+    "baseIri" : "https://w3id.org/candil/interface",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "outErrors",
+      "undefined" : "out errors"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "28"
+  }, {
+    "iri" : "https://w3id.org/candil/interface#inDiscards",
+    "baseIri" : "https://w3id.org/candil/interface",
+    "range" : "24",
+    "label" : {
+      "IRI-based" : "inDiscards",
+      "undefined" : "in discards"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "29"
+  }, {
+    "iri" : "https://w3id.org/candil/interface#interfaceEnabled",
+    "baseIri" : "https://w3id.org/candil/interface",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "interfaceEnabled",
+      "undefined" : "interface enabled"
+    },
+    "domain" : "1",
+    "attributes" : [ "datatype" ],
+    "id" : "30"
+  }, {
+    "iri" : "https://w3id.org/candil/interface#operStatus",
+    "baseIri" : "https://w3id.org/candil/interface",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "operStatus",
+      "undefined" : "oper status"
+    },
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "31"
+  }, {
+    "range" : "13",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "32"
+  }, {
+    "range" : "16",
+    "domain" : "25",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "33"
+  } ]
+}

@@ -1,0 +1,260 @@
+<h2 id="crossreference" class="list">Cross-reference for The CANDIL Ontology – Topology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by The CANDIL Ontology – Topology.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#Link" title="https://w3id.org/candil/topology#Link">Link</a></li>
+  <li><a href="#Network" title="https://w3id.org/candil/topology#Network">Network</a></li>
+  <li><a href="#Node" title="https://w3id.org/candil/topology#Node">Node</a></li>
+  <li><a href="#TerminationPoint" title="https://w3id.org/candil/topology#TerminationPoint">Termination Point</a></li>
+ </ul>
+ <div class="entity" id="Link">
+  <h3>Link<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/candil/topology#Link</p>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#connectsNode" title="https://w3id.org/candil/topology#connectsNode">connects node</a> <sup class="type-op" title="object property">op</sup>, <a href="#linkIdentifier" title="https://w3id.org/candil/topology#linkIdentifier">link identifier</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#terminatesLink" title="https://w3id.org/candil/topology#terminatesLink">terminates link</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Network">
+  <h3>Network<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/candil/topology#Network</p>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#networkIdentifier" title="https://w3id.org/candil/topology#networkIdentifier">network identifier</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isCointainedInNetwork" title="https://w3id.org/candil/topology#isCointainedInNetwork">is cointained in network</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Node">
+  <h3>Node<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/candil/topology#Node</p>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isCointainedInNetwork" title="https://w3id.org/candil/topology#isCointainedInNetwork">is cointained in network</a> <sup class="type-op" title="object property">op</sup>, <a href="#nodeIdentifier" title="https://w3id.org/candil/topology#nodeIdentifier">node identifier</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#connectsNode" title="https://w3id.org/candil/topology#connectsNode">connects node</a> <sup class="type-op" title="object property">op</sup>, <a href="#inNode" title="https://w3id.org/candil/topology#inNode">in node</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="TerminationPoint">
+  <h3>Termination Point<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/candil/topology#TerminationPoint</p>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#inNode" title="https://w3id.org/candil/topology#inNode">in node</a> <sup class="type-op" title="object property">op</sup>, <a href="#terminatesLink" title="https://w3id.org/candil/topology#terminatesLink">terminates link</a> <sup class="type-op" title="object property">op</sup>, <a href="#terminationPointIdentifier" title="https://w3id.org/candil/topology#terminationPointIdentifier">termination point identifier</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#connectsNode" title="https://w3id.org/candil/topology#connectsNode">connects node</a></li>
+  <li><a href="#inNode" title="https://w3id.org/candil/topology#inNode">in node</a></li>
+  <li><a href="#isCointainedInNetwork" title="https://w3id.org/candil/topology#isCointainedInNetwork">is cointained in network</a></li>
+  <li><a href="#terminatesLink" title="https://w3id.org/candil/topology#terminatesLink">terminates link</a></li>
+ </ul>
+ <div class="entity" id="connectsNode">
+  <h3>connects node<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/candil/topology#connectsNode</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Link" title="https://w3id.org/candil/topology#Link">Link</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Node" title="https://w3id.org/candil/topology#Node">Node</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="inNode">
+  <h3>in node<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/candil/topology#inNode</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#TerminationPoint" title="https://w3id.org/candil/topology#TerminationPoint">Termination Point</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Node" title="https://w3id.org/candil/topology#Node">Node</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isCointainedInNetwork">
+  <h3>is cointained in network<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/candil/topology#isCointainedInNetwork</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Node" title="https://w3id.org/candil/topology#Node">Node</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Network" title="https://w3id.org/candil/topology#Network">Network</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="terminatesLink">
+  <h3>terminates link<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/candil/topology#terminatesLink</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#TerminationPoint" title="https://w3id.org/candil/topology#TerminationPoint">Termination Point</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Link" title="https://w3id.org/candil/topology#Link">Link</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#linkIdentifier" title="https://w3id.org/candil/topology#linkIdentifier">link identifier</a></li>
+  <li><a href="#networkIdentifier" title="https://w3id.org/candil/topology#networkIdentifier">network identifier</a></li>
+  <li><a href="#nodeIdentifier" title="https://w3id.org/candil/topology#nodeIdentifier">node identifier</a></li>
+  <li><a href="#terminationPointIdentifier" title="https://w3id.org/candil/topology#terminationPointIdentifier">termination point identifier</a></li>
+ </ul>
+ <div class="entity" id="linkIdentifier">
+  <h3>link identifier<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/candil/topology#linkIdentifier</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Link" title="https://w3id.org/candil/topology#Link">Link</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="networkIdentifier">
+  <h3>network identifier<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/candil/topology#networkIdentifier</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Network" title="https://w3id.org/candil/topology#Network">Network</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="nodeIdentifier">
+  <h3>node identifier<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/candil/topology#nodeIdentifier</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Node" title="https://w3id.org/candil/topology#Node">Node</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="terminationPointIdentifier">
+  <h3>termination point identifier<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/candil/topology#terminationPointIdentifier</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#TerminationPoint" title="https://w3id.org/candil/topology#TerminationPoint">Termination Point</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>

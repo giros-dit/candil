@@ -1,0 +1,155 @@
+@prefix candil-if: <https://w3id.org/candil/interface#> .
+@prefix candil-tp: <https://w3id.org/candil/topology#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mod: <https://w3id.org/mod#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://www.owl-ontologies.com/schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dcterms:created a owl:AnnotationProperty .
+
+dcterms:creator a owl:AnnotationProperty .
+
+dcterms:description a owl:AnnotationProperty .
+
+dcterms:license a owl:AnnotationProperty .
+
+dcterms:publisher a owl:AnnotationProperty .
+
+dcterms:title a owl:AnnotationProperty .
+
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+
+schema1:codeRepository a owl:AnnotationProperty .
+
+owl:priorVersion a owl:AnnotationProperty .
+
+owl:versionIRI a owl:AnnotationProperty .
+
+owl:versionInfo a owl:AnnotationProperty .
+
+candil-if:InterfaceStatusDOWN a owl:NamedIndividual,
+        candil-if:InterfaceStatus .
+
+candil-if:InterfaceStatusUP a owl:NamedIndividual,
+        candil-if:InterfaceStatus .
+
+candil-if:adminStatus a owl:ObjectProperty ;
+    rdfs:label "admin status" ;
+    rdfs:domain candil-if:Interface ;
+    rdfs:range candil-if:InterfaceStatus .
+
+candil-if:ethernetCsmacd a owl:NamedIndividual,
+        candil-if:lnterfaceIANA .
+
+candil-if:hasInterfaceStatistics a owl:ObjectProperty ;
+    rdfs:label "has interface statistics" ;
+    rdfs:domain candil-if:Interface ;
+    rdfs:range candil-if:InterfaceStatistics .
+
+candil-if:hasInterfaceType a owl:ObjectProperty ;
+    rdfs:label "has interface type" ;
+    rdfs:domain candil-if:Interface ;
+    rdfs:range candil-if:InterfaceType .
+
+candil-if:inDiscards a owl:DatatypeProperty ;
+    rdfs:label "in discards" ;
+    rdfs:domain candil-if:InterfaceStatistics ;
+    rdfs:range xsd:integer .
+
+candil-if:inErrors a owl:DatatypeProperty ;
+    rdfs:label "in errors" ;
+    rdfs:domain candil-if:InterfaceStatistics ;
+    rdfs:range xsd:integer .
+
+candil-if:inUnicastPackets a owl:DatatypeProperty ;
+    rdfs:label "in unicast packets" ;
+    rdfs:domain candil-if:InterfaceStatistics ;
+    rdfs:range xsd:integer .
+
+candil-if:inputOctets a owl:DatatypeProperty ;
+    rdfs:label "input octets" ;
+    rdfs:domain candil-if:InterfaceStatistics ;
+    rdfs:range xsd:integer .
+
+candil-if:interfaceDescription a owl:DatatypeProperty ;
+    rdfs:label "interface description" ;
+    rdfs:domain candil-if:Interface ;
+    rdfs:range xsd:string .
+
+candil-if:interfaceEnabled a owl:DatatypeProperty ;
+    rdfs:label "interface enabled" ;
+    rdfs:domain candil-if:Interface ;
+    rdfs:range xsd:boolean .
+
+candil-if:interfaceName a owl:DatatypeProperty ;
+    rdfs:label "interface name" ;
+    rdfs:domain candil-if:Interface ;
+    rdfs:range xsd:string .
+
+candil-if:l2vlan a owl:NamedIndividual,
+        candil-if:lnterfaceIANA .
+
+candil-if:operStatus a owl:ObjectProperty ;
+    rdfs:label "oper status" ;
+    rdfs:domain candil-if:Interface ;
+    rdfs:range candil-if:InterfaceStatus .
+
+candil-if:outDiscards a owl:DatatypeProperty ;
+    rdfs:label "out discards" ;
+    rdfs:domain candil-if:InterfaceStatistics ;
+    rdfs:range xsd:integer .
+
+candil-if:outErrors a owl:DatatypeProperty ;
+    rdfs:label "out errors" ;
+    rdfs:domain candil-if:InterfaceStatistics ;
+    rdfs:range xsd:integer .
+
+candil-if:outUnicastPackets a owl:DatatypeProperty ;
+    rdfs:label "out unicast packets" ;
+    rdfs:domain candil-if:InterfaceStatistics ;
+    rdfs:range xsd:integer .
+
+candil-if:outputOctets a owl:DatatypeProperty ;
+    rdfs:label "output octets" ;
+    rdfs:domain candil-if:InterfaceStatistics ;
+    rdfs:range xsd:integer .
+
+candil-if: a owl:Ontology ;
+    dcterms:created "2024-02-05"^^xsd:date ;
+    dcterms:creator "Ignacio Dominguez Martinez-Casanueva (https://orcid.org/0000-0002-8573-127X)" ;
+    dcterms:description "An ontology for representing network interfaces" ;
+    dcterms:license <http://purl.org/NET/rdflicense/APACHE2.0> ;
+    dcterms:publisher <https://github.com/giros-dit> ;
+    dcterms:title "The CANDIL Ontology – Interface" ;
+    vann:preferredNamespacePrefix "candil-if" ;
+    vann:preferredNamespaceUri candil-if: ;
+    schema1:codeRepository "https://github.com/giros-dit/candil"^^xsd:anyURI ;
+    owl:priorVersion <https://w3id.org/candil/interface> ;
+    owl:versionIRI <https://w3id.org/candil/interface> ;
+    owl:versionInfo "1.0.0" ;
+    mod:createdWith <https://chowlk.linkeddata.es/> .
+
+candil-tp:TerminationPoint a owl:Class ;
+    rdfs:label "Termination Point" .
+
+candil-if:InterfaceType a owl:Class ;
+    rdfs:label "Interface Type" .
+
+candil-if:lnterfaceIANA a owl:Class ;
+    rdfs:label "lnterface I A N A" ;
+    rdfs:subClassOf candil-if:InterfaceType .
+
+candil-if:InterfaceStatus a owl:Class ;
+    rdfs:label "Interface Status" .
+
+candil-if:Interface a owl:Class ;
+    rdfs:label "Interface" ;
+    rdfs:subClassOf candil-tp:TerminationPoint .
+
+candil-if:InterfaceStatistics a owl:Class ;
+    rdfs:label "Interface Statistics" .

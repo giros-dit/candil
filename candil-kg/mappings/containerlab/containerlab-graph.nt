@@ -1,0 +1,4 @@
+<http://candil.namespace.com#clab-srlinux-openconfig-02-srl2> <http://candil.namespace.com#nodeIdentifier> "srl2" .
+<http://candil.namespace.com#clab-srlinux-openconfig-02-srl1> <http://candil.namespace.com#nodeIdentifier> "srl1" .
+<http://candil.namespace.com#clab-srlinux-openconfig-02-srl1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://candil.namespace.com#Node> .
+<http://candil.namespace.com#clab-srlinux-openconfig-02-srl2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://candil.namespace.com#Node> .

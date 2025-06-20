@@ -1,0 +1,261 @@
+@prefix : <https://w3id.org/candil/interface#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/candil/interface#> .
+
+<https://w3id.org/candil/interface#> rdf:type owl:Ontology ;
+                                      owl:versionIRI <https://w3id.org/candil/interface> ;
+                                      <http://purl.org/dc/terms/created> "2024-02-05"^^xsd:date ;
+                                      <http://purl.org/dc/terms/creator> "Ignacio Dominguez Martinez-Casanueva (https://orcid.org/0000-0002-8573-127X)" ;
+                                      <http://purl.org/dc/terms/description> "An ontology for representing network interfaces" ;
+                                      <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/APACHE2.0> ;
+                                      <http://purl.org/dc/terms/publisher> <https://github.com/giros-dit> ;
+                                      <http://purl.org/dc/terms/title> "The CANDIL Ontology – Interface" ;
+                                      <http://purl.org/vocab/vann/preferredNamespacePrefix> "candil-if" ;
+                                      <http://purl.org/vocab/vann/preferredNamespaceUri> <https://w3id.org/candil/interface#> ;
+                                      <http://www.owl-ontologies.com/schema#codeRepository> "https://github.com/giros-dit/candil"^^xsd:anyURI ;
+                                      owl:priorVersion <https://w3id.org/candil/interface> ;
+                                      owl:versionInfo "1.0.0" ;
+                                      <https://w3id.org/mod#createdWith> <https://chowlk.linkeddata.es/> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.owl-ontologies.com/schema#codeRepository
+<http://www.owl-ontologies.com/schema#codeRepository> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#priorVersion
+owl:priorVersion rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionIRI
+owl:versionIRI rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/mod#createdWith
+<https://w3id.org/mod#createdWith> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/candil/interface#adminStatus
+:adminStatus rdf:type owl:ObjectProperty ;
+             rdfs:domain :Interface ;
+             rdfs:range :InterfaceStatus ;
+             rdfs:label "admin status" .
+
+
+###  https://w3id.org/candil/interface#hasInterfaceStatistics
+:hasInterfaceStatistics rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Interface ;
+                        rdfs:range :InterfaceStatistics ;
+                        rdfs:label "has interface statistics" .
+
+
+###  https://w3id.org/candil/interface#hasInterfaceType
+:hasInterfaceType rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Interface ;
+                  rdfs:range :InterfaceType ;
+                  rdfs:label "has interface type" .
+
+
+###  https://w3id.org/candil/interface#operStatus
+:operStatus rdf:type owl:ObjectProperty ;
+            rdfs:domain :Interface ;
+            rdfs:range :InterfaceStatus ;
+            rdfs:label "oper status" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/candil/interface#inDiscards
+:inDiscards rdf:type owl:DatatypeProperty ;
+            rdfs:domain :InterfaceStatistics ;
+            rdfs:range xsd:integer ;
+            rdfs:label "in discards" .
+
+
+###  https://w3id.org/candil/interface#inErrors
+:inErrors rdf:type owl:DatatypeProperty ;
+          rdfs:domain :InterfaceStatistics ;
+          rdfs:range xsd:integer ;
+          rdfs:label "in errors" .
+
+
+###  https://w3id.org/candil/interface#inUnicastPackets
+:inUnicastPackets rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :InterfaceStatistics ;
+                  rdfs:range xsd:integer ;
+                  rdfs:label "in unicast packets" .
+
+
+###  https://w3id.org/candil/interface#inputOctets
+:inputOctets rdf:type owl:DatatypeProperty ;
+             rdfs:domain :InterfaceStatistics ;
+             rdfs:range xsd:integer ;
+             rdfs:label "input octets" .
+
+
+###  https://w3id.org/candil/interface#interfaceDescription
+:interfaceDescription rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Interface ;
+                      rdfs:range xsd:string ;
+                      rdfs:label "interface description" .
+
+
+###  https://w3id.org/candil/interface#interfaceEnabled
+:interfaceEnabled rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Interface ;
+                  rdfs:range xsd:boolean ;
+                  rdfs:label "interface enabled" .
+
+
+###  https://w3id.org/candil/interface#interfaceName
+:interfaceName rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Interface ;
+               rdfs:range xsd:string ;
+               rdfs:label "interface name" .
+
+
+###  https://w3id.org/candil/interface#outDiscards
+:outDiscards rdf:type owl:DatatypeProperty ;
+             rdfs:domain :InterfaceStatistics ;
+             rdfs:range xsd:integer ;
+             rdfs:label "out discards" .
+
+
+###  https://w3id.org/candil/interface#outErrors
+:outErrors rdf:type owl:DatatypeProperty ;
+           rdfs:domain :InterfaceStatistics ;
+           rdfs:range xsd:integer ;
+           rdfs:label "out errors" .
+
+
+###  https://w3id.org/candil/interface#outUnicastPackets
+:outUnicastPackets rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :InterfaceStatistics ;
+                   rdfs:range xsd:integer ;
+                   rdfs:label "out unicast packets" .
+
+
+###  https://w3id.org/candil/interface#outputOctets
+:outputOctets rdf:type owl:DatatypeProperty ;
+              rdfs:domain :InterfaceStatistics ;
+              rdfs:range xsd:integer ;
+              rdfs:label "output octets" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/candil/interface#Interface
+:Interface rdf:type owl:Class ;
+           rdfs:subClassOf <https://w3id.org/candil/topology#TerminationPoint> ;
+           rdfs:label "Interface" .
+
+
+###  https://w3id.org/candil/interface#InterfaceStatistics
+:InterfaceStatistics rdf:type owl:Class ;
+                     rdfs:label "Interface Statistics" .
+
+
+###  https://w3id.org/candil/interface#InterfaceStatus
+:InterfaceStatus rdf:type owl:Class ;
+                 rdfs:label "Interface Status" .
+
+
+###  https://w3id.org/candil/interface#InterfaceType
+:InterfaceType rdf:type owl:Class ;
+               rdfs:label "Interface Type" .
+
+
+###  https://w3id.org/candil/interface#lnterfaceIANA
+:lnterfaceIANA rdf:type owl:Class ;
+               rdfs:subClassOf :InterfaceType ;
+               rdfs:label "lnterface I A N A" .
+
+
+###  https://w3id.org/candil/topology#TerminationPoint
+<https://w3id.org/candil/topology#TerminationPoint> rdf:type owl:Class ;
+                                                    rdfs:label "Termination Point" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/candil/interface#InterfaceStatusDOWN
+:InterfaceStatusDOWN rdf:type owl:NamedIndividual ,
+                              :InterfaceStatus .
+
+
+###  https://w3id.org/candil/interface#InterfaceStatusUP
+:InterfaceStatusUP rdf:type owl:NamedIndividual ,
+                            :InterfaceStatus .
+
+
+###  https://w3id.org/candil/interface#ethernetCsmacd
+:ethernetCsmacd rdf:type owl:NamedIndividual ,
+                         :lnterfaceIANA .
+
+
+###  https://w3id.org/candil/interface#l2vlan
+:l2vlan rdf:type owl:NamedIndividual ,
+                 :lnterfaceIANA .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

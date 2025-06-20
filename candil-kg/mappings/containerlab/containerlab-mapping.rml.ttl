@@ -1,0 +1,196 @@
+@prefix candil: <http://candil.namespace.com#>.
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+
+<nodes_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "/files/topology-data.json";
+		rml:referenceFormulation ql:JSONPath;
+		rml:iterator "$.nodes.*"
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "http://candil.namespace.com#{longname}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant candil:Node;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant candil:nodeIdentifier;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "shortname";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant candil:isContainedInNetwork;
+		];
+		rr:objectMap [
+			a rr:RefObjectMap;
+			rr:parentTriplesMap <network_0>;
+			rr:joinCondition [
+				rr:child "labels.containerlab";
+				rr:parent "name";
+			];
+		];
+	].
+
+
+<termination-point_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "/files/topology-data.json";
+		rml:referenceFormulation ql:JSONPath;
+		rml:iterator "$.links.*.*"
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "http://candil.namespace.com#{node}_{interface}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant candil:Interface;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant candil:terminationPointId;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "interface";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant candil:inNode;
+		];
+		rr:objectMap [
+			a rr:RefObjectMap;
+			rr:parentTriplesMap <nodes_0>;
+			rr:joinCondition [
+				rr:child "node";
+				rr:parent "shortname";
+			];
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant candil:terminatesLink;
+		];
+		rr:objectMap [
+			a rr:RefObjectMap;
+			rr:parentTriplesMap <links_0>;
+			rr:joinCondition [
+				rr:child "node";
+				rr:parent "a.node";
+			];
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant candil:terminatesLink;
+		];
+		rr:objectMap [
+			a rr:RefObjectMap;
+			rr:parentTriplesMap <links_0>;
+			rr:joinCondition [
+				rr:child "node";
+				rr:parent "z.node";
+			];
+		];
+	].
+
+
+<links_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "/files/topology-data.json";
+		rml:referenceFormulation ql:JSONPath;
+		rml:iterator "$.links.*"
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "http://candil.namespace.com#{a.node}_{a.interface}_{z.node}_{z.interface}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant candil:Link;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant candil:linkIdentifier;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "{a.node}_{a.interface}_{z.node}_{z.interface}";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant candil:connectsNode;
+		];
+		rr:objectMap [
+			a rr:RefObjectMap;
+			rr:parentTriplesMap <nodes_0>;
+			rr:joinCondition [
+				rr:child "a.node";
+				rr:parent "shortname";
+			];
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant candil:connectsNode;
+		];
+		rr:objectMap [
+			a rr:RefObjectMap;
+			rr:parentTriplesMap <nodes_0>;
+			rr:joinCondition [
+				rr:child "z.node";
+				rr:parent "shortname";
+			];
+		];
+	].
+
+

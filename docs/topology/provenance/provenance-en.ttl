@@ -1,0 +1,12 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix : <> .
+<https://w3id.org/candil/topology> a prov:Entity;
+	 dc:title "The CANDIL Ontology – Topology";
+	 prov:wasAttributedTo :agent0;
+	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:wasRevisionOf <https://w3id.org/candil/topology>;
+	 prov:wasGeneratedAt "2024-02-05";
+.
+:agent0 a prov:Agent; foaf:name "Ignacio Dominguez Martinez-Casanueva (https://orcid.org/0000-0002-8573-127X)".

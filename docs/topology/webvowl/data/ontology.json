@@ -1,0 +1,293 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "undefined" ],
+    "baseIris" : [ "https://w3id.org/candil/topology", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema" ],
+    "title" : {
+      "undefined" : "The CANDIL Ontology – Topology"
+    },
+    "iri" : "https://w3id.org/candil/interface#",
+    "version" : "1.0.0",
+    "author" : [ "Ignacio Dominguez Martinez-Casanueva (https://orcid.org/0000-0002-8573-127X)" ],
+    "description" : {
+      "undefined" : "An ontology for representing network topologies"
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "http://purl.org/NET/rdflicense/APACHE2.0",
+        "type" : "iri"
+      } ],
+      "priorVersion" : [ {
+        "identifier" : "priorVersion",
+        "language" : "undefined",
+        "value" : "https://w3id.org/candil/topology",
+        "type" : "iri"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Ignacio Dominguez Martinez-Casanueva (https://orcid.org/0000-0002-8573-127X)",
+        "type" : "label"
+      } ],
+      "createdWith" : [ {
+        "identifier" : "createdWith",
+        "language" : "undefined",
+        "value" : "https://chowlk.linkeddata.es/",
+        "type" : "iri"
+      } ],
+      "created" : [ {
+        "identifier" : "created",
+        "language" : "undefined",
+        "value" : "2024-02-05",
+        "type" : "label"
+      } ],
+      "preferredNamespacePrefix" : [ {
+        "identifier" : "preferredNamespacePrefix",
+        "language" : "undefined",
+        "value" : "candil-tp",
+        "type" : "label"
+      } ],
+      "publisher" : [ {
+        "identifier" : "publisher",
+        "language" : "undefined",
+        "value" : "https://github.com/giros-dit",
+        "type" : "iri"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "1.0.0",
+        "type" : "label"
+      } ],
+      "codeRepository" : [ {
+        "identifier" : "codeRepository",
+        "language" : "undefined",
+        "value" : "https://github.com/giros-dit/candil",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://w3id.org/candil/topology#",
+        "type" : "iri"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "undefined",
+        "value" : "The CANDIL Ontology – Topology",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "7",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "8",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "rdfs:Datatype"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "7",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "8",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://w3id.org/candil/topology#Node",
+    "baseIri" : "https://w3id.org/candil/topology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Node",
+      "undefined" : "Node"
+    },
+    "attributes" : [ "external" ],
+    "id" : "1"
+  }, {
+    "iri" : "https://w3id.org/candil/topology#Network",
+    "baseIri" : "https://w3id.org/candil/topology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Network",
+      "undefined" : "Network"
+    },
+    "attributes" : [ "external" ],
+    "id" : "2"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "12",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://w3id.org/candil/topology#Link",
+    "baseIri" : "https://w3id.org/candil/topology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Link",
+      "undefined" : "Link"
+    },
+    "attributes" : [ "external" ],
+    "id" : "4"
+  }, {
+    "iri" : "https://w3id.org/candil/topology#TerminationPoint",
+    "baseIri" : "https://w3id.org/candil/topology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TerminationPoint",
+      "undefined" : "Termination Point"
+    },
+    "attributes" : [ "external" ],
+    "id" : "11"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "6",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "3",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "5",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "9",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "10",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "13",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "14",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "15",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "https://w3id.org/candil/topology#isCointainedInNetwork",
+    "baseIri" : "https://w3id.org/candil/topology",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "isCointainedInNetwork",
+      "undefined" : "is cointained in network"
+    },
+    "domain" : "1",
+    "attributes" : [ "external", "object" ],
+    "id" : "0"
+  }, {
+    "iri" : "https://w3id.org/candil/topology#connectsNode",
+    "baseIri" : "https://w3id.org/candil/topology",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "connectsNode",
+      "undefined" : "connects node"
+    },
+    "domain" : "4",
+    "attributes" : [ "external", "object" ],
+    "id" : "3"
+  }, {
+    "iri" : "https://w3id.org/candil/topology#networkIdentifier",
+    "baseIri" : "https://w3id.org/candil/topology",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "networkIdentifier",
+      "undefined" : "network identifier"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "5"
+  }, {
+    "iri" : "https://w3id.org/candil/topology#nodeIdentifier",
+    "baseIri" : "https://w3id.org/candil/topology",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "nodeIdentifier",
+      "undefined" : "node identifier"
+    },
+    "domain" : "1",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "9"
+  }, {
+    "iri" : "https://w3id.org/candil/topology#inNode",
+    "baseIri" : "https://w3id.org/candil/topology",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "inNode",
+      "undefined" : "in node"
+    },
+    "domain" : "11",
+    "attributes" : [ "external", "object" ],
+    "id" : "10"
+  }, {
+    "iri" : "https://w3id.org/candil/topology#terminationPointIdentifier",
+    "baseIri" : "https://w3id.org/candil/topology",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "terminationPointIdentifier",
+      "undefined" : "termination point identifier"
+    },
+    "domain" : "11",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "13"
+  }, {
+    "iri" : "https://w3id.org/candil/topology#linkIdentifier",
+    "baseIri" : "https://w3id.org/candil/topology",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "linkIdentifier",
+      "undefined" : "link identifier"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "14"
+  }, {
+    "iri" : "https://w3id.org/candil/topology#terminatesLink",
+    "baseIri" : "https://w3id.org/candil/topology",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "terminatesLink",
+      "undefined" : "terminates link"
+    },
+    "domain" : "11",
+    "attributes" : [ "external", "object" ],
+    "id" : "15"
+  } ]
+}

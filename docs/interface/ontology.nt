@@ -1,0 +1,243 @@
+<https://w3id.org/candil/interface#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/candil/interface#> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/candil/interface> .
+<https://w3id.org/candil/interface#> <http://purl.org/dc/terms/created> "2024-02-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/candil/interface#> <http://purl.org/dc/terms/creator> "Ignacio Dominguez Martinez-Casanueva (https://orcid.org/0000-0002-8573-127X)" .
+<https://w3id.org/candil/interface#> <http://purl.org/dc/terms/description> "An ontology for representing network interfaces" .
+<https://w3id.org/candil/interface#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/APACHE2.0> .
+<https://w3id.org/candil/interface#> <http://purl.org/dc/terms/publisher> <https://github.com/giros-dit> .
+<https://w3id.org/candil/interface#> <http://purl.org/dc/terms/title> "The CANDIL Ontology – Interface" .
+<https://w3id.org/candil/interface#> <http://purl.org/vocab/vann/preferredNamespacePrefix> "candil-if" .
+<https://w3id.org/candil/interface#> <http://purl.org/vocab/vann/preferredNamespaceUri> <https://w3id.org/candil/interface#> .
+<https://w3id.org/candil/interface#> <http://www.owl-ontologies.com/schema#codeRepository> "https://github.com/giros-dit/candil"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/candil/interface#> <http://www.w3.org/2002/07/owl#priorVersion> <https://w3id.org/candil/interface> .
+<https://w3id.org/candil/interface#> <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" .
+<https://w3id.org/candil/interface#> <https://w3id.org/mod#createdWith> <https://chowlk.linkeddata.es/> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.owl-ontologies.com/schema#codeRepository
+<http://www.owl-ontologies.com/schema#codeRepository> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2002/07/owl#priorVersion
+<http://www.w3.org/2002/07/owl#priorVersion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2002/07/owl#versionIRI
+<http://www.w3.org/2002/07/owl#versionIRI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2002/07/owl#versionInfo
+<http://www.w3.org/2002/07/owl#versionInfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/mod#createdWith
+<https://w3id.org/mod#createdWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/candil/interface#adminStatus
+<https://w3id.org/candil/interface#adminStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/candil/interface#adminStatus> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/interface#Interface> .
+<https://w3id.org/candil/interface#adminStatus> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/candil/interface#InterfaceStatus> .
+<https://w3id.org/candil/interface#adminStatus> <http://www.w3.org/2000/01/rdf-schema#label> "admin status" .
+# 
+# https://w3id.org/candil/interface#hasInterfaceStatistics
+<https://w3id.org/candil/interface#hasInterfaceStatistics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/candil/interface#hasInterfaceStatistics> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/interface#Interface> .
+<https://w3id.org/candil/interface#hasInterfaceStatistics> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/candil/interface#InterfaceStatistics> .
+<https://w3id.org/candil/interface#hasInterfaceStatistics> <http://www.w3.org/2000/01/rdf-schema#label> "has interface statistics" .
+# 
+# https://w3id.org/candil/interface#hasInterfaceType
+<https://w3id.org/candil/interface#hasInterfaceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/candil/interface#hasInterfaceType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/interface#Interface> .
+<https://w3id.org/candil/interface#hasInterfaceType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/candil/interface#InterfaceType> .
+<https://w3id.org/candil/interface#hasInterfaceType> <http://www.w3.org/2000/01/rdf-schema#label> "has interface type" .
+# 
+# https://w3id.org/candil/interface#operStatus
+<https://w3id.org/candil/interface#operStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/candil/interface#operStatus> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/interface#Interface> .
+<https://w3id.org/candil/interface#operStatus> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/candil/interface#InterfaceStatus> .
+<https://w3id.org/candil/interface#operStatus> <http://www.w3.org/2000/01/rdf-schema#label> "oper status" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/candil/interface#inDiscards
+<https://w3id.org/candil/interface#inDiscards> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/candil/interface#inDiscards> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/interface#InterfaceStatistics> .
+<https://w3id.org/candil/interface#inDiscards> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/candil/interface#inDiscards> <http://www.w3.org/2000/01/rdf-schema#label> "in discards" .
+# 
+# https://w3id.org/candil/interface#inErrors
+<https://w3id.org/candil/interface#inErrors> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/candil/interface#inErrors> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/interface#InterfaceStatistics> .
+<https://w3id.org/candil/interface#inErrors> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/candil/interface#inErrors> <http://www.w3.org/2000/01/rdf-schema#label> "in errors" .
+# 
+# https://w3id.org/candil/interface#inUnicastPackets
+<https://w3id.org/candil/interface#inUnicastPackets> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/candil/interface#inUnicastPackets> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/interface#InterfaceStatistics> .
+<https://w3id.org/candil/interface#inUnicastPackets> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/candil/interface#inUnicastPackets> <http://www.w3.org/2000/01/rdf-schema#label> "in unicast packets" .
+# 
+# https://w3id.org/candil/interface#inputOctets
+<https://w3id.org/candil/interface#inputOctets> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/candil/interface#inputOctets> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/interface#InterfaceStatistics> .
+<https://w3id.org/candil/interface#inputOctets> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/candil/interface#inputOctets> <http://www.w3.org/2000/01/rdf-schema#label> "input octets" .
+# 
+# https://w3id.org/candil/interface#interfaceDescription
+<https://w3id.org/candil/interface#interfaceDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/candil/interface#interfaceDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/interface#Interface> .
+<https://w3id.org/candil/interface#interfaceDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/candil/interface#interfaceDescription> <http://www.w3.org/2000/01/rdf-schema#label> "interface description" .
+# 
+# https://w3id.org/candil/interface#interfaceEnabled
+<https://w3id.org/candil/interface#interfaceEnabled> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/candil/interface#interfaceEnabled> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/interface#Interface> .
+<https://w3id.org/candil/interface#interfaceEnabled> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/candil/interface#interfaceEnabled> <http://www.w3.org/2000/01/rdf-schema#label> "interface enabled" .
+# 
+# https://w3id.org/candil/interface#interfaceName
+<https://w3id.org/candil/interface#interfaceName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/candil/interface#interfaceName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/interface#Interface> .
+<https://w3id.org/candil/interface#interfaceName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/candil/interface#interfaceName> <http://www.w3.org/2000/01/rdf-schema#label> "interface name" .
+# 
+# https://w3id.org/candil/interface#outDiscards
+<https://w3id.org/candil/interface#outDiscards> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/candil/interface#outDiscards> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/interface#InterfaceStatistics> .
+<https://w3id.org/candil/interface#outDiscards> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/candil/interface#outDiscards> <http://www.w3.org/2000/01/rdf-schema#label> "out discards" .
+# 
+# https://w3id.org/candil/interface#outErrors
+<https://w3id.org/candil/interface#outErrors> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/candil/interface#outErrors> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/interface#InterfaceStatistics> .
+<https://w3id.org/candil/interface#outErrors> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/candil/interface#outErrors> <http://www.w3.org/2000/01/rdf-schema#label> "out errors" .
+# 
+# https://w3id.org/candil/interface#outUnicastPackets
+<https://w3id.org/candil/interface#outUnicastPackets> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/candil/interface#outUnicastPackets> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/interface#InterfaceStatistics> .
+<https://w3id.org/candil/interface#outUnicastPackets> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/candil/interface#outUnicastPackets> <http://www.w3.org/2000/01/rdf-schema#label> "out unicast packets" .
+# 
+# https://w3id.org/candil/interface#outputOctets
+<https://w3id.org/candil/interface#outputOctets> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/candil/interface#outputOctets> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/candil/interface#InterfaceStatistics> .
+<https://w3id.org/candil/interface#outputOctets> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/candil/interface#outputOctets> <http://www.w3.org/2000/01/rdf-schema#label> "output octets" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/candil/interface#Interface
+<https://w3id.org/candil/interface#Interface> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/candil/interface#Interface> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/candil/topology#TerminationPoint> .
+<https://w3id.org/candil/interface#Interface> <http://www.w3.org/2000/01/rdf-schema#label> "Interface" .
+# 
+# https://w3id.org/candil/interface#InterfaceStatistics
+<https://w3id.org/candil/interface#InterfaceStatistics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/candil/interface#InterfaceStatistics> <http://www.w3.org/2000/01/rdf-schema#label> "Interface Statistics" .
+# 
+# https://w3id.org/candil/interface#InterfaceStatus
+<https://w3id.org/candil/interface#InterfaceStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/candil/interface#InterfaceStatus> <http://www.w3.org/2000/01/rdf-schema#label> "Interface Status" .
+# 
+# https://w3id.org/candil/interface#InterfaceType
+<https://w3id.org/candil/interface#InterfaceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/candil/interface#InterfaceType> <http://www.w3.org/2000/01/rdf-schema#label> "Interface Type" .
+# 
+# https://w3id.org/candil/interface#lnterfaceIANA
+<https://w3id.org/candil/interface#lnterfaceIANA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/candil/interface#lnterfaceIANA> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/candil/interface#InterfaceType> .
+<https://w3id.org/candil/interface#lnterfaceIANA> <http://www.w3.org/2000/01/rdf-schema#label> "lnterface I A N A" .
+# 
+# https://w3id.org/candil/topology#TerminationPoint
+<https://w3id.org/candil/topology#TerminationPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/candil/topology#TerminationPoint> <http://www.w3.org/2000/01/rdf-schema#label> "Termination Point" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/candil/interface#InterfaceStatusDOWN
+<https://w3id.org/candil/interface#InterfaceStatusDOWN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/candil/interface#InterfaceStatusDOWN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/candil/interface#InterfaceStatus> .
+# 
+# https://w3id.org/candil/interface#InterfaceStatusUP
+<https://w3id.org/candil/interface#InterfaceStatusUP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/candil/interface#InterfaceStatusUP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/candil/interface#InterfaceStatus> .
+# 
+# https://w3id.org/candil/interface#ethernetCsmacd
+<https://w3id.org/candil/interface#ethernetCsmacd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/candil/interface#ethernetCsmacd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/candil/interface#lnterfaceIANA> .
+# 
+# https://w3id.org/candil/interface#l2vlan
+<https://w3id.org/candil/interface#l2vlan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/candil/interface#l2vlan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/candil/interface#lnterfaceIANA> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
