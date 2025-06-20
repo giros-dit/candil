@@ -59,22 +59,6 @@ To generate the documentation, execute the following command:
 
 The CANDIL KG mechanisms and related artifacts can be found in folder [candil-kg](./candil-kg/).
 
-### Morph-KGC Guidelines
-
-Build the image as follows:
-
-```bash
-cd morph-kgc
-docker build -t morph-kgc --build-arg optional_dependencies="sqlite kafka" .
-```
-
-Then run the container like this:
-
-```bash
-cd ..
-docker run -it -v ./mappings/containerlab/:/files morph-kgc-new /files/config.ini
-```
-
 ## Acknowledgements
 
 This work has been partly supported by project [ECTICS](https://www.dit.upm.es/~giros/project/ectics/) (PID2019-105257RB-C21), funded by:
