@@ -1,0 +1,165 @@
+{
+  "@context" : {
+    "versionIRI" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionIRI"
+    },
+    "terminatesLink" : {
+      "@id" : "https://w3id.org/candil/topology#terminatesLink",
+      "@type" : "@id"
+    },
+    "interfaceEnabled" : {
+      "@id" : "https://w3id.org/candil/interface#interfaceEnabled",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "operStatus" : {
+      "@id" : "https://w3id.org/candil/interface#operStatus",
+      "@type" : "@id"
+    },
+    "created" : {
+      "@id" : "http://purl.org/dc/terms/created"
+    },
+    "outUnicastPackets" : {
+      "@id" : "https://w3id.org/candil/interface#outUnicastPackets",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "outDiscards" : {
+      "@id" : "https://w3id.org/candil/interface#outDiscards",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license"
+    },
+    "Link" : {
+      "@id" : "https://w3id.org/candil/topology#Link"
+    },
+    "networkIdentifier" : {
+      "@id" : "https://w3id.org/candil/topology#networkIdentifier",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "terminationPointIdentifier" : {
+      "@id" : "https://w3id.org/candil/topology#terminationPointIdentifier",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "InterfaceType" : {
+      "@id" : "https://w3id.org/candil/interface#InterfaceType"
+    },
+    "TerminationPoint" : {
+      "@id" : "https://w3id.org/candil/topology#TerminationPoint"
+    },
+    "codeRepository" : {
+      "@id" : "http://www.owl-ontologies.com/schema#codeRepository"
+    },
+    "priorVersion" : {
+      "@id" : "http://www.w3.org/2002/07/owl#priorVersion"
+    },
+    "InterfaceStatus" : {
+      "@id" : "https://w3id.org/candil/interface#InterfaceStatus"
+    },
+    "inErrors" : {
+      "@id" : "https://w3id.org/candil/interface#inErrors",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "InterfaceStatistics" : {
+      "@id" : "https://w3id.org/candil/interface#InterfaceStatistics"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "lnterfaceIANA" : {
+      "@id" : "https://w3id.org/candil/interface#lnterfaceIANA"
+    },
+    "Interface" : {
+      "@id" : "https://w3id.org/candil/interface#Interface"
+    },
+    "nodeIdentifier" : {
+      "@id" : "https://w3id.org/candil/topology#nodeIdentifier",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasInterfaceType" : {
+      "@id" : "https://w3id.org/candil/interface#hasInterfaceType",
+      "@type" : "@id"
+    },
+    "interfaceName" : {
+      "@id" : "https://w3id.org/candil/interface#interfaceName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/terms/creator"
+    },
+    "connectsNode" : {
+      "@id" : "https://w3id.org/candil/topology#connectsNode",
+      "@type" : "@id"
+    },
+    "createdWith" : {
+      "@id" : "https://w3id.org/mod#createdWith"
+    },
+    "outputOctets" : {
+      "@id" : "https://w3id.org/candil/interface#outputOctets",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "Network" : {
+      "@id" : "https://w3id.org/candil/topology#Network"
+    },
+    "preferredNamespacePrefix" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix"
+    },
+    "interfaceDescription" : {
+      "@id" : "https://w3id.org/candil/interface#interfaceDescription",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "inNode" : {
+      "@id" : "https://w3id.org/candil/topology#inNode",
+      "@type" : "@id"
+    },
+    "inUnicastPackets" : {
+      "@id" : "https://w3id.org/candil/interface#inUnicastPackets",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "outErrors" : {
+      "@id" : "https://w3id.org/candil/interface#outErrors",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "inDiscards" : {
+      "@id" : "https://w3id.org/candil/interface#inDiscards",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title"
+    },
+    "publisher" : {
+      "@id" : "http://purl.org/dc/terms/publisher"
+    },
+    "isCointainedInNetwork" : {
+      "@id" : "https://w3id.org/candil/topology#isCointainedInNetwork",
+      "@type" : "@id"
+    },
+    "adminStatus" : {
+      "@id" : "https://w3id.org/candil/interface#adminStatus",
+      "@type" : "@id"
+    },
+    "inputOctets" : {
+      "@id" : "https://w3id.org/candil/interface#inputOctets",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "linkIdentifier" : {
+      "@id" : "https://w3id.org/candil/topology#linkIdentifier",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Node" : {
+      "@id" : "https://w3id.org/candil/topology#Node"
+    },
+    "hasInterfaceStatistics" : {
+      "@id" : "https://w3id.org/candil/interface#hasInterfaceStatistics",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description"
+    },
+    "preferredNamespaceUri" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri"
+    }
+  }
+}
