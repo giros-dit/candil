@@ -1,0 +1,53 @@
+@startuml ngsi-ld-federated
+hide footbox
+
+' You can style participants globally if you want
+skinparam participant {
+  BackgroundColor #DAE8FC
+  BorderColor #000000
+  FontColor #1e293b
+  FontSize 18
+  FontStyle light
+  RoundCorner 10
+}
+
+skinparam sequenceActorFontSize 18
+
+skinparam ParticipantBorderThickness 2
+skinparam ParticipantPadding 10
+
+skinparam BoxFontSize 30
+skinparam BoxPadding 25
+
+skinparam backgroundColor #FFFFFF
+
+' If you want to use a custom actor sprite, you must define it as a sprite (see previous answer).
+
+box "Edge Data Fabric" #LightCyan
+  participant "NGSI-LD\nContext Broker" as Edge
+end box
+
+box "Cloud Data Fabric" #LightYellow
+  participant "NGSI-LD\nContext Broker" as Cloud
+end box
+
+participant "Network\nAnalytics" as App
+
+== Federated NGSI-LD Subscription ==
+
+App -> Cloud : (1) Subscribe to NGSI-LD notifications
+
+Cloud -> Edge : (2) Forward NGSI-LD subscription request
+
+Edge --> Cloud
+
+Cloud --> App
+
+== Federated NGSI-LD Notifications ==
+alt Notification Via Cloud
+Edge -> Cloud : (1) Push NGSI-LD notification
+Cloud -> App : (2) Forward NGSI-LD notification
+else Direct Notification
+Edge -> App : (1) Push NGSI-LD notification
+end
+@enduml

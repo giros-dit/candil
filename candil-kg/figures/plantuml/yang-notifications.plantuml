@@ -1,0 +1,60 @@
+@startuml yang-notifications
+hide footbox
+
+' You can style participants globally if you want
+skinparam participant {
+  BackgroundColor #DAE8FC
+  BorderColor #000000
+  FontColor #1e293b
+  FontSize 18
+  FontStyle light
+  RoundCorner 10
+}
+
+skinparam sequenceActorFontSize 18
+
+skinparam ParticipantBorderThickness 2
+skinparam ParticipantPadding 10
+
+skinparam BoxFontSize 30
+skinparam BoxPadding 25
+
+skinparam backgroundColor #FFFFFF
+
+' If you want to use a custom actor sprite, you must define it as a sprite (see previous answer).
+box "IP Network" #LightBlue
+  participant "Network\nDevice" as Device
+end box
+
+box "Data Fabric" #LightYellow
+  participant "Telemetry\nCollector" as Collector
+  participant "Message\nBus" as Bus
+  participant "Mapping\nEngine" as Engine
+  participant "RDF to\nNGSI-LD" as Translator
+  participant "NGSI-LD\nContext Broker" as Broker
+end box
+
+== Telemetry Subscription ==
+
+Collector -> Device : (1) Subscribe to\nYANG notifications
+Device --> Collector
+
+== KG Engineering Pipeline ==
+
+Device -> Collector : (1) Generate\nYANG notification
+
+Collector -> Bus : (2) Process and send\nYANG notification
+
+Bus -> Engine : (3) Push YANG\nnotification
+
+Engine -> Engine: (4) Map and\ngenerate RDF data
+
+Engine -> Bus : (5) Send\nRDF data
+
+Bus -> Translator : (6) Push\nRDF data
+
+Translator -> Translator : (7) Translate RDF data\ninto NGSI-LD data
+
+Translator -> Broker : (8) Store in\nContext Broker
+
+@enduml

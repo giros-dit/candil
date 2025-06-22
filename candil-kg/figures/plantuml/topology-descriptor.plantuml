@@ -1,0 +1,60 @@
+@startuml topology-descriptor
+hide footbox
+
+' You can style participants globally if you want
+skinparam participant {
+  BackgroundColor #DAE8FC
+  BorderColor #000000
+  FontColor #1e293b
+  FontSize 18
+  FontStyle light
+  RoundCorner 10
+}
+
+skinparam sequenceActorFontSize 18
+
+skinparam ParticipantBorderThickness 2
+skinparam ParticipantPadding 10
+
+skinparam BoxFontSize 30
+skinparam BoxPadding 25
+
+skinparam backgroundColor #FFFFFF
+
+' If you want to use a custom actor sprite, you must define it as a sprite (see previous answer).
+participant "IP\nNetwork" as Network
+participant "NMS" as NMS
+participant "Topology\nDescriptor File" as Descriptor
+
+box "Data Fabric" #LightYellow
+  participant "Mapping\nEngine" as Engine
+  participant "Message\nBus" as Bus
+  participant "RDF to\nNGSI-LD" as Translator
+  participant "NGSI-LD\nContext Broker" as Broker
+end box
+
+== Network Deployment ==
+
+NMS -> Descriptor : (1) Consume\ntopology descriptor
+activate NMS
+Descriptor --> NMS
+NMS -> Network : (2) Deploy\nnetwork
+Network --> NMS
+deactivate NMS
+
+== KG Engineering Pipeline ==
+
+Engine -> Descriptor : (1) Fetch\ntopology descriptor
+Descriptor --> Engine
+
+Engine -> Engine: (2) Map and\ngenerate RDF data
+
+Engine -> Bus : (3) Send\nRDF data
+
+Bus -> Translator : (4) Push\nRDF data
+
+Translator -> Translator : (5) Translate RDF data\ninto NGSI-LD data
+
+Translator -> Broker : (6) Store in\nContext Broker
+
+@enduml
