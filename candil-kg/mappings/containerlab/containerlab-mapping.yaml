@@ -1,5 +1,6 @@
 prefixes:
- candil: "http://candil.namespace.com#"
+ candil-if: "https://w3id.org/candil/interface#"
+ candil-tp: "https://w3id.org/candil/topology#"
 
 mappings:
   network:
@@ -7,20 +8,20 @@ mappings:
       access: /files/topology-data.json
       referenceFormulation: jsonpath
       iterator: $
-    s: candil:$(name)
+    s: http://example.org/Topology/$(name)
     po:
-      - [a, candil:Network]
-      - [candil:networkIdentifier, $(name), xsd:string]
+      - [a, candil-tp:Network]
+      - [candil-tp:networkIdentifier, $(name), xsd:string]
   nodes:
     sources:
       access: /files/topology-data.json
       referenceFormulation: jsonpath
       iterator: $.nodes.*
-    s: candil:$(longname)
+    s: http://example.org/Node/$(longname)
     po:
-      - [a, candil:Node]
-      - [candil:nodeIdentifier, $(shortname), xsd:string]
-      - p: candil:isContainedInNetwork
+      - [a, candil-tp:Node]
+      - [candil-tp:nodeIdentifier, $(shortname), xsd:string]
+      - p: candil-tp:isContainedInNetwork
         o:
           - mapping: network
             condition:
@@ -33,11 +34,11 @@ mappings:
       access: /files/topology-data.json
       referenceFormulation: jsonpath
       iterator: $.links.*.*
-    s: candil:$(node)_$(interface)
+    s: http://example.org/Node/$(node)/Interface/$(interface)
     po:
-      - [a, candil:Interface] # Use Interface to skip NGSI-LD multi-type
-      - [candil:terminationPointId, $(interface)]
-      - p: candil:inNode
+      - [a, candil-if:Interface] # Use Interface to skip NGSI-LD multi-type
+      - [candil-tp:terminationPointId, $(interface)]
+      - p: candil-tp:inNode
         o:
           - mapping: nodes
             condition:
@@ -45,7 +46,7 @@ mappings:
               parameters:
                 - [str1, $(node)] # ID of node under `termination-points`
                 - [str2, $(shortname)] # ID of node under `nodes`
-      - p: candil:terminatesLink
+      - p: candil-tp:terminatesLink
         o:
           - mapping: links
             condition:
@@ -53,7 +54,7 @@ mappings:
               parameters:
                 - [str1, $(node)] # ID of node under `termination-points`
                 - [str2, $(a.node)] # ID of node under `links`
-      - p: candil:terminatesLink
+      - p: candil-tp:terminatesLink
         o:
           - mapping: links
             condition:
@@ -66,11 +67,11 @@ mappings:
       access: /files/topology-data.json
       referenceFormulation: jsonpath
       iterator: $.links.*
-    s: candil:$(a.node)_$(a.interface)_$(z.node)_$(z.interface)
+    s: http://example.org/Node/$(a.node)/Interface/$(a.interface)/Node/$(z.node)/Interface/$(z.interface)
     po:
-      - [a, candil:Link]
-      - [candil:linkIdentifier, $(a.node)_$(a.interface)_$(z.node)_$(z.interface), xsd:string]
-      - p: candil:connectsNode
+      - [a, candil-tp:Link]
+      - [candil-tp:linkIdentifier, $(a.node)_$(a.interface)_$(z.node)_$(z.interface), xsd:string]
+      - p: candil-tp:connectsNode
         o:
           - mapping: nodes
             condition:
@@ -78,7 +79,7 @@ mappings:
               parameters:
                 - [str1, $(a.node)] # ID of node under `links`
                 - [str2, $(shortname)] # ID of node under `nodes`
-      - p: candil:connectsNode
+      - p: candil-tp:connectsNode
         o:
           - mapping: nodes
             condition:
