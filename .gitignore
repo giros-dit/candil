@@ -149,3 +149,6 @@ target/
 
 # Drawio
 *.drawio.bkp
+
+# Camel
+.camel-jbang
