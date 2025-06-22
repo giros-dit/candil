@@ -3,7 +3,7 @@
     "name": "default-1700068212",
     "timestamp": 1700068242497477295,
     "tags": {
-      "interface_name": "ethernet-1/1",
+      "interface_name": "e1-1",
       "source": "172.20.20.6",
       "subscription-name": "default-1700068212"
     },

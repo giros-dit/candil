@@ -1,0 +1,17 @@
+@prefix schema: <http://schema.org/> .
+@prefix mod: <https://w3id.org/mod#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix candil-tp: <https://w3id.org/candil/topology#> .
+@prefix candil-if: <https://w3id.org/candil/interface#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+
+<http://example.org/Node/srl1/Interface/e1-1> a candil-if:Interface;
+  candil-if:interfaceName "e1-1";
+  candil-if:operStatus candil-if:InterfaceStatusDOWN .

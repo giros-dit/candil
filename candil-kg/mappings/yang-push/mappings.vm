@@ -1,0 +1,58 @@
+@prefix candil-if: <https://w3id.org/candil/interface#> .
+@prefix candil-tp: <https://w3id.org/candil/topology#> .
+@prefix mod: <https://w3id.org/mod#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix schema: <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@base <http://example.org/> .
+
+
+#set( $ifQuery = '
+    declare namespace yp = "urn:ietf:params:xml:ns:yang:ietf-yang-push" ;
+    declare namespace if = "urn:ietf:params:xml:ns:yang:ietf-interfaces" ;
+    for $interface in //*:push-update/*:datastore-contents-xml/*:interfaces-state/*:interface
+    return map {
+        "name": $interface/if:name/text() ,
+        "adminStatus": $interface/if:admin-status/text() ,
+        "operStatus": $interface/if:oper-status/text() ,
+        "inputOctets": $interface/if:statistics/if:in-octets/text() ,
+        "inputUnicastPackets": $interface/if:statistics/if:in-unicast-pkts/text() ,
+        "inputDiscards": $interface/if:statistics/if:in-discards/text() ,
+        "inputErrors": $interface/if:statistics/if:in-errors/text() ,
+        "outOctets": $interface/if:statistics/if:out-octets/text() ,
+        "outputUnicastPackets": $interface/if:statistics/if:out-unicast-pkts/text() ,
+        "outputDiscards": $interface/if:statistics/if:out-discards/text() ,
+        "outputErrors": $interface/if:statistics/if:out-errors/text()
+    }')
+#set($ifData = $reader.getDataframe($ifQuery))
+
+#foreach($interface in $ifData)
+
+#set ($adminStatus = $interface.adminStatus.toUpperCase())
+#set ($operStatus = $interface.operStatus.toUpperCase())
+
+<Node/srl2/Interface/${interface.name}> a candil-if:Interface ;
+    candil-if:interfaceName "$interface.name" ;
+    candil-if:adminStatus candil-if:InterfaceStatus${adminStatus} ;
+    candil-if:operStatus candil-if:InterfaceStatus${operStatus} ;
+    candil-if:hasInterfaceStatistics <Node/srl2/Interface/$interface.name/InterfaceStatistics> ;
+.
+
+<Node/srl2/Interface/$interface.name/InterfaceStatistics> a candil-if:InterfaceStatistics ;
+    candil-if:inputOctets "$interface.inputOctets"^^xsd:integer ;
+    candil-if:inputUnicastPackets "$interface.inputUnicastPackets"^^xsd:integer ;
+    candil-if:inputDiscards "$interface.inputDiscards"^^xsd:integer ;
+    candil-if:inputErrors "$interface.inputErrors"^^xsd:integer ;
+    candil-if:outOctets "$interface.outOctets"^^xsd:integer ;
+    candil-if:outputUnicastPackets "$interface.outputUnicastPackets"^^xsd:integer ;
+    candil-if:outputDiscards "$interface.outputDiscards"^^xsd:integer ;
+    candil-if:outputErrors "$interface.outputErrors"^^xsd:integer ;
+.
+#end

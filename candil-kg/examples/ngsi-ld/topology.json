@@ -1,0 +1,81 @@
+[
+    {
+        "id": "http://example.org/Node/clab-srlinux-openconfig-02-srl1",
+        "type": "https://w3id.org/candil/topology#Node",
+        "https://w3id.org/candil/topology#nodeIdentifier": {
+            "type": "Property",
+            "value": "srl1"
+        },
+        "https://w3id.org/candil/topology#isContainedInNetwork": {
+            "type": "Relationship",
+            "object": "http://example.org/Topology/srlinux-openconfig-02"
+        }
+    },
+    {
+        "id": "http://example.org/Node/srl1/Interface/e1-1",
+        "type": "https://w3id.org/candil/interface#Interface",
+        "https://w3id.org/candil/topology#terminatesLink": {
+            "type": "Relationship",
+            "object": "http://example.org/Node/srl1/Interface/e1-1/Node/srl2/Interface/e1-1"
+        },
+        "https://w3id.org/candil/topology#terminationPointId": {
+            "type": "Property",
+            "value": "e1-1"
+        },
+        "https://w3id.org/candil/topology#inNode": {
+            "type": "Relationship",
+            "object": "http://example.org/Node/clab-srlinux-openconfig-02-srl1"
+        }
+    },
+    {
+        "id": "http://example.org/Node/srl1/Interface/e1-1/Node/srl2/Interface/e1-1",
+        "type": "https://w3id.org/candil/topology#Link",
+        "https://w3id.org/candil/topology#connectsNode": {
+            "type": "Relationship",
+            "object": [
+                "http://example.org/Node/clab-srlinux-openconfig-02-srl1",
+                "http://example.org/Node/clab-srlinux-openconfig-02-srl2"
+            ]
+        },
+        "https://w3id.org/candil/topology#linkIdentifier": {
+            "type": "Property",
+            "value": "srl1_e1-1_srl2_e1-1"
+        }
+    },
+    {
+        "id": "http://example.org/Topology/srlinux-openconfig-02",
+        "type": "https://w3id.org/candil/topology#Network",
+        "https://w3id.org/candil/topology#networkIdentifier": {
+            "type": "Property",
+            "value": "srlinux-openconfig-02"
+        }
+    },
+    {
+        "id": "http://example.org/Node/clab-srlinux-openconfig-02-srl2",
+        "type": "https://w3id.org/candil/topology#Node",
+        "https://w3id.org/candil/topology#nodeIdentifier": {
+            "type": "Property",
+            "value": "srl2"
+        },
+        "https://w3id.org/candil/topology#isContainedInNetwork": {
+            "type": "Relationship",
+            "object": "http://example.org/Topology/srlinux-openconfig-02"
+        }
+    },
+    {
+        "id": "http://example.org/Node/srl2/Interface/e1-1",
+        "type": "https://w3id.org/candil/interface#Interface",
+        "https://w3id.org/candil/topology#terminationPointId": {
+            "type": "Property",
+            "value": "e1-1"
+        },
+        "https://w3id.org/candil/topology#terminatesLink": {
+            "type": "Relationship",
+            "object": "http://example.org/Node/srl1/Interface/e1-1/Node/srl2/Interface/e1-1"
+        },
+        "https://w3id.org/candil/topology#inNode": {
+            "type": "Relationship",
+            "object": "http://example.org/Node/clab-srlinux-openconfig-02-srl2"
+        }
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "id": "http://example.org/Node/srl1/Interface/e1-1",
+        "type": "https://w3id.org/candil/interface#Interface",
+        "https://w3id.org/candil/interface#interfaceName": {
+            "type": "Property",
+            "value": "e1-1"
+        },
+        "https://w3id.org/candil/interface#operStatus": {
+            "type": "Relationship",
+            "object": "https://w3id.org/candil/interface#InterfaceStatusDOWN"
+        }
+    }
+]

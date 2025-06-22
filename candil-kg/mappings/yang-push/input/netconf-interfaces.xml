@@ -6,7 +6,7 @@
         <datastore-contents-xml>
             <interfaces-state xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
                 <interface>
-                    <name>GigabitEthernet1</name>
+                    <name>e1-1</name>
                     <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">
                         ianaift:ethernetCsmacd</type>
                     <admin-status>up</admin-status>

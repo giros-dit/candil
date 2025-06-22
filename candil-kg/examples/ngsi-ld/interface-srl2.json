@@ -1,0 +1,58 @@
+[
+    {
+        "id": "http://example.org/Node/srl2/Interface/e1-1/InterfaceStatistics",
+        "type": "https://w3id.org/candil/interface#InterfaceStatistics",
+        "https://w3id.org/candil/interface#inputOctets": {
+            "type": "Property",
+            "value": "8157"
+        },
+        "https://w3id.org/candil/interface#inputUnicastPackets": {
+            "type": "Property",
+            "value": "94"
+        },
+        "https://w3id.org/candil/interface#inputDiscards": {
+            "type": "Property",
+            "value": "0"
+        },
+        "https://w3id.org/candil/interface#inputErrors": {
+            "type": "Property",
+            "value": "0"
+        },
+        "https://w3id.org/candil/interface#outOctets": {
+            "type": "Property",
+            "value": "89363"
+        },
+        "https://w3id.org/candil/interface#outputUnicastPackets": {
+            "type": "Property",
+            "value": "209"
+        },
+        "https://w3id.org/candil/interface#outputDiscards": {
+            "type": "Property",
+            "value": "0"
+        },
+        "https://w3id.org/candil/interface#outputErrors": {
+            "type": "Property",
+            "value": "0"
+        }
+    },
+    {
+        "id": "http://example.org/Node/srl2/Interface/e1-1",
+        "type": "https://w3id.org/candil/interface#Interface",
+        "https://w3id.org/candil/interface#interfaceName": {
+            "type": "Property",
+            "value": "e1-1"
+        },
+        "https://w3id.org/candil/interface#adminStatus": {
+            "type": "Relationship",
+            "object": "https://w3id.org/candil/interface#InterfaceStatusUP"
+        },
+        "https://w3id.org/candil/interface#operStatus": {
+            "type": "Relationship",
+            "object": "https://w3id.org/candil/interface#InterfaceStatusUP"
+        },
+        "https://w3id.org/candil/interface#hasInterfaceStatistics": {
+            "type": "Relationship",
+            "object": "http://example.org/Node/srl2/Interface/e1-1/InterfaceStatistics"
+        }
+    }
+]
