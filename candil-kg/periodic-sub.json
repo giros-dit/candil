@@ -3,8 +3,8 @@
   "type": "Subscription",
   "entities": [
     {
-      "type": "candil:InterfaceStatistics",
-      "id": "candil:r2_eth1_stats"
+      "type": "InterfaceStatistics",
+      "id": "http://example.org/Topology/IP-Network/Node/R2/Interface/e1-1/InterfaceStatistics"
     }
   ],
   "timeInterval": 60,

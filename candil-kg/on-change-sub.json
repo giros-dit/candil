@@ -3,13 +3,19 @@
   "type": "Subscription",
   "entities": [
     {
-      "type": "candil:Interface",
-      "id": "candil:r1_e1-1"
+      "type": "Interface",
+      "id": "http://example.org/Topology/IP-Network/Node/R1/Interface/e1-1"
     }
   ],
-  "watchedAttributes": ["candil:operStatus"],
+  "watchedAttributes": [
+    "operStatus",
+    "adminStatus"
+  ],
   "notification": {
-    "attributes": ["candil:operStatus"],
+    "attributes": [
+      "operStatus",
+      "adminStatus"
+    ],
     "endpoint": {
       "uri": "http://analytics-server:8080",
       "accept": "application/json"
