@@ -19,13 +19,18 @@ def get_or_assign_predicate_type(predicate):
     """
     if predicate not in predicate_type_map:
         if random.random() < 0.5:
-            # URI object type
             predicate_type_map[predicate] = 'uri'
         else:
-            # Literal object type -> choose *one* literal datatype
-            literal_type = random.choice(['literal-string', 'literal-int', 'literal-bool'])
-            predicate_type_map[predicate] = literal_type
+            predicate_type_map[predicate] = random.choice([
+                'literal-string', 'literal-int', 'literal-bool'
+            ])
     return predicate_type_map[predicate]
+
+def generate_random_subject_uri():
+    """Generate a reproducible random subject URI using Python's random module."""
+    # random.getrandbits allows us to generate a large random number in a reproducible way
+    rand_id = random.getrandbits(64)  # 64-bit random integer
+    return URIRef(f"http://example.org/subject_{rand_id}")
 
 def generate_random_object(object_type):
     """Generate an object matching the given type."""
@@ -33,8 +38,7 @@ def generate_random_object(object_type):
         return URIRef(f"http://example.org/object{random.randint(0, 50)}")
 
     elif object_type == 'literal-string':
-        choices = ["apple", "banana", "carrot", "dog", "house"]
-        return Literal(random.choice(choices), datatype=XSD.string)
+        return Literal(random.choice(["apple", "banana", "carrot", "dog", "house"]), datatype=XSD.string)
 
     elif object_type == 'literal-int':
         return Literal(random.randint(0, 1000), datatype=XSD.integer)
@@ -45,53 +49,56 @@ def generate_random_object(object_type):
     else:
         raise ValueError(f"Unknown object type: {object_type}")
 
-def generate_triples_message(num_subjects, triples_per_subject, class_uri):
-    """
-    Generate triples with:
-    - Consistent URI or literal type per predicate
-    - If literal, consistent literal datatype across run for that predicate
-    """
+def generate_triples_message(num_subjects, total_triples, class_uri):
     g = Graph()
-    subjects = [URIRef(f"http://example.org/subject{i}") for i in range(num_subjects)]
+    subjects = [generate_random_subject_uri() for _ in range(num_subjects)]
 
+    # Add rdf:type triple for each subject
     for subject in subjects:
-        # Always add rdf:type triple
         g.add((subject, RDF.type, URIRef(class_uri)))
 
-        for _ in range(triples_per_subject):
-            predicate = URIRef(f"http://example.org/predicate{random.randint(0, 4)}")
-            obj_type = get_or_assign_predicate_type(predicate)
-            obj = generate_random_object(obj_type)
-            g.add((subject, predicate, obj))
+    # Keep generating triples until we have exactly total_triples
+    while len(g) < total_triples:
+        subject = random.choice(subjects)
+        predicate = URIRef(f"http://example.org/predicate{random.randint(0, 4)}")
+        obj_type = get_or_assign_predicate_type(predicate)
+        obj = generate_random_object(obj_type)
+        g.add((subject, predicate, obj))  # duplicates won't increase len(g), so loop retries
 
     return g.serialize(format='nt')
 
-def send_rdf_messages(num_subjects, triples_per_subject, messages_per_second,
+
+def send_rdf_messages(num_subjects, total_triples, messages_per_second,
                       duration_seconds, kafka_bootstrap, topic, class_uri):
-    """
-    Send triples to Kafka with consistent predicate object and literal datatype types.
-    """
     producer = KafkaProducer(
         bootstrap_servers=kafka_bootstrap,
-        value_serializer=lambda v: v.encode('utf-8')
+        value_serializer=lambda v: v.encode('utf-8')  # Only the RDF string is serialized
     )
 
     interval = 1.0 / messages_per_second
     start_time = time.time()
 
     while time.time() - start_time < duration_seconds:
-        triples_data = generate_triples_message(num_subjects, triples_per_subject, class_uri)
-        producer.send(topic, value=triples_data)
+        triples_data = generate_triples_message(num_subjects, total_triples, class_uri)
+
+        # Add mps as Kafka message header (byte values required)
+        producer.send(
+            topic,
+            value=triples_data,
+            headers=[("mps", str(messages_per_second).encode("utf-8"))]
+        )
+
         producer.flush()
         time.sleep(interval)
 
     producer.close()
 
+
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Send RDF triples with consistent predicate-object types and literal datatypes to Kafka.")
+    parser = argparse.ArgumentParser(description="Send RDF triples with total triples specified per message.")
     parser.add_argument("--subjects", type=int, required=True, help="Number of subjects per message")
-    parser.add_argument("--triples-per-subject", type=int, required=True, help="Triples per subject (excluding rdf:type)")
-    parser.add_argument("--mps", type=float, required=True, help="Messages per second")
+    parser.add_argument("--total-triples", type=int, required=True, help="Total triples per message (including rdf:type triples)")
+    parser.add_argument("--mps", type=int, required=True, help="Messages per second")
     parser.add_argument("--duration", type=int, required=True, help="Test duration in seconds")
     parser.add_argument("--bootstrap", default="localhost:9092", help="Kafka bootstrap servers")
     parser.add_argument("--topic", default="rdf_triples", help="Kafka topic name")
@@ -105,7 +112,7 @@ if __name__ == "__main__":
 
     send_rdf_messages(
         num_subjects=args.subjects,
-        triples_per_subject=args.triples_per_subject,
+        total_triples=args.total_triples,
         messages_per_second=args.mps,
         duration_seconds=args.duration,
         kafka_bootstrap=args.bootstrap,
