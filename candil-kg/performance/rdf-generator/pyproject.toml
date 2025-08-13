@@ -7,8 +7,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-pyoxigraph = "^0.3.22"
 kafka-python = "^2.0.2"
+rdflib = "^7.1.4"
 
 
 [build-system]
