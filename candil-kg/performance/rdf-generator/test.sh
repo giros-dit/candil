@@ -304,7 +304,7 @@ sleep 10
 echo "Number of routers: 175"
 python rdf_generator/generator.py --subjects 5 --total-triples 10 --mps 175 --duration 60
 sleep 10
-echo "Number of routers: 1100"
+echo "Number of routers: 180"
 python rdf_generator/generator.py --subjects 5 --total-triples 10 --mps 180 --duration 60
 sleep 10
 echo "Number of routers: 190"

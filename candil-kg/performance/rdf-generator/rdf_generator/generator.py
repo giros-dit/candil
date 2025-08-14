@@ -53,20 +53,32 @@ def generate_triples_message(num_subjects, total_triples, class_uri):
     g = Graph()
     subjects = [generate_random_subject_uri() for _ in range(num_subjects)]
 
-    # Add rdf:type triple for each subject
+    # First, add rdf:type triple for each subject
     for subject in subjects:
         g.add((subject, RDF.type, URIRef(class_uri)))
 
-    # Keep generating triples until we have exactly total_triples
+    # Distribute remaining triples as evenly as possible
+    remaining_triples = max(0, total_triples - num_subjects)
+    base_triples = remaining_triples // num_subjects
+    extra_triples = remaining_triples % num_subjects
+
+    for i, subject in enumerate(subjects):
+        n_triples = base_triples + (1 if i < extra_triples else 0)
+        for _ in range(n_triples):
+            predicate = URIRef(f"http://example.org/predicate{random.randint(0, 4)}")
+            obj_type = get_or_assign_predicate_type(predicate)
+            obj = generate_random_object(obj_type)
+            g.add((subject, predicate, obj))
+
+    # If due to duplicate triples, len(g) < total_triples, keep adding random triples until complete
     while len(g) < total_triples:
         subject = random.choice(subjects)
         predicate = URIRef(f"http://example.org/predicate{random.randint(0, 4)}")
         obj_type = get_or_assign_predicate_type(predicate)
         obj = generate_random_object(obj_type)
-        g.add((subject, predicate, obj))  # duplicates won't increase len(g), so loop retries
+        g.add((subject, predicate, obj))
 
     return g.serialize(format='nt')
-
 
 def send_rdf_messages(num_subjects, total_triples, messages_per_second,
                       duration_seconds, kafka_bootstrap, topic, class_uri):

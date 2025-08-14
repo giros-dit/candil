@@ -2,30 +2,38 @@ version: '3'
 
 services:
   # Kafka
-  kafka:
-    image: wurstmeister/kafka:latest
-    hostname: kafka
-    container_name: kafka
-    ports:
-      - "9092:9092"
+  zookeeper:
+    image: 'confluentinc/cp-zookeeper:7.5.0'
+    container_name: zookeeper
     environment:
-      KAFKA_ADVERTISED_HOST_NAME: kafka
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_ADVERTISED_PORT: 9092
-      KAFKA_LOG_DIRS: "/tmp/kafka-logs"
-      KAFKA_CREATE_TOPICS: "rdf-streams"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+  kafka:
+    image: 'confluentinc/cp-kafka:7.5.0'
+    container_name: kafka
     depends_on:
       - zookeeper
-  zookeeper:
-    image: zookeeper
-    hostname: zookeeper
-    container_name: zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,INTERNAL://kafka:29092
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,INTERNAL://0.0.0.0:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,INTERNAL:PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
     ports:
-      - "2181"
+      - "9092:9092"    # For external access
+      - "29092:29092"  # For access from other Docker containers
+    healthcheck:
+      test: ["CMD", "kafka-topics", "--list", "--bootstrap-server", "kafka:9092"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
   postgres:
     image: postgis/postgis
+    platform: linux/amd64
     ports:
       - "5432"
     environment:
@@ -34,29 +42,10 @@ services:
       POSTGRES_DB: ngb
   scorpio:
     image: scorpiobroker/all-in-one-runner:java-latest
+    platform: linux/amd64
     environment:
       DBHOST: postgres
     ports:
-      - "9099:9090"
+      - "9090:9090"
     depends_on:
       - postgres
-  rdf-to-ngsi-ld:
-    image: rdf-to-ngsi-ld
-    environment:
-      KAFKA_BROKER: kafka:9092
-      KAFKA_TOPIC: rdf-streams
-      BROKER_URI: http://scorpio:9090/ngsi-ld/v1
-      DEBUG: False
-    volumes:
-      - ./results:/tmp
-    depends_on:
-      - kafka
-      - scorpio
-  rdf-generator:
-    image: rdf-generator
-    environment:
-      KAFKA_BROKER: kafka:9092
-      KAFKA_TOPIC: rdf-streams
-    depends_on:
-      - kafka
-      - scorpio
